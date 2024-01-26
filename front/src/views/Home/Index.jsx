@@ -1,10 +1,13 @@
 import React from "react";
+import { BannerCampestre } from "./components/bannerCampestre";
 
 export const Home = () => {
   return (
     <>
-      <div>
-        <h2>Home</h2>
+      <div className=" w-full flex flex-col">
+        <div>
+          <BannerCampestre />
+        </div>
       </div>
     </>
   );

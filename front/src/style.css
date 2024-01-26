@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: 'AltoneNormal';
+    src: url('./style/fonts/AltoneTrial-Regular.ttf') format('truetype');
+    font-weight: 400;
+    /* Ajusta según tus necesidades */
+    font-style: normal;
+    /* Ajusta según tus necesidades */
+  }
+  
+  @font-face {
+    font-family: 'AltoneBold';
+    src: url('./style/fonts/AltoneTrial-Bold.ttf') format('truetype');
+    font-weight: 400;
+    /* Ajusta según tus necesidades */
+    font-style: normal;
+    /* Ajusta según tus necesidades */
+  }
