@@ -4,7 +4,5 @@ import { ClubCampestreApp } from "./clubCampestreApp";
 import "./style.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ClubCampestreApp />
-  </React.StrictMode>
+  <ClubCampestreApp />
 );

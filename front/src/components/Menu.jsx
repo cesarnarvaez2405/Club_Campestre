@@ -25,12 +25,9 @@ export const Menu = () => {
 
           <div className="col-start-5  flex justify-center items-center">
             <div
-              className=" h-32 w-36"
+              className=" h-32 w-36 bg-center bg-no-repeat bg-contain"
               style={{
                 backgroundImage: `url(${logo})`,
-                backgroundSize: "content",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
               }}
             ></div>
           </div>
