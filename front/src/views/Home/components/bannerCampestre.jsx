@@ -40,7 +40,7 @@ export const BannerCampestre = () => {
   return (
     <>
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-slate-600 z-10 flex top-0">
-        <div className=" w-full h-full absolute z-20">
+        <div className=" w-full h-full block z-20">
           <div
             className="bg-center bg-no-repeat bg-cover 2xl:h-[50rem] xl:h-[40rem] h-[40rem] brightness-[0.7] "
             style={{

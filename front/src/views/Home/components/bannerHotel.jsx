@@ -5,7 +5,7 @@ import { WifiIcon } from "@heroicons/react/16/solid";
 export const BannerHotel = () => {
   return (
     <>
-      <div className=" w-full 2xl:h-[147px] h-[128px] bg-zinc-800 p-2 ">
+      <div className=" w-full 2xl:h-[147px] h-[128px] bg-zinc-800 p-2 z-40 ">
         <div className=" w-full h-full border-2 rounded-md border-amber-300 flex flex-row justify-center items-center gap-12">
           <div
             className=" w-[12rem] h-[5rem] bg-center bg-no-repeat bg-cover"
@@ -94,7 +94,7 @@ export const BannerHotel = () => {
             </div>
           </div>
           <div>
-            <button className=" border-2 border-amber-300 px-6 py-2 rounded-md text-amber-300 font-AltoneNormal">
+            <button className=" border-2 border-amber-300 px-6 py-2 rounded-md text-amber-300 font-AltoneNormal hover:scale-110 transition-all ease-in-out duration-150">
               Reserva Ya
             </button>
           </div>
