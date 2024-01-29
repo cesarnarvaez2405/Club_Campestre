@@ -37,3 +37,8 @@
  .fade-exit-active{
     transition: opacity 500ms;
  }
+
+ #map {
+   height: 250px; /* Ajusta a tus necesidades */
+   width: 300px;
+ }

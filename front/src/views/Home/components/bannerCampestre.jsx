@@ -8,7 +8,7 @@ import { infoBanner } from "../data/infoBanner";
 import fondo from "../../../style/images/campoGolf.jpg";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
-export const BannerCampestre = () => {
+export const BannerCampestre = ({ desplazarBannerHotel }) => {
   const [posicionInfo, setPosicionInfo] = useState(0);
 
   const handleClickButtonRight = () => {
@@ -78,7 +78,10 @@ export const BannerCampestre = () => {
               </div>
             </div>
             <div className="  w-full h-[8rem] flex justify-center items-end ">
-              <ChevronDoubleDownIcon className=" w-10 h-10 text-white" />
+              <ChevronDoubleDownIcon
+                className=" w-10 h-10 text-white cursor-pointer hover:opacity-30 transition-all ease-in-out duration-100"
+                onClick={() => desplazarBannerHotel()}
+              />
             </div>
           </div>
         </div>

@@ -2,11 +2,14 @@ import React from "react";
 import logoHotel from "../../../style/images/HotelClubCampestre.png";
 import { WifiIcon } from "@heroicons/react/16/solid";
 
-export const BannerHotel = () => {
+export const BannerHotel = React.forwardRef((props, ref) => {
   return (
     <>
       <div className=" w-full 2xl:h-[147px] h-[128px] bg-zinc-800 p-2 z-40 ">
-        <div className=" w-full h-full border-2 rounded-md border-amber-300 flex flex-row justify-center items-center gap-12">
+        <div
+          ref={ref}
+          className=" w-full h-full border-2 rounded-md border-amber-300 flex flex-row justify-center items-center gap-12"
+        >
           <div
             className=" w-[12rem] h-[5rem] bg-center bg-no-repeat bg-cover"
             style={{
@@ -48,7 +51,7 @@ export const BannerHotel = () => {
                     <path
                       fill="var(--ci-primary-color, currentColor)"
                       d="M224,160H176V48H144V160H96V48H64V172c0,45.505,34.655,83.393,80,90.715V472h32V262.715c45.345-7.322,80-45.21,80-90.715V48H224Zm-64,72c-27.811,0-51.524-16.722-60.33-40H220.33C211.524,215.278,187.811,232,160,232Z"
-                      class="ci-primary"
+                      className="ci-primary"
                     />
                     <path
                       fill="var(--ci-primary-color, currentColor)"
@@ -102,4 +105,4 @@ export const BannerHotel = () => {
       </div>
     </>
   );
-};
+});
