@@ -4,6 +4,8 @@ import { Wrapper } from "@googlemaps/react-wrapper";
 import logoBlanco from "../style/images/logoCampestreBlanco.png";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/16/solid";
 
+const apiKeyGoogle = import.meta.env.VITE_GOOGLE_KEY;
+
 export const Footer = () => {
   const center = { lat: 2.8356931949576785, lng: -75.29160131669344 };
   const zoom = 13;
@@ -16,7 +18,7 @@ export const Footer = () => {
               Kilometro 12 Vía al sur, Rivera - Huila
             </span>
             <div className=" w-48 h-48 pt-3">
-              <Wrapper apiKey="AIzaSyDdYjmsnLB5l0kbUzq6nlXHpiu_j-RCvJ8">
+              <Wrapper apiKey={apiKeyGoogle}>
                 <GoogleMaps center={center} zoom={zoom} />
               </Wrapper>
             </div>
