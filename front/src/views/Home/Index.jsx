@@ -14,7 +14,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="">
+      <div>
         <BannerCampestre desplazarBannerHotel={desplazarBannerHotel} />
         <BannerHotel ref={bannerHotelRef} />
         <div className=" w-full 2xl:h-[20rem] h-[18rem] bg-white ">

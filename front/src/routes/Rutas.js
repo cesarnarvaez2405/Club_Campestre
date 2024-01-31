@@ -5,9 +5,21 @@ export const linkRutas = [
     title: "Inicio",
   },
   {
-    path: "/nosotros",
     name: "nosotros",
     title: "Nosotros",
+    subMenu: [
+      {
+        path: "/nosotros/ElClub",
+        name: "ElClub",
+        title: "El Club",
+      },
+      {
+        path: "/nosotros/instalaciones",
+        name: "instalaciones",
+        title: "Instalaciones",
+      },
+      // Más enlaces de submenú si los necesitas...
+    ],
   },
   {
     path: "/eventos",
