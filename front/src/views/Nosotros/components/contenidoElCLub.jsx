@@ -5,7 +5,7 @@ export const ContenidoElCLub = () => {
   return (
     <>
       <div className=" w-full">
-        <div className=" w-full h-[25rem]  xl:px-[10rem]  px-[3rem] ">
+        <div className=" w-full xl:px-[10rem]  px-[3rem] ">
           <div className=" h-full grid grid-cols-2 py-[5rem]">
             <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
               <div className=" flex justify-center items-center gap-2">
