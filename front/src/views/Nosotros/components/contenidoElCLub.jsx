@@ -46,12 +46,12 @@ export const ContenidoElCLub = () => {
                 }}
               ></div>
             </div>
-            <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
+            <div className=" col-span-1 flex flex-col justify-start items-start  gap-5 ">
               <div className=" flex justify-center items-center gap-2">
+                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300"></div>
                 <strong className=" font-AltoneNormal text-5xl font-semibold">
                   Visión
                 </strong>
-                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300"></div>
               </div>
               <div className=" 2xl:pl-10 ">
                 <p>
