@@ -68,7 +68,7 @@ export const ContenidoElCLub = () => {
               </div>
             </div>
           </div>
-          <div className=" h-full grid grid-cols-2 py-[2rem]">
+          <div className=" h-full grid grid-cols-2 py-[5rem] pb-36">
             <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
               <div className=" flex justify-center items-center gap-2">
                 <strong className=" font-AltoneNormal text-5xl font-semibold">

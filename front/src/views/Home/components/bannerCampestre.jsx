@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { infoBanner } from "../data/infoBanner";
 import fondo from "../../../style/images/campoGolf.jpg";
+import videoFondo from "../../../style/images/lago.mp4";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 export const BannerCampestre = ({ desplazarBannerHotel }) => {
@@ -41,13 +42,31 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
     <>
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-slate-600 z-10 flex top-0">
         <div className=" w-full h-full block z-20">
-          <div
+          <div className="relative w-full 2xl:h-[50rem] xl:h-[40rem] h-[40rem] overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
+            >
+              <source src={videoFondo} type="video/mp4" />
+            </video>
+          </div>
+          {/* <video
+            autoPlay
+            loop
+            muted
+            className="bg-center bg-no-repeat bg-cover  brightness-[0.7]"
+          >
+            <source src={videoFondo} type="video/mp4" />
+          </video> */}
+          {/* <div
             className="bg-center bg-no-repeat bg-cover 2xl:h-[50rem] xl:h-[40rem] h-[40rem] brightness-[0.7] "
             style={{
               backgroundImage: `url(${fondo})`,
             }}
-          ></div>
-          <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 xl:top-[25%] top-[20%] ">
+          ></div> */}
+          <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[18%] lg:top-[20%] top-[30%] ">
             <div className=" flex  items-center h-full justify-between mx-8">
               <div
                 className=" order-first h-8 w-8 text-white cursor-pointer"
