@@ -1,4 +1,5 @@
 import React from "react";
+import documentoEstatuto from "../style/images/estatuto.pdf";
 
 export const BannerSerSocio = () => {
   return (
@@ -16,9 +17,11 @@ export const BannerSerSocio = () => {
             membresía
           </p>
         </div>
-        <button className=" border-2 border-amber-300 px-6 py-2 rounded-md text-amber-300 font-AltoneNormal hover:scale-110 transition-all ease-in-out duration-150 hover:border-white hover:bg-black hover:shadow-lg hover:shadow-amber-300">
-          Quiero ser socio
-        </button>
+        <a href={documentoEstatuto} target="_blank" rel="noopener noreferrer">
+          <button className=" border-2 border-amber-300 px-6 py-2 rounded-md text-amber-300 font-AltoneNormal hover:scale-110 transition-all ease-in-out duration-150 hover:border-white hover:bg-black hover:shadow-lg hover:shadow-amber-300">
+            Quiero ser socio
+          </button>
+        </a>
       </div>
     </>
   );

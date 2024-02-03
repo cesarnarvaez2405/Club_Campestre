@@ -97,9 +97,15 @@ export const BannerHotel = React.forwardRef((props, ref) => {
             </div>
           </div>
           <div>
-            <button className=" border-2 border-amber-300 px-6 py-2 rounded-md text-amber-300 font-AltoneNormal hover:scale-110 transition-all ease-in-out duration-150">
-              Reserva Ya
-            </button>
+            <a
+              href="https://wa.me/3175021927?text=Quiero%20reserver%20en%20el%20Hotel%20Club%20Campestre"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="border-2 border-amber-300 px-6 py-2 rounded-md text-amber-300 font-AltoneNormal hover:scale-110 transition-all ease-in-out duration-150">
+                Reserva Ya
+              </button>
+            </a>
           </div>
         </div>
       </div>

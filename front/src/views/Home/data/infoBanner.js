@@ -3,9 +3,9 @@ export const infoBanner = [
     text: "#Vive Club Campestre",
   },
   {
-    text: "La mejor experiencia ",
+    text: "Naturaleza y Deporte Juntos ",
   },
   {
-    text: "No te pierdas de esta maravilla",
+    text: "Bienestar, Amistad, Recreación",
   },
 ];

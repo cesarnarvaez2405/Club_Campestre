@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { infoBanner } from "../data/infoBanner";
 import fondo from "../../../style/images/campoGolf.jpg";
-import videoFondo from "../../../style/images/lago.mp4";
+import videoFondo from "../../../style/images/secuencia.mp4";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 export const BannerCampestre = ({ desplazarBannerHotel }) => {

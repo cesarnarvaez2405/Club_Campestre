@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleMaps } from "./Partials/googleMaps";
 import { Wrapper } from "@googlemaps/react-wrapper";
-import logoBlanco from "../style/images/logoCampestreBlanco.png";
+import logoBlanco from "../style/images/Logo_club.png";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/16/solid";
 
 const apiKeyGoogle = import.meta.env.VITE_GOOGLE_KEY;
@@ -14,7 +14,7 @@ export const Footer = () => {
       <div className=" w-full h-[20rem] bg-zinc-800 px-5 border-t-4 border-amber-300 ">
         <div className=" w-full h-full grid grid-cols-3 py-4 px-4">
           <div className=" flex-col flex items-start justify-start">
-            <span className=" text-white font-serif">
+            <span className=" text-white font-Tommy">
               Kilometro 12 Vía al sur, Rivera - Huila
             </span>
             <div className=" w-48 h-48 pt-3">
@@ -30,12 +30,12 @@ export const Footer = () => {
                 backgroundImage: `url(${logoBlanco})`,
               }}
             ></div>
-            <span className=" text-white font-serif">
+            <span className=" text-white font-Tommy">
               Corporacion Club Campestre de Neiva
             </span>
           </div>
           <div className=" flex flex-col gap-3 text-right">
-            <span className=" text-2xl text-white font-serif">Contacto</span>
+            <span className=" text-2xl text-white font-Tommy">Contacto</span>
             <div className=" flex justify-end gap-4">
               <span className=" text-white text-wrap">
                 3175021927 - 3157829360 - 3155661284
@@ -48,7 +48,7 @@ export const Footer = () => {
               </span>
               <EnvelopeIcon className=" h-6 w-6 text-amber-300" />
             </div>
-            <span className=" pt-5 text-white font-serif text-2xl">
+            <span className=" pt-5 text-white font-Tommy text-2xl">
               Nuestras Redes
             </span>
             <div className=" flex justify-end">
