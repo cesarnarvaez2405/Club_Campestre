@@ -12,7 +12,7 @@ export const Menu = () => {
     <>
       <div className="w-full h-36 z-50 absolute ">
         <div className="grid h-full grid-cols-9">
-          <div className="flex flex-row justify-end w-full col-span-4 pl-10">
+          <div className="flex flex-row justify-end w-full col-span-4 pr-10">
             {primerasRutas.map((ruta) => (
               <div
                 key={ruta.name}
@@ -21,7 +21,7 @@ export const Menu = () => {
               >
                 <Link
                   to={ruta.path}
-                  className="flex items-center text-white border-l-2 my-14 border-x-amber-300 px-10 duration-150 ease-in-out cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                  className="flex items-center px-10 duration-150 text-white ease-in-out border-l-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
                 >
                   <h4>{ruta.title}</h4>
                 </Link>
@@ -52,16 +52,20 @@ export const Menu = () => {
               }}
             ></div>
           </div>
-
-          <div className="flex flex-row justify-start w-full col-span-4 pl-10 ">
+          <div className="flex flex-row justify-start w-full col-span-4 pl-10">
             {ultimasRutas.map((ruta) => (
-              <Link
-                to={ruta.path}
-                className="flex items-center px-10 duration-150 text-white ease-in-out border-r-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
+              <div
                 key={ruta.name}
+                onMouseEnter={() => setOpenSubMenu(ruta.name)}
+                onMouseLeave={() => setOpenSubMenu(null)}
               >
-                <h4>{ruta.title}</h4>
-              </Link>
+                <Link
+                  to={ruta.path}
+                  className="flex items-center px-10 duration-150 text-white ease-in-out border-r-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                >
+                  <h4>{ruta.title}</h4>
+                </Link>
+              </div>
             ))}
           </div>
         </div>

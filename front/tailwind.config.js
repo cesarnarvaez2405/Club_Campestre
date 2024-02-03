@@ -18,6 +18,7 @@ export default {
       fontFamily: {
         AltoneNormal: ["AltoneNormal", "sans-serif"],
         AltoneBold: ["AltoneBold", "sans-serif"],
+        Tommy: ["tommy", "sans-serif"],
       },
     },
   },

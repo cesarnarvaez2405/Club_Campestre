@@ -7,7 +7,7 @@ export const ElClub = () => {
   return (
     <>
       <div className=" w-full flex flex-col">
-        <BannerNosotros />
+        <BannerNosotros titulo={"El Club"} componente={"elClub"} />
         <ContenidoElCLub />
         <Footer />
       </div>

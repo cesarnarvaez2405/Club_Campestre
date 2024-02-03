@@ -52,21 +52,7 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
               <source src={videoFondo} type="video/mp4" />
             </video>
           </div>
-          {/* <video
-            autoPlay
-            loop
-            muted
-            className="bg-center bg-no-repeat bg-cover  brightness-[0.7]"
-          >
-            <source src={videoFondo} type="video/mp4" />
-          </video> */}
-          {/* <div
-            className="bg-center bg-no-repeat bg-cover 2xl:h-[50rem] xl:h-[40rem] h-[40rem] brightness-[0.7] "
-            style={{
-              backgroundImage: `url(${fondo})`,
-            }}
-          ></div> */}
-          <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[18%] lg:top-[20%] top-[30%] ">
+          <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[18%] lg:top-[25%] top-[45%] ">
             <div className=" flex  items-center h-full justify-between mx-8">
               <div
                 className=" order-first h-8 w-8 text-white cursor-pointer"

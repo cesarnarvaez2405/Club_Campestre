@@ -21,6 +21,15 @@
     /* Ajusta según tus necesidades */
   }
 
+  @font-face {
+   font-family: 'tommy';
+   src: url('./fonts/Tommy.otf') format('opentype');
+   font-weight: bold;
+   /* Ajusta según tus necesidades */
+   font-style: normal;
+   /* Ajusta según tus necesidades */
+ }
+
   .fade-enter{
     opacity: 0;
  }
