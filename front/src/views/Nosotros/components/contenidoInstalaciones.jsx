@@ -36,27 +36,27 @@ export const ContenidoInstalaciones = () => {
 
   return (
     <>
-      <div className=" w-full h-full bg-zinc-800 ">
-        <div className=" flex justify-center items-center pt-10 flex-col">
-          <span className=" font-AltoneNormal text-3xl text-white">
+      <div className=' w-full h-full bg-zinc-800 '>
+        <div className=' flex justify-center items-center pt-10 flex-col'>
+          <span className=' font-AltoneNormal text-3xl text-white'>
             Deportivas
           </span>
-          <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
+          <div className='border-t border-amber-300 w-[20rem] mt-3 '></div>
         </div>
-        <div className=" 2xl:px-[8rem] px-[2rem] py-[2rem] ">
-          <div className="flex flex-wrap justify-center">
+        <div className=' 2xl:px-[8rem] px-[2rem] py-[2rem] '>
+          <div className='flex flex-wrap justify-center'>
             {deportes.map((deporte, index) => (
-              <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4">
-                <div className="bg-white rounded shadow p-6">
+              <div key={index} className='w-full sm:w-1/2 lg:w-1/3 p-4'>
+                <div className='bg-white rounded shadow p-6'>
                   <img
                     src={deporte.imagen}
                     alt={deporte.nombre}
-                    className="w-full h-64 object-cover mb-4 rounded"
+                    className='w-full h-64 object-cover mb-4 rounded'
                   />
-                  <h2 className="text-2xl font-bold mb-2 font-Tommy">
+                  <h2 className='text-2xl font-bold mb-2 font-Tommy'>
                     {deporte.nombre}
                   </h2>
-                  <p className="text-sm sm:text-base lg:text-base font-AltoneNormal">
+                  <p className='text-sm sm:text-base lg:text-base font-AltoneNormal'>
                     {deporte.descripcion}
                   </p>
                 </div>
@@ -64,20 +64,20 @@ export const ContenidoInstalaciones = () => {
             ))}
           </div>
         </div>
-        <div className=" flex justify-center items-center pt-10 flex-col">
-          <span className=" font-AltoneNormal text-3xl text-white">
+        <div className=' flex justify-center items-center pt-10 flex-col'>
+          <span className=' font-AltoneNormal text-3xl text-white'>
             Restaurante
           </span>
-          <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
+          <div className='border-t border-amber-300 w-[20rem] mt-3 '></div>
         </div>
-        <div className=" flex justify-center items-center py-[2rem] ">
-          <div className=" w-[50%] h-[45rem] bg-white rounded p-6 ">
+        <div className=' flex justify-center items-center py-[2rem] '>
+          <div className=' w-[50%] h-[45rem] bg-white rounded p-6 '>
             <img
               src={restaurante}
               alt={"natacion"}
-              className="w-full h-[30rem] object-cover object-center mb-4 rounded"
+              className='w-full h-[30rem] object-cover object-center mb-4 rounded'
             />
-            <p className="text-sm sm:text-base lg:text-base font-AltoneNormal">
+            <p className='text-sm sm:text-base lg:text-base font-AltoneNormal'>
               Quienes quieren degustar de la buena mesa, saben que en el Club
               Campestre de Neiva está una de las mejores opciones si de
               restaurantes se trata, la ofrece nuestro Club, donde además de una
@@ -90,24 +90,24 @@ export const ContenidoInstalaciones = () => {
             </p>
           </div>
         </div>
-        <div className=" flex justify-center items-center pt-10 flex-col">
-          <span className=" font-AltoneNormal text-3xl text-white">
+        <div className=' flex justify-center items-center pt-10 flex-col'>
+          <span className=' font-AltoneNormal text-3xl text-white'>
             Salones
           </span>
-          <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
+          <div className='border-t border-amber-300 w-[20rem] mt-3 '></div>
         </div>
-        <div className=" flex justify-center items-center py-[2rem] ">
-          <div className=" w-[50%] h-[45rem] bg-white rounded p-6 ">
+        <div className=' flex justify-center items-center py-[2rem] '>
+          <div className=' w-[50%] h-[50  rem] bg-white rounded p-6 '>
             <img
               src={salones}
               alt={"natacion"}
-              className="w-full h-[30rem] object-cover object-center mb-4 rounded"
+              className='w-full h-[30rem] object-cover object-center mb-4 rounded'
             />
-            <p className="text-sm sm:text-base lg:text-base font-AltoneNormal">
+            <p className='text-sm sm:text-base lg:text-base font-AltoneNormal'>
               Los Salones sociales de nuestro Club, gozan de gran preferencia en
               toda la región, pues con un total de cinco salones se puede
               atender eventos de hasta{" "}
-              <strong className=" font-sans">2000</strong> personas en
+              <strong className=' font-sans'>2000</strong> personas en
               simultaneo, lo que sin duda es un gran honor. Para ello, contamos
               con gran variedad a la hora de la decoración de nuestros sitios de
               recepción, los cuales hemos bautizado con los nombres de Salón

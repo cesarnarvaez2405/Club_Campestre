@@ -22,9 +22,9 @@ export const linkRutas = [
     ],
   },
   {
-    path: "/eventos",
-    name: "eventos",
-    title: "Eventos",
+    path: "/noticias",
+    name: "noticias",
+    title: "Noticias",
   },
   {
     path: "/convenios",
@@ -32,13 +32,13 @@ export const linkRutas = [
     title: "Convenios",
   },
   {
+    path: "/eventos",
+    name: "eventos",
+    title: "Eventos",
+  },
+  {
     path: "/hotel",
     name: "hotel",
     title: "Hotel",
-  },
-  {
-    path: "/spa",
-    name: "spa",
-    title: "Spa",
   },
 ];
