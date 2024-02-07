@@ -3,6 +3,7 @@ import { CreateTagDto } from './dto/create-tag.dto';
 import { UpdateTagDto } from './dto/update-tag.dto';
 import { Repository } from 'typeorm';
 import { Tags } from './entities/tag.entity';
+import { NotFoundError } from 'src/util/NotFoundError';
 
 @Injectable()
 export class TagsService {
@@ -22,15 +23,25 @@ export class TagsService {
     });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} tag`;
+  async findOne(rowId: number, options?: any): Promise<Tags> {
+    const tag = this.tagRepository.findOne({
+      where: { rowId },
+      ...options,
+    });
+    if (!tag) {
+      throw new NotFoundError('No encuentra registro');
+    }
+    return tag;
   }
 
-  update(id: number, updateTagDto: UpdateTagDto) {
-    return `This action updates a #${id} tag`;
+  async update(rowId: number, datos: UpdateTagDto): Promise<Tags> {
+    const tag = await this.findOne(rowId);
+    this.tagRepository.merge(tag, datos);
+    return await this.tagRepository.save(tag);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} tag`;
+  async remove(rowId: number): Promise<any> {
+    await this.findOne(rowId);
+    return await this.tagRepository.delete(rowId);
   }
 }

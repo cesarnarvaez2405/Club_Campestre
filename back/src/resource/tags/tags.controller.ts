@@ -39,18 +39,18 @@ export class TagsController {
     }
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.tagsService.findOne(+id);
+  @Get(':rowId')
+  findOne(@Param('rowId') rowId: number) {
+    return this.tagsService.findOne(+rowId);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTagDto: UpdateTagDto) {
-    return this.tagsService.update(+id, updateTagDto);
+  @Patch(':rowId')
+  update(@Param('rowId') rowId: number, @Body() updateTagDto: UpdateTagDto) {
+    return this.tagsService.update(+rowId, updateTagDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.tagsService.remove(+id);
+  @Delete(':rowId')
+  remove(@Param('rowId') rowId: number) {
+    return this.tagsService.remove(+rowId);
   }
 }
