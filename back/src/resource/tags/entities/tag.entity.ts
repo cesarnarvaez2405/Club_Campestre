@@ -1,5 +1,6 @@
+import { Noticia } from 'src/resource/noticias/entities/noticia.entity';
 import { entityBase } from 'src/util/entityBase';
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, ManyToMany } from 'typeorm';
 
 @Entity({ name: 'tags' })
 export class Tags extends entityBase {
@@ -13,4 +14,7 @@ export class Tags extends entityBase {
 
   @Column({ nullable: false })
   nombre: string;
+
+  @ManyToMany(() => Noticia, (noticia) => noticia.tags)
+  noticias: Noticia[];
 }

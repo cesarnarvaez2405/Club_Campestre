@@ -28,6 +28,7 @@ export class TagsController {
   }
 
   @Get()
+  @Auth(Role.Admin)
   async findAll() {
     try {
       const tags = await this.tagsService.findAll({
@@ -40,16 +41,19 @@ export class TagsController {
   }
 
   @Get(':rowId')
+  @Auth(Role.Admin)
   findOne(@Param('rowId') rowId: number) {
     return this.tagsService.findOne(+rowId);
   }
 
   @Patch(':rowId')
+  @Auth(Role.Admin)
   update(@Param('rowId') rowId: number, @Body() updateTagDto: UpdateTagDto) {
     return this.tagsService.update(+rowId, updateTagDto);
   }
 
   @Delete(':rowId')
+  @Auth(Role.Admin)
   remove(@Param('rowId') rowId: number) {
     return this.tagsService.remove(+rowId);
   }

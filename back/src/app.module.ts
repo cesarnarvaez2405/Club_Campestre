@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UsuarioModule } from './resource/usuario/usuario.module';
 import { AuthModule } from './resource/auth/auth.module';
 import { TagsModule } from './resource/tags/tags.module';
+import { NoticiasModule } from './resource/noticias/noticias.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { TagsModule } from './resource/tags/tags.module';
     UsuarioModule,
     AuthModule,
     TagsModule,
+    NoticiasModule,
   ],
   controllers: [],
   providers: [],

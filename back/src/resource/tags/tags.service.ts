@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateTagDto } from './dto/create-tag.dto';
 import { UpdateTagDto } from './dto/update-tag.dto';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { Tags } from './entities/tag.entity';
 import { NotFoundError } from 'src/util/NotFoundError';
 
@@ -38,6 +38,18 @@ export class TagsService {
     const tag = await this.findOne(rowId);
     this.tagRepository.merge(tag, datos);
     return await this.tagRepository.save(tag);
+  }
+
+  async buscarPorIds(ids: number[]): Promise<Tags[]> {
+    const tags = await this.tagRepository.find({
+      where: {
+        rowId: In(ids),
+      },
+    });
+    if (!tags) {
+      throw new NotFoundError('No encuentra registro');
+    }
+    return tags;
   }
 
   async remove(rowId: number): Promise<any> {
