@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     cors: true,
-    logger: console,
+    logger: false,
   });
 
   app.setGlobalPrefix('campestre-api/v1');

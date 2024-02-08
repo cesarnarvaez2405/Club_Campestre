@@ -2,6 +2,8 @@ import { DataSource } from 'typeorm';
 
 const ENV: string = process.env.ENVIRONMENT_PROJECT ?? 'dev';
 
+console.info('💻 Enviroments:', ENV);
+
 const TYPEORM_ROUTE_FILES: any = {
   dev: {
     migrations: ['src/migration/**/*.ts'],
@@ -29,6 +31,7 @@ export const databaseProviders = [
         logging: false,
       });
 
+      console.info('🐘 Conectado a la DB:', dataSource.options.database);
       return dataSource.initialize();
     },
   },
