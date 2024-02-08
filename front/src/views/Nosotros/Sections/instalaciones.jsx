@@ -6,10 +6,7 @@ export const Instalaciones = () => {
   return (
     <>
       <div className="w-full flex flex-col">
-        <BannerNosotros
-          titulo={"Nuestras Instalaciones"}
-          componente={"instalaciones"}
-        />
+        <BannerNosotros titulo={"Servicios"} componente={"instalaciones"} />
         <ContenidoInstalaciones />
       </div>
     </>

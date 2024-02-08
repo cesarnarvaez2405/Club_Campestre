@@ -1,0 +1,7 @@
+.element {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 400px 5px 0;
+  border-color: transparent #FCD339 transparent transparent;
+}

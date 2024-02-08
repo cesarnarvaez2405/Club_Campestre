@@ -5,6 +5,7 @@ import tenis from "../../../style/images/tenis.jpg";
 import natacion from "../../../style/images/natacion.jpg";
 import restaurante from "../../../style/images/restaurante.png";
 import salones from "../../../style/images/salones.png";
+import "../style/instalaciones.css";
 
 export const ContenidoInstalaciones = () => {
   const deportes = [
@@ -37,11 +38,11 @@ export const ContenidoInstalaciones = () => {
   return (
     <>
       <div className=" w-full h-full bg-zinc-800 ">
-        <div className=" flex justify-center items-center pt-10 flex-col">
-          <span className=" font-AltoneNormal text-3xl text-white">
-            Deportivas
+        <div className=" flex justify-start items-center">
+          <span className=" font-California text-3xl text-white 2xl:px-[8rem] px-[2rem]  py-[2rem]">
+            Instalaciones Deportivas
           </span>
-          <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
+          <div className="element "></div>
         </div>
         <div className=" 2xl:px-[8rem] px-[2rem] py-[2rem] ">
           <div className="flex flex-wrap justify-center">

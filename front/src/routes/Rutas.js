@@ -14,9 +14,9 @@ export const linkRutas = [
         title: "El Club",
       },
       {
-        path: "/nosotros/instalaciones",
-        name: "instalaciones",
-        title: "Instalaciones",
+        path: "/nosotros/servicios",
+        name: "servicios",
+        title: "Servicios",
       },
       // Más enlaces de submenú si los necesitas...
     ],
