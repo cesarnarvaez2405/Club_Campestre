@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Home } from "../views/Home/Index";
 import { Nosotros } from "../views/Nosotros/Index";
@@ -8,11 +8,32 @@ import { Eventos } from "../views/Eventos/Index";
 import { Convenios } from "../views/Convenios/Index";
 import { Hotel } from "../views/Hotel/Index";
 import { Spa } from "../views/Spa/Index";
+import { Login } from "../views/Plataforma/modules/Login/index";
+import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
+import { Inicio } from "../views/Plataforma/modules/Inicio/Index";
 
 export const AppRouter = () => {
+  const { checkAuthToken, status } = useAuthUtils();
+
+  useEffect(() => {
+    checkAuthToken();
+  }, []);
+  if (status === "checking") {
+    return <h3>Cargando ...</h3>;
+  }
+
   return (
     <>
       <Routes>
+        {status === "no autenticado" ? (
+          <>
+            <Route path="/plataforma/login" element={<Login />} />
+          </>
+        ) : (
+          <>
+            <Route path="/plataforma/inicio" element={<Inicio />} />
+          </>
+        )}
         <Route path="/" element={<Home />} />
         {/* <Route path="/nosotros" element={<Nosotros />} /> */}
         <Route path="/nosotros/ElClub" element={<ElClub />} />
