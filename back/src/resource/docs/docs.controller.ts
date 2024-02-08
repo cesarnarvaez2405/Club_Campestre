@@ -21,12 +21,15 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { Response } from 'express';
 import { obtenerFechaAlmacenamiento } from 'src/util/filesDate';
+import { Auth } from '../auth/decorators/auth.decorators';
+import { Role } from '../common/enums/rol.enum';
 
 @Controller('file')
 export class DocsController {
   constructor(private readonly docsService: DocsService) {}
 
   @Post('upload-image')
+  @Auth(Role.Admin)
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
