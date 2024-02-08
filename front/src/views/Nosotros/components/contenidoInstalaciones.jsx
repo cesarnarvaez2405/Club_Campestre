@@ -38,11 +38,11 @@ export const ContenidoInstalaciones = () => {
   return (
     <>
       <div className=" w-full h-full bg-zinc-800 ">
-        <div className=" flex justify-start items-center">
-          <span className=" font-California text-3xl text-white 2xl:px-[8rem] px-[2rem]  py-[2rem]">
-            Instalaciones Deportivas
+        <div className=" flex justify-center items-center pt-10 flex-col">
+          <span className=" font-AltoneNormal text-3xl text-white">
+            Deportivas
           </span>
-          <div className="element "></div>
+          <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
         </div>
         <div className=" 2xl:px-[8rem] px-[2rem] py-[2rem] ">
           <div className="flex flex-wrap justify-center">
@@ -98,7 +98,7 @@ export const ContenidoInstalaciones = () => {
           <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
         </div>
         <div className=" flex justify-center items-center py-[2rem] ">
-          <div className=" w-[50%] h-[45rem] bg-white rounded p-6 ">
+          <div className=" w-[50%] h-[50  rem] bg-white rounded p-6 ">
             <img
               src={salones}
               alt={"natacion"}
