@@ -10,6 +10,7 @@ import {
   UploadedFile,
   ParseFilePipe,
   FileTypeValidator,
+  Res,
 } from '@nestjs/common';
 import { DocsService } from './docs.service';
 import { CreateDocDto } from './dto/create-doc.dto';
@@ -18,12 +19,14 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import * as path from 'path';
 import * as fs from 'fs';
+import { Response } from 'express';
+import { obtenerFechaAlmacenamiento } from 'src/util/filesDate';
 
-@Controller()
+@Controller('file')
 export class DocsController {
   constructor(private readonly docsService: DocsService) {}
 
-  @Post('noticias/upload-image')
+  @Post('upload-image')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
@@ -39,7 +42,7 @@ export class DocsController {
         },
         filename: (req, file, cb) => {
           const prefijoUnico =
-            Date.now() + '-' + Math.round(Math.round(2) * 1e9);
+            Date.now() + '-' + Math.round(Math.round(5) * 1e9);
           const extension = file.originalname.split('.').pop();
           const filename = `${prefijoUnico}.${extension}`;
           cb(null, filename);
@@ -66,9 +69,18 @@ export class DocsController {
     }
   }
 
-  @Get()
-  findAll() {
-    return this.docsService.findAll();
+  @Get(':filename')
+  serveFile(@Param('filename') filename: string, @Res() res: Response) {
+    const ruta = process.env.ROUTE_DOCS;
+
+    const coincidencia = filename.match(/^(\d+)-\d+\.png$/);
+    const fechaNumerico = coincidencia ? coincidencia[1] : null;
+
+    const fecha = new Date(parseInt(fechaNumerico));
+    const { año, mes } = obtenerFechaAlmacenamiento(fecha);
+
+    const file = path.join(__dirname, ruta, `${año}/${mes}`, filename);
+    res.sendFile(file);
   }
 
   @Get(':id')
