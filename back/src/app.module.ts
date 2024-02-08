@@ -4,6 +4,7 @@ import { UsuarioModule } from './resource/usuario/usuario.module';
 import { AuthModule } from './resource/auth/auth.module';
 import { TagsModule } from './resource/tags/tags.module';
 import { NoticiasModule } from './resource/noticias/noticias.module';
+import { DocsModule } from './resource/docs/docs.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { NoticiasModule } from './resource/noticias/noticias.module';
     AuthModule,
     TagsModule,
     NoticiasModule,
+    DocsModule,
   ],
   controllers: [],
   providers: [],
