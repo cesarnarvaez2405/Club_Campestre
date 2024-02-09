@@ -47,6 +47,7 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
               autoPlay
               loop
               muted
+              controls={false}
               className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
             >
               <source src={videoFondo} type="video/mp4" />

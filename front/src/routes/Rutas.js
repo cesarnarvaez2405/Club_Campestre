@@ -41,4 +41,10 @@ export const linkRutas = [
     name: "hotel",
     title: "Hotel",
   },
+  {
+    path: "/plataforma/inicio",
+    name: "plataforma",
+    title: "Plataforma",
+    estaRegistrado: true,
+  },
 ];

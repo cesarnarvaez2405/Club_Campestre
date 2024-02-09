@@ -18,7 +18,7 @@ export const Login = () => {
 
   const onSubmit = async (event) => {
     const { email, password } = event;
-    ingresarLogin(email, password);
+    await ingresarLogin(email, password);
   };
 
   return (
@@ -27,7 +27,7 @@ export const Login = () => {
         <div className="bg-gradient-to-r from-red-700 to-amber-300 w-[100%] h-screen flex justify-center items-center animate-color-change-2x ">
           <div className="flex items-center justify-center">
             <div className="bg-gray-900 border-[4px]  border-gray-900 shadow-2xl shadow-black rounded-2xl hover:shadow-lg transition-all duration-200">
-              <div className="mx-auto flex items-center space-y-4 py-16 px-12 font-semibold text-gray-500 flex-col">
+              <div className="mx-auto flex items-center space-y-4 py-24 px-16 font-semibold text-gray-500 flex-col">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -50,7 +50,7 @@ export const Login = () => {
                     errors.email &&
                     "border-red-500 outline-none border-2 ring-red-500"
                   }`}
-                  placeholder="you@example.com"
+                  placeholder="Email"
                   type="email"
                   name="email"
                   id=""

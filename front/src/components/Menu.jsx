@@ -2,74 +2,126 @@ import React, { useState } from "react";
 import { linkRutas } from "../routes/Rutas";
 import { Link } from "react-router-dom";
 import logo from "../style/images/ClubCampestre.png";
+import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
 
 const primerasRutas = linkRutas.slice(0, 3);
 const ultimasRutas = linkRutas.slice(3, 7);
 
 export const Menu = () => {
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const { status } = useAuthUtils();
   return (
     <>
-      <div className="w-full h-36 z-50 absolute ">
-        <div className="grid h-full grid-cols-9">
-          <div className="flex flex-row justify-end w-full col-span-4 pr-10">
-            {primerasRutas.map((ruta) => (
-              <div
-                key={ruta.name}
-                onMouseEnter={() => setOpenSubMenu(ruta.name)}
-                onMouseLeave={() => setOpenSubMenu(null)}
-              >
-                <Link
-                  to={ruta.path}
-                  className="flex items-center px-10 duration-150 text-white ease-in-out border-l-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
+      {status === "no autenticado" && (
+        <div className="w-full h-36 z-50 absolute ">
+          <div className="grid h-full grid-cols-9">
+            <div className="flex flex-row justify-end w-full col-span-4 pr-10">
+              {primerasRutas.map((ruta) => (
+                <div
+                  key={ruta.name}
+                  onMouseEnter={() => setOpenSubMenu(ruta.name)}
+                  onMouseLeave={() => setOpenSubMenu(null)}
                 >
-                  <h4>{ruta.title}</h4>
-                </Link>
-                {ruta.subMenu && ruta.name === openSubMenu && (
-                  <div className=" absolute w-[10rem] font-AltoneNormal text-white backdrop-blur-xl pb-4 top-[60%] px-2  ">
-                    {ruta.subMenu.map((subRuta) => (
-                      <div className=" border-b border-amber-300 pt-4">
-                        <Link
-                          to={subRuta.path}
-                          className=" hover:opacity-65"
-                          key={subRuta.name}
-                        >
-                          <h4>{subRuta.title}</h4>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  <Link
+                    to={ruta.path}
+                    className="flex items-center px-10 duration-150 text-white ease-in-out border-l-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                  >
+                    <h4>{ruta.title}</h4>
+                  </Link>
+                  {ruta.subMenu && ruta.name === openSubMenu && (
+                    <div className=" absolute w-[10rem] font-AltoneNormal text-white backdrop-blur-xl pb-4 top-[60%] px-2  ">
+                      {ruta.subMenu.map((subRuta) => (
+                        <div className=" border-b border-amber-300 pt-4">
+                          <Link
+                            to={subRuta.path}
+                            className=" hover:opacity-65"
+                            key={subRuta.name}
+                          >
+                            <h4>{subRuta.title}</h4>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
 
-          <div className="col-start-5  flex justify-center items-center">
-            <div
-              className=" h-32 w-36 bg-center bg-no-repeat bg-contain"
-              style={{
-                backgroundImage: `url(${logo})`,
-              }}
-            ></div>
-          </div>
-          <div className="flex flex-row justify-start w-full col-span-4 pl-10">
-            {ultimasRutas.map((ruta) => (
+            <div className="col-start-5  flex justify-center items-center">
               <div
-                key={ruta.name}
-                onMouseEnter={() => setOpenSubMenu(ruta.name)}
-                onMouseLeave={() => setOpenSubMenu(null)}
-              >
-                <Link
-                  to={ruta.path}
-                  className="flex items-center px-10 duration-150 text-white ease-in-out border-r-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
-                >
-                  <h4>{ruta.title}</h4>
-                </Link>
-              </div>
-            ))}
+                className=" h-32 w-36 bg-center bg-no-repeat bg-contain"
+                style={{
+                  backgroundImage: `url(${logo})`,
+                }}
+              ></div>
+            </div>
+            <div className="flex flex-row justify-start w-full col-span-4 pl-10">
+              {ultimasRutas
+                .filter((ruta) => ruta.estaRegistrado === undefined)
+                .map((ruta) => (
+                  <div
+                    key={ruta.name}
+                    onMouseEnter={() => setOpenSubMenu(ruta.name)}
+                    onMouseLeave={() => setOpenSubMenu(null)}
+                  >
+                    <Link
+                      key={ruta.name}
+                      to={ruta.path}
+                      className="flex items-center px-10 duration-150 text-white ease-in-out border-r-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                    >
+                      <h4>{ruta.title}</h4>
+                    </Link>
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
+
+      {status === "autenticado" && (
+        <div className="w-full h-36 z-50 absolute">
+          <div className=" flex justify-center items-center pt-3">
+            <div className="grid h-full grid-cols-8 items-center">
+              <div
+                className=" h-32 w-36 bg-center bg-no-repeat bg-contain"
+                style={{
+                  backgroundImage: `url(${logo})`,
+                }}
+              ></div>
+              {linkRutas.map((ruta) => (
+                <div
+                  key={ruta.name}
+                  onMouseEnter={() => setOpenSubMenu(ruta.name)}
+                  onMouseLeave={() => setOpenSubMenu(null)}
+                  className=" flex justify-center items-center border-r-2 my-6 border-x-amber-300"
+                >
+                  <Link
+                    to={ruta.path}
+                    className="flex items-center duration-150 text-white ease-in-out   cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                  >
+                    <h4>{ruta.title}</h4>
+                  </Link>
+                  {ruta.subMenu && ruta.name === openSubMenu && (
+                    <div className=" absolute w-[10rem] font-AltoneNormal text-white backdrop-blur-xl pb-4 top-[60%] px-2  ">
+                      {ruta.subMenu.map((subRuta) => (
+                        <div className=" border-b border-amber-300 pt-4">
+                          <Link
+                            to={subRuta.path}
+                            className=" hover:opacity-65"
+                            key={subRuta.name}
+                          >
+                            <h4>{subRuta.title}</h4>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

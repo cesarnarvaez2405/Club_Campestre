@@ -18,6 +18,7 @@ export const useAuthUtils = () => {
       const usuarioLogin = await usuario.usuario();
       dispatch(
         onLogin({
+          nombre: usuarioLogin.nombre,
           email: usuarioLogin.email,
           rol: usuarioLogin.rol_id,
         })
@@ -37,5 +38,6 @@ export const useAuthUtils = () => {
     status,
     checkAuthToken,
     cerrarSeccion,
+    user,
   };
 };

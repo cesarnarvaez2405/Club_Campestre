@@ -32,6 +32,7 @@ export const AppRouter = () => {
         ) : (
           <>
             <Route path="/plataforma/inicio" element={<Inicio />} />
+            <Route path="/*" element={<Navigate to="/plataforma/inicio" />} />
           </>
         )}
         <Route path="/" element={<Home />} />
