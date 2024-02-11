@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import { AlertError } from "../../../../../components/Util/alertError";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
+import Swal from "sweetalert2";
 
 export const RegistrarNoticia = () => {
   const [tags, setTags] = useState([]);
-  const { obtenerTags } = useRegistrarNoticia();
+  const [contenido, setContenido] = useState("");
+  const { obtenerTags, guardar } = useRegistrarNoticia();
 
   const animatedComponents = makeAnimated();
   const {
@@ -15,6 +19,7 @@ export const RegistrarNoticia = () => {
     handleSubmit,
     control,
     formState: { errors },
+    reset,
   } = useForm();
 
   useEffect(() => {
@@ -25,9 +30,27 @@ export const RegistrarNoticia = () => {
     encontrarTags();
   }, []);
 
+  const handleChange = (texto) => {
+    setContenido(texto);
+  };
+
+  const guardarNoticia = async (event) => {
+    const respuesta = await guardar(event);
+
+    if (respuesta) {
+      Swal.fire({
+        title: "El tamaño del archivo excede el límite de 3MB",
+        text: "La imagen tiene que ser menos a 3mb",
+        icon: "error",
+      });
+      reset();
+    }
+    reset();
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(guardarNoticia)}>
         <div className=" h-full flex flex-col gap-10 justify-start items-start 2xl:px-56 px-20 py-5 bg-white ">
           <div className="flex flex-row gap-5">
             <div className=" flex justify-center items-center">
@@ -44,7 +67,7 @@ export const RegistrarNoticia = () => {
                 </span>
               </h3>
               <input
-                className={` w-[50rem] p-2 bg-slate-300 text-black rounded-md border shadow-lg focus:ring-1 hover:border-blue-500 transition-all duration-100 focus:outline-none ${
+                className={` 2xl:w-[50rem] lg:w-[40rem] md:w-[25rem] w-[20rem] p-2 bg-slate-300 text-black rounded-md border shadow-lg focus:ring-1 hover:border-blue-500 transition-all duration-100 focus:outline-none ${
                   errors.titulo &&
                   "border-red-500 outline-none border-2 ring-red-500"
                 }`}
@@ -80,6 +103,8 @@ export const RegistrarNoticia = () => {
                   type="file"
                   name="portada"
                   id="file-input"
+                  accept=".png, .jpg, .jpeg"
+                  maxLength="3145728"
                   {...register("portada", {
                     required: "La imagen es obligatoria",
                   })}
@@ -132,6 +157,63 @@ export const RegistrarNoticia = () => {
                   <AlertError> {errors.tags.message} </AlertError>
                 )}
               </div>
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-5">
+            <div className=" flex justify-center items-center">
+              <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
+                4
+              </span>
+            </div>
+
+            <div className=" flex flex-col justify-center items-start">
+              <h3 className=" font-AltoneNormal text-xl">
+                Cuerpo
+                <span className=" font-AltoneNormal text-sm pl-3">
+                  "Diseña la Noticia a tu gusto"
+                </span>
+              </h3>
+              <div className=" 2xl:w-[50rem] lg:w-[40rem] md:w-[25rem] w-[20rem] ">
+                <Controller
+                  name="cuerpo"
+                  control={control}
+                  rules={{ required: "El contenido son obligatorios" }}
+                  render={({ field }) => (
+                    <ReactQuill
+                      value={contenido}
+                      onChange={handleChange}
+                      theme="snow"
+                      modules={{
+                        toolbar: [
+                          [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                          ["bold", "italic", "underline", "strike"],
+                          [{ list: "ordered" }, { list: "bullet" }],
+                          ["link", "image"],
+                          ["clean"],
+                        ],
+                      }}
+                      {...field}
+                    />
+                  )}
+                />
+                {errors.cuerpo && (
+                  <AlertError> {errors.cuerpo.message} </AlertError>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-row gap-5">
+            <div className=" flex justify-center items-center">
+              <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
+                5
+              </span>
+            </div>
+
+            <div className=" flex flex-col justify-center items-start">
+              <button className="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-[#1a195f] hover:bg-white hover:text-[#1a195f] focus:text-[#1a195f] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200">
+                Guardar
+              </button>
             </div>
           </div>
         </div>

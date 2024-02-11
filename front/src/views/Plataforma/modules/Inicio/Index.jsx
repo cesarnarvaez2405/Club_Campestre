@@ -8,8 +8,8 @@ export const Inicio = () => {
     <>
       <div className=" w-full bg-gray-400">
         <div className=" w-full h-36"></div>
-        <div className=" border-t-2 h-[50rem] mt-3 flex">
-          <div className="w-64 h-[100%] ">
+        <div className=" border-t-2 min-h-[50rem] mt-3 flex">
+          <div className="w-64 ">
             <div className="px-4 pt-4 border-r h-full border-gray-300 sha">
               <ul className="space-y-2 font-AltoneNormal text-white">
                 <li></li>

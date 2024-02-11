@@ -45,7 +45,7 @@ export const Noticias = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full h-[30rem] px-7 pt-5 ">
+        <div className=" w-full  px-7 pt-5 mb-10 ">
           <div className=" w-full h-full bg-white">
             {tab === 1 && <RegistrarNoticia></RegistrarNoticia>}
           </div>
