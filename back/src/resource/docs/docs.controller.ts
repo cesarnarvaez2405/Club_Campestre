@@ -78,7 +78,7 @@ export class DocsController {
   serveFile(@Param('filename') filename: string, @Res() res: Response) {
     const ruta = process.env.ROUTE_DOCS;
 
-    const coincidencia = filename.match(/^(\d+)-\d+\.png$/);
+    const coincidencia = filename.match(/^(\d+)-\d+\.(png|jpg|jpeg)$/i);
     const fechaNumerico = coincidencia ? coincidencia[1] : null;
 
     const fecha = new Date(parseInt(fechaNumerico));

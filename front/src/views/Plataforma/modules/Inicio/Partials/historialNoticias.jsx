@@ -7,14 +7,18 @@ export const HistorialNoticias = ({ noticias }) => {
     { text: "Fecha creacion" },
     { text: "Fecha modificacion" },
     { text: "Titulo" },
+    { text: "Imagen" },
+    { text: "Opciones" },
   ]);
 
   return (
     <>
-      <div className=" h-full flex flex-col gap-10 justify-start items-start 2xl:px-56 px-20 py-5 bg-white ">
-        <h2 className=" text-2xl font-semibold pt-3">Historial de Noticias</h2>
+      <div className="flex flex-col items-start justify-start h-full gap-10 px-20 py-5 bg-white 2xl:px-56">
+        <h2 className="pt-3 text-2xl font-semibold ">Historial de Noticias</h2>
         <div className="flex flex-row gap-5">
-          <TableComponent items={noticias} headers={headers} itemsPerPage={5} />
+          <TableComponent items={noticias} headers={headers} itemsPerPage={5}>
+            <button>Editar</button>
+          </TableComponent>
         </div>
       </div>
     </>
