@@ -52,19 +52,19 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
   return (
     <>
       <form onSubmit={handleSubmit(guardarNoticia)}>
-        <div className=" h-full flex flex-col gap-10 justify-start items-start 2xl:px-56 px-20 py-5 bg-white ">
-          <h2 className=" text-2xl font-semibold pt-3">Crea tu Noticia</h2>
+        <div className="flex flex-col items-start justify-start h-full gap-10 px-20 py-5 bg-white  2xl:px-56">
+          <h2 className="pt-3 text-2xl font-semibold ">Crea tu Noticia</h2>
           <div className="flex flex-row gap-5">
-            <div className=" flex justify-center items-center">
+            <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
                 1
               </span>
             </div>
 
-            <div className=" flex flex-col justify-center items-start">
-              <h3 className=" font-AltoneNormal text-xl">
+            <div className="flex flex-col items-start justify-center ">
+              <h3 className="text-xl  font-AltoneNormal">
                 TÍtulo
-                <span className=" font-AltoneNormal text-sm pl-3">
+                <span className="pl-3 text-sm  font-AltoneNormal">
                   "Escriba tu titulo mas creativo"
                 </span>
               </h3>
@@ -87,16 +87,16 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
             </div>
           </div>
           <div className="flex flex-row gap-5">
-            <div className=" flex justify-center items-center">
+            <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
                 2
               </span>
             </div>
 
-            <div className=" flex flex-col justify-center items-start">
-              <h3 className=" font-AltoneNormal text-xl">
+            <div className="flex flex-col items-start justify-center ">
+              <h3 className="text-xl  font-AltoneNormal">
                 Portada
-                <span className=" font-AltoneNormal text-sm pl-3">
+                <span className="pl-3 text-sm  font-AltoneNormal">
                   "Selecciona la mejor imagen como portada"
                 </span>
               </h3>
@@ -105,7 +105,7 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
                   type="file"
                   name="portada"
                   id="file-input"
-                  accept=".png"
+                  accept=".png, .jpeg, .jpg"
                   maxLength="3145728"
                   {...register("portada", {
                     required: "La imagen es obligatoria",
@@ -123,16 +123,16 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
           </div>
 
           <div className="flex flex-row gap-5">
-            <div className=" flex justify-center items-center">
+            <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
                 3
               </span>
             </div>
 
-            <div className=" flex flex-col justify-center items-start">
-              <h3 className=" font-AltoneNormal text-xl">
+            <div className="flex flex-col items-start justify-center ">
+              <h3 className="text-xl  font-AltoneNormal">
                 Tags
-                <span className=" font-AltoneNormal text-sm pl-3">
+                <span className="pl-3 text-sm  font-AltoneNormal">
                   "Escoja los tags adecuados a la noticia"
                 </span>
               </h3>
@@ -150,7 +150,7 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
                         value: tag.rowId,
                         label: tag.nombre,
                       }))}
-                      className=" w-full"
+                      className="w-full "
                       {...field}
                     />
                   )}
@@ -163,16 +163,16 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
           </div>
 
           <div className="flex flex-row gap-5">
-            <div className=" flex justify-center items-center">
+            <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
                 4
               </span>
             </div>
 
-            <div className=" flex flex-col justify-center items-start">
-              <h3 className=" font-AltoneNormal text-xl">
+            <div className="flex flex-col items-start justify-center ">
+              <h3 className="text-xl  font-AltoneNormal">
                 Cuerpo
-                <span className=" font-AltoneNormal text-sm pl-3">
+                <span className="pl-3 text-sm  font-AltoneNormal">
                   "Diseña la Noticia a tu gusto"
                 </span>
               </h3>
@@ -206,13 +206,13 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
             </div>
           </div>
           <div className="flex flex-row gap-5">
-            <div className=" flex justify-center items-center">
+            <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
                 5
               </span>
             </div>
 
-            <div className=" flex flex-col justify-center items-start">
+            <div className="flex flex-col items-start justify-center ">
               <button className="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-[#1a195f] hover:bg-white hover:text-[#1a195f] focus:text-[#1a195f] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200">
                 Guardar
               </button>

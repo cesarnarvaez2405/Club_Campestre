@@ -58,7 +58,9 @@ export class DocsController {
       new ParseFilePipe({
         validators: [
           // new MaxFileSizeValidator({ maxSize: 1000 }),
-          new FileTypeValidator({ fileType: 'image/png' }),
+          new FileTypeValidator({
+            fileType: /^(image\/png|image\/jpeg|image\/jpg)$/,
+          }),
         ],
       }),
     )
