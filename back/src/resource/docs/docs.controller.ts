@@ -66,7 +66,7 @@ export class DocsController {
   ) {
     try {
       const filename = file.filename;
-      return { imageUrl: `/uploads/${filename}` };
+      return { imageUrl: `/uploads/${filename}`, filename: filename };
     } catch (error) {
       console.log(error);
     }

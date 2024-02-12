@@ -21,12 +21,12 @@ export const useRegistrarNoticia = () => {
       return "El tamaño del archivo excede el límite de 3MB";
     }
     const imagen = await enviarImagen(portada[0]);
-    const { imageUrl } = imagen;
+    const { filename } = imagen;
     const tagsIds = tags.map((tag) => tag.value);
     const noticiaACrear = {
       titulo,
       cuerpo,
-      portada: imageUrl,
+      portada: filename,
       usuarioCreacionId: 1,
       usuarioModificacionId: 1,
       tagsIds,

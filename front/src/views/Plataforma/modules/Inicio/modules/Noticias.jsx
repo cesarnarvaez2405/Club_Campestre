@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RegistrarNoticia } from "../Form/registrarNoticia";
+import { HistorialNoticias } from "../Partials/historialNoticias";
+import { useHistorialNoticia } from "../hooks/useHistorialNoticias";
+import { getFormatDate } from "../../../../../utils/timeFormat";
 
 export const Noticias = () => {
+  const { obtenerNoticias } = useHistorialNoticia();
+
   const [tab, setTab] = useState(0);
+  const [noticias, Setnoticias] = useState([]);
+
+  async function encontrarNoticias() {
+    const noticias = await obtenerNoticias();
+    noticias.map((noticia) => {
+      noticia.fechaCreacion = getFormatDate(noticia.fechaCreacion);
+      noticia.fechaModificacion = getFormatDate(noticia.fechaModificacion);
+    });
+    Setnoticias(noticias);
+  }
+
+  useEffect(() => {
+    encontrarNoticias();
+  }, []);
   return (
     <>
       <div className=" w-full h-full ">
@@ -47,7 +66,12 @@ export const Noticias = () => {
         </div>
         <div className=" w-full  px-7 pt-5 mb-10 ">
           <div className=" w-full h-full bg-white">
-            {tab === 1 && <RegistrarNoticia></RegistrarNoticia>}
+            {tab === 0 && <HistorialNoticias noticias={noticias} />}
+            {tab === 1 && (
+              <RegistrarNoticia
+                obtenerNoticias={encontrarNoticias}
+              ></RegistrarNoticia>
+            )}
           </div>
         </div>
       </div>

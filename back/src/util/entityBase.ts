@@ -9,9 +9,9 @@ export class entityBase extends BaseEntity {
   @PrimaryGeneratedColumn()
   rowId: number;
 
-  @CreateDateColumn()
-  created_at: Date;
+  @CreateDateColumn({ name: 'created_at' })
+  fechaCreacion: Date;
 
-  @UpdateDateColumn()
-  updated_at: Date;
+  @UpdateDateColumn({ name: 'updated_at' })
+  fechaModificacion: Date;
 }

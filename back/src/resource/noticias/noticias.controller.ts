@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { NoticiasService } from './noticias.service';
 import { CreateNoticiaDto } from './dto/create-noticia.dto';
@@ -27,6 +28,25 @@ export class NoticiasController {
   @Auth(Role.Admin)
   findAll() {
     return this.noticiasService.findAll();
+  }
+
+  @Get('buscar-personalizado')
+  buscarNoticiasPersonalizado(@Query() query: any) {
+    const { registros } = query;
+    return this.noticiasService.findAll({
+      select: {
+        rowId: true,
+        titulo: true,
+        tags: true,
+        fechaCreacion: true,
+        fechaModificacion: true,
+        portada: true,
+      },
+      order: {
+        fechaCreacion: 'DESC', // Ordenar por fechaCreacion de forma descendente
+      },
+      take: registros,
+    });
   }
 
   @Get(':rowId')

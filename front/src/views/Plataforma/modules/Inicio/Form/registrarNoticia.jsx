@@ -8,7 +8,7 @@ import { AlertError } from "../../../../../components/Util/alertError";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
 import Swal from "sweetalert2";
 
-export const RegistrarNoticia = () => {
+export const RegistrarNoticia = ({ obtenerNoticias }) => {
   const [tags, setTags] = useState([]);
   const [contenido, setContenido] = useState("");
   const { obtenerTags, guardar } = useRegistrarNoticia();
@@ -46,12 +46,14 @@ export const RegistrarNoticia = () => {
       reset();
     }
     reset();
+    await obtenerNoticias();
   };
 
   return (
     <>
       <form onSubmit={handleSubmit(guardarNoticia)}>
         <div className=" h-full flex flex-col gap-10 justify-start items-start 2xl:px-56 px-20 py-5 bg-white ">
+          <h2 className=" text-2xl font-semibold pt-3">Crea tu Noticia</h2>
           <div className="flex flex-row gap-5">
             <div className=" flex justify-center items-center">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
@@ -103,7 +105,7 @@ export const RegistrarNoticia = () => {
                   type="file"
                   name="portada"
                   id="file-input"
-                  accept=".png, .jpg, .jpeg"
+                  accept=".png"
                   maxLength="3145728"
                   {...register("portada", {
                     required: "La imagen es obligatoria",
