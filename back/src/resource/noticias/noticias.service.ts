@@ -1,9 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateNoticiaDto } from './dto/create-noticia.dto';
 import { UpdateNoticiaDto } from './dto/update-noticia.dto';
 import { Repository } from 'typeorm';
 import { Noticia } from './entities/noticia.entity';
-import { NotFoundError } from 'src/util/NotFoundError';
 import { Usuario } from '../usuario/entities/usuario.entity';
 import { TagsService } from '../tags/tags.service';
 
@@ -35,12 +34,12 @@ export class NoticiasService {
   }
 
   async findOne(rowId: number, options?: any): Promise<Noticia> {
-    const noticia = this.noticiaRepository.findOne({
+    const noticia = await this.noticiaRepository.findOne({
       where: { rowId },
       ...options,
     });
     if (!noticia) {
-      throw new NotFoundError('No encuentra registro');
+      throw new NotFoundException('No se encuentra el registro');
     }
 
     return noticia;

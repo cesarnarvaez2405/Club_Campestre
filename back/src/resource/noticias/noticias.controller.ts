@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   Query,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { NoticiasService } from './noticias.service';
 import { CreateNoticiaDto } from './dto/create-noticia.dto';
@@ -52,7 +53,11 @@ export class NoticiasController {
   @Get(':rowId')
   @Auth(Role.Admin)
   findOne(@Param('rowId') rowId: number) {
-    return this.noticiasService.findOne(+rowId);
+    try {
+      return this.noticiasService.findOne(+rowId);
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 
   @Patch(':rowId')
@@ -61,12 +66,20 @@ export class NoticiasController {
     @Param('rowId') rowId: number,
     @Body() updateNoticiaDto: UpdateNoticiaDto,
   ) {
-    return this.noticiasService.update(+rowId, updateNoticiaDto);
+    try {
+      return this.noticiasService.update(+rowId, updateNoticiaDto);
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 
   @Delete(':rowId')
   @Auth(Role.Admin)
   remove(@Param('rowId') rowId: number) {
-    return this.noticiasService.remove(+rowId);
+    try {
+      return this.noticiasService.remove(+rowId);
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 }

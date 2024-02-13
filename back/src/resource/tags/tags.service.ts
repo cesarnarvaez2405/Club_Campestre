@@ -1,9 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTagDto } from './dto/create-tag.dto';
 import { UpdateTagDto } from './dto/update-tag.dto';
 import { In, Repository } from 'typeorm';
 import { Tags } from './entities/tag.entity';
-import { NotFoundError } from 'src/util/NotFoundError';
 
 @Injectable()
 export class TagsService {
@@ -29,7 +28,7 @@ export class TagsService {
       ...options,
     });
     if (!tag) {
-      throw new NotFoundError('No encuentra registro');
+      throw new NotFoundException('No se encuentra el registro');
     }
     return tag;
   }
@@ -47,7 +46,7 @@ export class TagsService {
       },
     });
     if (!tags) {
-      throw new NotFoundError('No encuentra registro');
+      throw new NotFoundException('No se encuentra el registro');
     }
     return tags;
   }

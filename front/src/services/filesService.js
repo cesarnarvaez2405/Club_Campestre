@@ -1,5 +1,9 @@
 import axios from "axios";
 import API from "../api/apiNode";
+import {
+  alertSuccessReponse,
+  alertErrorResponse,
+} from "../utils/alertResponseHttpUtils";
 
 const configApi = {
   headers: {
@@ -32,7 +36,7 @@ export default {
       );
       return response.data;
     } catch (error) {
-      console.error(error);
+      alertErrorResponse(error);
     }
   },
 };

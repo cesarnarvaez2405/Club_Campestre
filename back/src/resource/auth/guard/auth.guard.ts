@@ -17,7 +17,9 @@ export class AuthGuard implements CanActivate {
 
     const token = this.extractTokenFromHeader(request);
     if (!token) {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException(
+        'No tienes permiso para realizar esta accion',
+      );
     }
     try {
       const payload = await this.jwtService.verifyAsync(token, {
@@ -27,7 +29,9 @@ export class AuthGuard implements CanActivate {
       // so that we can access it in our route handlers
       request.usuario = payload;
     } catch {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException(
+        'No tienes permiso para realizar esta accion',
+      );
     }
 
     return true;

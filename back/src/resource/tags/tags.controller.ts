@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { TagsService } from './tags.service';
 import { CreateTagDto } from './dto/create-tag.dto';
@@ -23,7 +24,7 @@ export class TagsController {
     try {
       return await this.tagsService.create(createTagDto);
     } catch (error) {
-      console.error(error);
+      throw new InternalServerErrorException(error);
     }
   }
 
@@ -36,25 +37,37 @@ export class TagsController {
       });
       return tags;
     } catch (error) {
-      console.error(error);
+      throw new InternalServerErrorException(error);
     }
   }
 
   @Get(':rowId')
   @Auth(Role.Admin)
   findOne(@Param('rowId') rowId: number) {
-    return this.tagsService.findOne(+rowId);
+    try {
+      return this.tagsService.findOne(+rowId);
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 
   @Patch(':rowId')
   @Auth(Role.Admin)
   update(@Param('rowId') rowId: number, @Body() updateTagDto: UpdateTagDto) {
-    return this.tagsService.update(+rowId, updateTagDto);
+    try {
+      return this.tagsService.update(+rowId, updateTagDto);
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 
   @Delete(':rowId')
   @Auth(Role.Admin)
   remove(@Param('rowId') rowId: number) {
-    return this.tagsService.remove(+rowId);
+    try {
+      return this.tagsService.remove(+rowId);
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 }

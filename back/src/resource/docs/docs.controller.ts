@@ -11,6 +11,8 @@ import {
   ParseFilePipe,
   FileTypeValidator,
   Res,
+  UnsupportedMediaTypeException,
+  NotFoundException,
 } from '@nestjs/common';
 import { DocsService } from './docs.service';
 import { CreateDocDto } from './dto/create-doc.dto';
@@ -70,22 +72,26 @@ export class DocsController {
       const filename = file.filename;
       return { imageUrl: `/uploads/${filename}`, filename: filename };
     } catch (error) {
-      console.log(error);
+      throw new UnsupportedMediaTypeException();
     }
   }
 
   @Get(':filename')
   serveFile(@Param('filename') filename: string, @Res() res: Response) {
-    const ruta = process.env.ROUTE_DOCS;
+    try {
+      const ruta = process.env.ROUTE_DOCS;
 
-    const coincidencia = filename.match(/^(\d+)-\d+\.(png|jpg|jpeg)$/i);
-    const fechaNumerico = coincidencia ? coincidencia[1] : null;
+      const coincidencia = filename.match(/^(\d+)-\d+\.(png|jpg|jpeg)$/i);
+      const fechaNumerico = coincidencia ? coincidencia[1] : null;
 
-    const fecha = new Date(parseInt(fechaNumerico));
-    const { año, mes } = obtenerFechaAlmacenamiento(fecha);
+      const fecha = new Date(parseInt(fechaNumerico));
+      const { año, mes } = obtenerFechaAlmacenamiento(fecha);
 
-    const file = path.join(__dirname, ruta, `${año}/${mes}`, filename);
-    res.sendFile(file);
+      const file = path.join(__dirname, ruta, `${año}/${mes}`, filename);
+      res.sendFile(file);
+    } catch (error) {
+      throw new NotFoundException();
+    }
   }
 
   @Get(':id')

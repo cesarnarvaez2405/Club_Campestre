@@ -1,5 +1,6 @@
 import axios from "axios";
 import API from "../api/apiNode";
+import { alertErrorResponse } from "../utils/alertResponseHttpUtils";
 
 const configApi = {
   headers: {
@@ -27,7 +28,7 @@ export default {
       response = await axios.get(`${API.node}campestre-api/v1/tags`, configApi);
       return response.data;
     } catch (error) {
-      console.error(error);
+      alertErrorResponse(error);
     }
   },
 };

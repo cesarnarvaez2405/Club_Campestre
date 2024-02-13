@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post, UseGuards, Req } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  UseGuards,
+  Req,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
@@ -24,7 +32,11 @@ export class AuthController {
     @Body()
     registerDto: RegisterDto,
   ) {
-    return this.authService.register(registerDto);
+    try {
+      return this.authService.register(registerDto);
+    } catch (error) {
+      throw new InternalServerErrorException(error.message);
+    }
   }
 
   @Post('login')
@@ -32,12 +44,20 @@ export class AuthController {
     @Body()
     loginDto: LoginDto,
   ) {
-    return this.authService.login(loginDto);
+    try {
+      return this.authService.login(loginDto);
+    } catch (error) {
+      throw new InternalServerErrorException(error.message);
+    }
   }
 
   @Get('perfil')
   @Auth(Role.Admin)
   perfil(@UsuarioActivo() usuario: UsuarioActivoInterface) {
-    return this.authService.perfil(usuario);
+    try {
+      return this.authService.perfil(usuario);
+    } catch (error) {
+      throw new InternalServerErrorException(error.message);
+    }
   }
 }

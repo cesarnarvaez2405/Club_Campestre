@@ -1,9 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { Repository } from 'typeorm';
 import { Usuario } from './entities/usuario.entity';
-import { NotFoundError } from 'src/util/NotFoundError';
 
 @Injectable()
 export class UsuarioService {
@@ -30,7 +29,7 @@ export class UsuarioService {
     });
 
     if (!usuario) {
-      throw new NotFoundError('No encuentra registro');
+      throw new NotFoundException('No encuentra registro');
     }
 
     return usuario;
