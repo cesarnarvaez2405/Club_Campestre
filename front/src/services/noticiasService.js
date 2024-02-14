@@ -58,4 +58,28 @@ export default {
       alertErrorResponse(error);
     }
   },
+
+  async buscarTodos() {
+    try {
+      response = await axios.get(
+        `${API.node}campestre-api/v1/noticias`,
+        configApi
+      );
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async eliminar(id) {
+    try {
+      response = await axios.delete(
+        `${API.node}campestre-api/v1/noticias/${id}`,
+        configApi
+      );
+      alertSuccessReponse(response);
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
 };

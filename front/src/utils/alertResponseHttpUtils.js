@@ -33,18 +33,23 @@ export function alertErrorResponse(response) {
 }
 
 function alertResponse(response) {
-  const {
-    statusCode,
-    response: {
-      data: { message },
-    },
-    error,
-  } = response;
   let title = "¡Error!";
   let color = "error";
   let icon = COLORS.error;
+  let mensaje = null;
 
-  const msg = message || MESSAGES_HTTP[statusCode] || error;
+  const { statusCode } = response;
+
+  if (statusCode < 200 || statusCode > 300) {
+    const {
+      response: {
+        data: { message },
+      },
+    } = response;
+    mensaje = message;
+  }
+
+  const msg = mensaje || MESSAGES_HTTP[statusCode] || error;
 
   if (statusCode >= 200 && statusCode < 300) {
     title = "¡Éxito!";

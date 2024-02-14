@@ -34,7 +34,7 @@ export class AuthService {
     const passwordValido = await bcrypt.compare(password, tieneEmail.password);
 
     if (!passwordValido) {
-      throw new UnauthorizedException('La contraseña es ioncorrecta');
+      throw new UnauthorizedException('La contraseña es incorrecta');
     }
 
     const payload = { email: tieneEmail.email, rol: tieneEmail.rol };

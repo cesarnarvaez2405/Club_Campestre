@@ -10,7 +10,6 @@ export const useRegistrarNoticia = () => {
   };
 
   const subirImagenesCuerpo = async (image) => {
-    console.log(image);
     return await "../../uploads/hola.png";
   };
 

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { RegistrarNoticia } from "../Form/registrarNoticia";
 import { HistorialNoticias } from "../Partials/historialNoticias";
-import { useHistorialNoticia } from "../hooks/useHistorialNoticias";
+import { useHistorialNoticias } from "../hooks/useHistorialNoticias";
 import { getFormatDate } from "../../../../../utils/timeFormat";
 
 export const Noticias = () => {
-  const { obtenerNoticias } = useHistorialNoticia();
+  const { obtenerNoticias } = useHistorialNoticias();
 
   const [tab, setTab] = useState(0);
   const [noticias, Setnoticias] = useState([]);
+  const [noticiaAEditar, setNoticiaAEditar] = useState(null);
 
   async function encontrarNoticias() {
     const noticias = await obtenerNoticias();
@@ -18,6 +19,11 @@ export const Noticias = () => {
     });
     Setnoticias(noticias);
   }
+
+  const editar = async (item) => {
+    setNoticiaAEditar(item);
+    setTab(1);
+  };
 
   useEffect(() => {
     encontrarNoticias();
@@ -66,10 +72,19 @@ export const Noticias = () => {
         </div>
         <div className=" w-full  px-7 pt-5 mb-10 ">
           <div className=" w-full h-full bg-white">
-            {tab === 0 && <HistorialNoticias noticias={noticias} />}
+            {tab === 0 && (
+              <HistorialNoticias
+                obtenerNoticias={encontrarNoticias}
+                noticias={noticias}
+                editar={editar}
+                noticia={null}
+                estaEditando={true}
+              />
+            )}
             {tab === 1 && (
               <RegistrarNoticia
                 obtenerNoticias={encontrarNoticias}
+                estaEditando={false}
               ></RegistrarNoticia>
             )}
           </div>

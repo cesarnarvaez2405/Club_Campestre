@@ -43,7 +43,7 @@ export default {
       );
       return response.data;
     } catch (error) {
-      console.error(error);
+      alertErrorResponse(error);
     }
   },
 };

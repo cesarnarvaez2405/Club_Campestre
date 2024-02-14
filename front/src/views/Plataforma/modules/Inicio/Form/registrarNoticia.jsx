@@ -8,7 +8,11 @@ import { AlertError } from "../../../../../components/Util/alertError";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
 import Swal from "sweetalert2";
 
-export const RegistrarNoticia = ({ obtenerNoticias }) => {
+export const RegistrarNoticia = ({
+  obtenerNoticias,
+  noticia,
+  estaEditando,
+}) => {
   const [tags, setTags] = useState([]);
   const [contenido, setContenido] = useState("");
   const { obtenerTags, guardar } = useRegistrarNoticia();
@@ -20,12 +24,25 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
     control,
     formState: { errors },
     reset,
+    setValue,
   } = useForm();
 
   useEffect(() => {
     async function encontrarTags() {
       const tagsEncontrados = await obtenerTags();
       setTags(tagsEncontrados);
+    }
+    if (estaEditando) {
+      console.log(noticia);
+      const { titulo, cuerpo, portada } = noticia;
+      const tagsEditar = noticia.tags;
+      setValue("titulo", titulo);
+      setValue("portada", portada);
+      setValue("tags", tags);
+      // const tagsEditar = tags.filter((tag) =>
+      //     dato[0].skills.some((skill) => skill.skillId === tag.value)
+      //   );
+      setContenido(cuerpo);
     }
     encontrarTags();
   }, []);
@@ -44,6 +61,8 @@ export const RegistrarNoticia = ({ obtenerNoticias }) => {
         icon: "error",
       });
       reset();
+      setTags([]);
+      console.log(tags);
     }
     reset();
     await obtenerNoticias();

@@ -8,6 +8,8 @@ import {
   Delete,
   Query,
   InternalServerErrorException,
+  Res,
+  HttpCode,
 } from '@nestjs/common';
 import { NoticiasService } from './noticias.service';
 import { CreateNoticiaDto } from './dto/create-noticia.dto';
@@ -21,18 +23,20 @@ export class NoticiasController {
 
   @Post()
   @Auth(Role.Admin)
-  create(@Body() createNoticiaDto: CreateNoticiaDto) {
+  async create(@Body() createNoticiaDto: CreateNoticiaDto) {
     return this.noticiasService.create(createNoticiaDto);
   }
 
   @Get()
   @Auth(Role.Admin)
-  findAll() {
-    return this.noticiasService.findAll();
+  async findAll() {
+    return this.noticiasService.findAll({
+      relations: ['tags', 'usuarioCreacion', 'usuarioModificacion'],
+    });
   }
 
   @Get('buscar-personalizado')
-  buscarNoticiasPersonalizado(@Query() query: any) {
+  async buscarNoticiasPersonalizado(@Query() query: any) {
     const { registros } = query;
     return this.noticiasService.findAll({
       select: {
@@ -52,7 +56,7 @@ export class NoticiasController {
 
   @Get(':rowId')
   @Auth(Role.Admin)
-  findOne(@Param('rowId') rowId: number) {
+  async findOne(@Param('rowId') rowId: number) {
     try {
       return this.noticiasService.findOne(+rowId);
     } catch (error) {
@@ -62,7 +66,7 @@ export class NoticiasController {
 
   @Patch(':rowId')
   @Auth(Role.Admin)
-  update(
+  async update(
     @Param('rowId') rowId: number,
     @Body() updateNoticiaDto: UpdateNoticiaDto,
   ) {
@@ -75,9 +79,11 @@ export class NoticiasController {
 
   @Delete(':rowId')
   @Auth(Role.Admin)
-  remove(@Param('rowId') rowId: number) {
+  @HttpCode(204)
+  async remove(@Param('rowId') rowId: number) {
     try {
-      return this.noticiasService.remove(+rowId);
+      this.noticiasService.remove(+rowId);
+      return null;
     } catch (error) {
       throw new InternalServerErrorException(error);
     }
