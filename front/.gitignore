@@ -20,6 +20,10 @@ psd
 thumb
 sketch
 
+# Nuxt.js build / generate output
+.nuxt
+dist
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -46,7 +50,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Ignoramos el archivo de imagenes
-/src/style/images
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,dotenv,react
