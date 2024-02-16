@@ -239,7 +239,4 @@ $RECYCLE.BIN/
 ## Carpeta de imagenes
 /uploads/*
 
-# Ignoramos el archivo de palabra principal
-/src/resource/auth/constants/constants.ts
-
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
