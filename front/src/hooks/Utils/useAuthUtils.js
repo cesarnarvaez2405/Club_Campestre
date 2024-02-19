@@ -18,9 +18,10 @@ export const useAuthUtils = () => {
       const usuarioLogin = await usuario.usuario();
       dispatch(
         onLogin({
+          rowId: usuarioLogin.rowId,
           nombre: usuarioLogin.nombre,
           email: usuarioLogin.email,
-          rol: usuarioLogin.rol_id,
+          rol: usuarioLogin.rol,
         })
       );
     } catch (error) {

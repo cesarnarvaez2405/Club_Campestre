@@ -1,9 +1,12 @@
 import tagsService from "../../../../../services/tagsService";
 import { useDocsUtils } from "../../../../../hooks/Utils/useDocsUtils";
+import { useAuthUtils } from "../../../../../hooks/Utils/useAuthUtils";
 import noticiasService from "../../../../../services/noticiasService";
 
 export const useRegistrarNoticia = () => {
   const { enviarImagen } = useDocsUtils();
+  const { user } = useAuthUtils();
+
   const obtenerTags = async () => {
     const tags = await tagsService.getTags();
     return tags;
@@ -26,8 +29,8 @@ export const useRegistrarNoticia = () => {
       titulo,
       cuerpo,
       portada: filename,
-      usuarioCreacionId: 1,
-      usuarioModificacionId: 1,
+      usuarioCreacionId: user.rowId,
+      usuarioModificacionId: user.rowId,
       tagsIds,
     };
     await noticiasService.addNoticia(noticiaACrear);
