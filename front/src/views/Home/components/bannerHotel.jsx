@@ -1,5 +1,4 @@
 import React from "react";
-import logoHotel from "../../../style/images/HotelClubCampestre.png";
 import { WifiIcon } from "@heroicons/react/16/solid";
 
 export const BannerHotel = React.forwardRef((props, ref) => {
@@ -8,17 +7,17 @@ export const BannerHotel = React.forwardRef((props, ref) => {
       <div className=" w-full 2xl:h-[147px] h-[128px] bg-zinc-800 p-2 z-40 ">
         <div
           ref={ref}
-          className=" w-full h-full border-2 rounded-md border-amber-300 flex flex-row justify-center items-center gap-12"
+          className="flex flex-row items-center justify-center w-full h-full gap-12 border-2 rounded-md border-amber-300"
         >
-          <div
-            className=" w-[12rem] h-[5rem] bg-center bg-no-repeat bg-cover"
-            style={{
-              backgroundImage: `url(${logoHotel})`,
-            }}
-          ></div>
+          <img
+            src="https://i.ibb.co/7gkFsZV/Hotel-Club-Campestre.png"
+            alt="Hotel-Club-Campestre"
+            border="0"
+            className="w-[12rem]"
+          ></img>
           <div className=" h-full w-[40%]  grid grid-cols-5 ">
-            <div className=" flex flex-col justify-center items-center">
-              <div className=" w-5 h-5">
+            <div className="flex flex-col items-center justify-center ">
+              <div className="w-5 h-5 ">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path
                     fill="#fcd34d"
@@ -27,26 +26,26 @@ export const BannerHotel = React.forwardRef((props, ref) => {
                 </svg>
               </div>
               <div>
-                <small className=" font-AltoneNormal text-white">
+                <small className="text-white font-AltoneNormal">
                   Parqueadero
                 </small>
               </div>
             </div>
 
-            <div className=" flex flex-col justify-center items-center">
-              <div className=" w-5 h-5 bg-amber-300 flex justify-center items-center rounded-sm ">
-                <div className=" h-4 w-4">
+            <div className="flex flex-col items-center justify-center ">
+              <div className="flex items-center justify-center w-5 h-5 rounded-sm bg-amber-300">
+                <div className="w-4 h-4 ">
                   <WifiIcon />
                 </div>
               </div>
               <div>
-                <small className=" font-AltoneNormal text-white">Wifi</small>
+                <small className="text-white font-AltoneNormal">Wifi</small>
               </div>
             </div>
 
-            <div className=" flex flex-col justify-center items-center">
-              <div className=" w-5 h-5 bg-amber-300 flex justify-center items-center rounded-sm ">
-                <div className=" h-4 w-4">
+            <div className="flex flex-col items-center justify-center ">
+              <div className="flex items-center justify-center w-5 h-5 rounded-sm bg-amber-300">
+                <div className="w-4 h-4 ">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
                       fill="var(--ci-primary-color, currentColor)"
@@ -62,35 +61,35 @@ export const BannerHotel = React.forwardRef((props, ref) => {
                 </div>
               </div>
               <div>
-                <small className=" font-AltoneNormal text-white">
+                <small className="text-white font-AltoneNormal">
                   Restaurante
                 </small>
               </div>
             </div>
 
-            <div className=" flex flex-col justify-center items-center">
-              <div className=" w-5 h-5 bg-amber-300 flex justify-center items-center rounded-sm ">
-                <div className=" h-4 w-4">
+            <div className="flex flex-col items-center justify-center ">
+              <div className="flex items-center justify-center w-5 h-5 rounded-sm bg-amber-300">
+                <div className="w-4 h-4 ">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path d="M32 0C19.1 0 7.4 7.8 2.4 19.8s-2.2 25.7 6.9 34.9L224 269.3V448H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h96 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H288V269.3L502.6 54.6c9.2-9.2 11.9-22.9 6.9-34.9S492.9 0 480 0H32zM256 210.7L109.3 64H402.7L256 210.7z" />
                   </svg>
                 </div>
               </div>
               <div>
-                <small className=" font-AltoneNormal text-white">Bar</small>
+                <small className="text-white font-AltoneNormal">Bar</small>
               </div>
             </div>
 
-            <div className=" flex flex-col justify-center items-center">
-              <div className=" w-5 h-5 bg-amber-300 flex justify-center items-center rounded-sm ">
-                <div className=" h-4 w-4">
+            <div className="flex flex-col items-center justify-center ">
+              <div className="flex items-center justify-center w-5 h-5 rounded-sm bg-amber-300">
+                <div className="w-4 h-4 ">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path d="M216 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h16v33.3C119.6 157.2 32 252.4 32 368H480c0-115.6-87.6-210.8-200-222.7V112h16c13.3 0 24-10.7 24-24s-10.7-24-24-24H256 216zM24 400c-13.3 0-24 10.7-24 24s10.7 24 24 24H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H24z" />
                   </svg>
                 </div>
               </div>
               <div>
-                <small className=" font-AltoneNormal text-white">
+                <small className="text-white font-AltoneNormal">
                   Room service
                 </small>
               </div>
@@ -102,7 +101,7 @@ export const BannerHotel = React.forwardRef((props, ref) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="border-2 border-amber-300 px-6 py-2 rounded-md text-amber-300 font-AltoneNormal hover:scale-110 transition-all ease-in-out duration-150">
+              <button className="px-6 py-2 transition-all duration-150 ease-in-out border-2 rounded-md border-amber-300 text-amber-300 font-AltoneNormal hover:scale-110">
                 Reserva Ya
               </button>
             </a>

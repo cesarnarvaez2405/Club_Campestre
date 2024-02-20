@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { linkRutas } from "../routes/Rutas";
 import { Link } from "react-router-dom";
-import logo from "../style/images/ClubCampestre.png";
 import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
 
 const primerasRutas = linkRutas.slice(0, 3);
@@ -13,7 +12,7 @@ export const Menu = () => {
   return (
     <>
       {status === "no autenticado" && (
-        <div className="w-full h-36 z-50 absolute ">
+        <div className="absolute z-50 w-full h-36 ">
           <div className="grid h-full grid-cols-9">
             <div className="flex flex-row justify-end w-full col-span-4 pr-10">
               {primerasRutas.map((ruta) => (
@@ -24,20 +23,20 @@ export const Menu = () => {
                 >
                   <Link
                     to={ruta.path}
-                    className="flex items-center px-10 duration-150 text-white ease-in-out border-l-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                    className="flex items-center px-10 text-white duration-150 ease-in-out border-l-2 cursor-pointer my-14 border-x-amber-300 hover:text-sky-900 font-AltoneNormal"
                   >
                     <h4>{ruta.title}</h4>
                   </Link>
                   {ruta.subMenu && ruta.name === openSubMenu && (
                     <div className=" absolute w-[10rem] font-AltoneNormal text-white backdrop-blur-xl pb-4 top-[60%] px-2  ">
-                      {ruta.subMenu.map((subRuta) => (
-                        <div className=" border-b border-amber-300 pt-4">
+                      {ruta.subMenu.map((subRuta, index) => (
+                        <div className="pt-4 border-b border-amber-300">
                           <Link
                             to={subRuta.path}
                             className=" hover:opacity-65"
-                            key={subRuta.name}
+                            key={index}
                           >
-                            <h4>{subRuta.title}</h4>
+                            <h4 key={subRuta.title}>{subRuta.title}</h4>
                           </Link>
                         </div>
                       ))}
@@ -47,13 +46,13 @@ export const Menu = () => {
               ))}
             </div>
 
-            <div className="col-start-5  flex justify-center items-center">
-              <div
-                className=" h-32 w-36 bg-center bg-no-repeat bg-contain"
-                style={{
-                  backgroundImage: `url(${logo})`,
-                }}
-              ></div>
+            <div className="flex items-center justify-center col-start-5">
+              <img
+                src="https://i.ibb.co/N155NbR/Logo-club.png"
+                alt="Logo-club"
+                border="0"
+                className="h-32"
+              ></img>
             </div>
             <div className="flex flex-row justify-start w-full col-span-4 pl-10">
               {ultimasRutas
@@ -67,7 +66,7 @@ export const Menu = () => {
                     <Link
                       key={ruta.name}
                       to={ruta.path}
-                      className="flex items-center px-10 duration-150 text-white ease-in-out border-r-2 my-14 border-x-amber-300  cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                      className="flex items-center px-10 text-white duration-150 ease-in-out border-r-2 cursor-pointer my-14 border-x-amber-300 hover:text-sky-900 font-AltoneNormal"
                     >
                       <h4>{ruta.title}</h4>
                     </Link>
@@ -79,11 +78,11 @@ export const Menu = () => {
       )}
 
       {status === "autenticado" && (
-        <div className="w-full h-36 z-50 absolute">
-          <div className=" flex justify-center items-center pt-3">
-            <div className="grid h-full grid-cols-8 items-center">
+        <div className="absolute z-50 w-full h-36">
+          <div className="flex items-center justify-center pt-3 ">
+            <div className="grid items-center h-full grid-cols-8">
               <div
-                className=" h-32 w-36 bg-center bg-no-repeat bg-contain"
+                className="h-32 bg-center bg-no-repeat bg-contain w-36"
                 style={{
                   backgroundImage: `url(${logo})`,
                 }}
@@ -93,18 +92,18 @@ export const Menu = () => {
                   key={ruta.name}
                   onMouseEnter={() => setOpenSubMenu(ruta.name)}
                   onMouseLeave={() => setOpenSubMenu(null)}
-                  className=" flex justify-center items-center border-r-2 my-6 border-x-amber-300"
+                  className="flex items-center justify-center my-6 border-r-2 border-x-amber-300"
                 >
                   <Link
                     to={ruta.path}
-                    className="flex items-center duration-150 text-white ease-in-out   cursor-pointer hover:text-sky-900 font-AltoneNormal"
+                    className="flex items-center text-white duration-150 ease-in-out cursor-pointer hover:text-sky-900 font-AltoneNormal"
                   >
                     <h4>{ruta.title}</h4>
                   </Link>
                   {ruta.subMenu && ruta.name === openSubMenu && (
                     <div className=" absolute w-[10rem] font-AltoneNormal text-white backdrop-blur-xl pb-4 top-[60%] px-2  ">
                       {ruta.subMenu.map((subRuta) => (
-                        <div className=" border-b border-amber-300 pt-4">
+                        <div className="pt-4 border-b border-amber-300">
                           <Link
                             to={subRuta.path}
                             className=" hover:opacity-65"

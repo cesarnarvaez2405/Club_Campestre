@@ -1,7 +1,6 @@
 import React from "react";
 import { GoogleMaps } from "./Partials/googleMaps";
 import { Wrapper } from "@googlemaps/react-wrapper";
-import logoBlanco from "../style/images/Logo_club.png";
 import { Link } from "react-router-dom";
 import API from "../api/apiNode";
 
@@ -13,44 +12,44 @@ export const Footer = () => {
   return (
     <>
       <div className=" w-full h-[20rem] bg-zinc-800 px-5 border-t-4 border-amber-300 ">
-        <div className=" w-full h-full grid grid-cols-3 py-4 px-4">
-          <div className=" flex-col flex items-start justify-start">
-            <span className=" text-white text-wrap font-AltoneNormal">
-              Kilometro <span className=" font-sans">12</span> vía al sur ,
+        <div className="grid w-full h-full grid-cols-3 px-4 py-4 ">
+          <div className="flex flex-col items-start justify-start ">
+            <span className="text-white text-wrap font-AltoneNormal">
+              Kilometro <span className="font-sans ">12</span> vía al sur ,
               Rivera - Huila
             </span>
-            <div className=" w-48 h-48 pt-3">
+            <div className="w-48 h-48 pt-3 ">
               <Wrapper apiKey={apiKeyGoogle}>
                 <GoogleMaps center={center} zoom={zoom} />
               </Wrapper>
             </div>
           </div>
-          <div className=" flex justify-start items-center flex-col">
-            <div
-              className=" bg-center bg-no-repeat bg-cover 2xl:w-[100px] 2xl:h-[100px] w-[80px] h-[80px] "
-              style={{
-                backgroundImage: `url(${logoBlanco})`,
-              }}
-            ></div>
-            <span className=" text-white pt-5 font-AltoneBold ">
+          <div className="flex flex-col items-center justify-start ">
+            <img
+              src="https://i.ibb.co/N155NbR/Logo-club.png"
+              alt="Logo-club"
+              border="0"
+              className="2xl:w-[100px] 2xl:h-[100px] w-[80px] h-[80px]"
+            ></img>
+            <span className="pt-5 text-white font-AltoneBold">
               Corporacion Club Campestre de Neiva
             </span>
-            <span className=" text-white text-wrap font-AltoneNormal">
+            <span className="text-white text-wrap font-AltoneNormal">
               Telefonos:
-              <span className=" font-sans pl-2">
+              <span className="pl-2 font-sans ">
                 3175021927 - 3157829360 - 3155661284
               </span>
             </span>
-            <span className=" text-white text-wrap font-AltoneNormal">
+            <span className="text-white text-wrap font-AltoneNormal">
               Email: comunicaciones@clubcampestreneiva.com
             </span>
           </div>
-          <div className=" flex flex-col gap-3 text-right">
-            <span className=" pt-5 text-white font-AltoneNormal text-2xl">
+          <div className="flex flex-col gap-3 text-right ">
+            <span className="pt-5 text-2xl text-white font-AltoneNormal">
               Nuestras Redes
             </span>
-            <div className=" flex justify-end">
-              <div className=" flex">
+            <div className="flex justify-end ">
+              <div className="flex ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="icon icon-tabler icon-tabler-brand-whatsapp"
@@ -99,11 +98,11 @@ export const Footer = () => {
                 </svg>
               </div>
             </div>
-            <div className=" pt-5">
-              <span className=" text-md text-white font-AltoneNormal">
+            <div className="pt-5 ">
+              <span className="text-white text-md font-AltoneNormal">
                 Plataforma Club Campestre
               </span>
-              <div className=" flex justify-end pt-2 cursor-pointer">
+              <div className="flex justify-end pt-2 cursor-pointer ">
                 <Link to={"/plataforma/login"} className=" hover:opacity-65">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
