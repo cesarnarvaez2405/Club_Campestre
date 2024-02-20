@@ -39,4 +39,13 @@ export default {
       alertErrorResponse(error);
     }
   },
+
+  async updateFileImgbb(body) {
+    try {
+      response = await axios.post("https://api.imgbb.com/1/upload", body);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
 };

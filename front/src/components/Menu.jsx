@@ -81,12 +81,12 @@ export const Menu = () => {
         <div className="absolute z-50 w-full h-36">
           <div className="flex items-center justify-center pt-3 ">
             <div className="grid items-center h-full grid-cols-8">
-              <div
-                className="h-32 bg-center bg-no-repeat bg-contain w-36"
-                style={{
-                  backgroundImage: `url(${logo})`,
-                }}
-              ></div>
+              <img
+                src="https://i.ibb.co/N155NbR/Logo-club.png"
+                alt="Logo-club"
+                border="0"
+                className="h-32 "
+              ></img>
               {linkRutas.map((ruta) => (
                 <div
                   key={ruta.name}

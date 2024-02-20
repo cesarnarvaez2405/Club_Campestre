@@ -1,4 +1,5 @@
 import filesService from "../../services/filesService";
+import API from "../../api/apiNode";
 
 export const useDocsUtils = () => {
   const enviarImagen = async (imagen) => {
@@ -7,5 +8,12 @@ export const useDocsUtils = () => {
     return await filesService.updateFile(archivo);
   };
 
-  return { enviarImagen };
+  const subirImagenImgbb = async (imagen) => {
+    const archivo = new FormData();
+    archivo.append("image", imagen);
+    archivo.append("key", API.apiImgbb);
+    return await filesService.updateFileImgbb(archivo);
+  };
+
+  return { enviarImagen, subirImagenImgbb };
 };

@@ -4,7 +4,7 @@ import { useAuthUtils } from "../../../../../hooks/Utils/useAuthUtils";
 import noticiasService from "../../../../../services/noticiasService";
 
 export const useRegistrarNoticia = () => {
-  const { enviarImagen } = useDocsUtils();
+  const { subirImagenImgbb } = useDocsUtils();
   const { user } = useAuthUtils();
 
   const obtenerTags = async () => {
@@ -22,13 +22,14 @@ export const useRegistrarNoticia = () => {
     if (file && file.size > 3145728) {
       return "El tamaño del archivo excede el límite de 3MB";
     }
-    const imagen = await enviarImagen(portada[0]);
-    const { filename } = imagen;
+    const imagen = await subirImagenImgbb(portada[0]);
+
+    const { display_url } = imagen.data;
     const tagsIds = tags.map((tag) => tag.value);
     const noticiaACrear = {
       titulo,
       cuerpo,
-      portada: filename,
+      portada: display_url,
       usuarioCreacionId: user.rowId,
       usuarioModificacionId: user.rowId,
       tagsIds,
