@@ -10,7 +10,7 @@ export const BannerHotel = React.forwardRef((props, ref) => {
           className="flex flex-row items-center justify-center w-full h-full gap-12 border-2 rounded-md border-amber-300"
         >
           <img
-            src="https://i.ibb.co/7gkFsZV/Hotel-Club-Campestre.png"
+            src="https://i.ibb.co/vZ0R8mg/Hotel-Club-Campestre.png"
             alt="Hotel-Club-Campestre"
             border="0"
             className="w-[12rem]"

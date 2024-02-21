@@ -48,7 +48,7 @@ export const Menu = () => {
 
             <div className="flex items-center justify-center col-start-5">
               <img
-                src="https://i.ibb.co/N155NbR/Logo-club.png"
+                src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
                 alt="Logo-club"
                 border="0"
                 className="h-32"
@@ -82,7 +82,7 @@ export const Menu = () => {
           <div className="flex items-center justify-center pt-3 ">
             <div className="grid items-center h-full grid-cols-8">
               <img
-                src="https://i.ibb.co/N155NbR/Logo-club.png"
+                src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
                 alt="Logo-club"
                 border="0"
                 className="h-32 "

@@ -26,7 +26,7 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col items-center justify-start ">
             <img
-              src="https://i.ibb.co/N155NbR/Logo-club.png"
+              src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
               alt="Logo-club"
               border="0"
               className="2xl:w-[100px] 2xl:h-[100px] w-[80px] h-[80px]"
