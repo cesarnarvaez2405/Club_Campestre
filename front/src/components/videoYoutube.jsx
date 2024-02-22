@@ -19,7 +19,7 @@ export const VideoYoutube = ({ videoId, width, height }) => {
   };
 
   return (
-    <div className="  brightness-75" style={{ width: width, height: height }}>
+    <div className=" brightness-75" style={{ width: width, height: height }}>
       <YouTube
         videoId={videoId}
         opts={opts}

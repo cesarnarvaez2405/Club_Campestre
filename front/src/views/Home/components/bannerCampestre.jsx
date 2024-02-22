@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { infoBanner } from "../data/infoBanner";
 import fondo from "../../../style/images/campoGolf.jpg";
-import videoFondo from "../../../style/images/secuencia.mp4";
+// import videoFondo from "../../../style/images/secuencia.mp4";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { VideoYoutube } from "../../../components/videoYoutube";
 
@@ -42,9 +42,9 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
   return (
     <>
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-slate-600 z-10 flex top-0">
-        <div className=" w-full h-full block z-20">
+        <div className="z-20 block w-full h-full ">
           <div className="relative w-full 2xl:h-[50rem] xl:h-[40rem] h-[40rem] overflow-hidden">
-            <video
+            {/* <video
               autoPlay
               loop
               muted
@@ -52,13 +52,13 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
               className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
             >
               <source src={videoFondo} type="video/mp4" />
-            </video>
-            {/* <VideoYoutube videoId="ddxdGn9dRxQ" width={1980} height={1100} /> */}
+            </video> */}
+            <VideoYoutube videoId="ddxdGn9dRxQ" width={1980} height={1100} />
           </div>
           <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[18%] lg:top-[25%] top-[45%] ">
-            <div className=" flex  items-center h-full justify-between mx-8">
+            <div className="flex items-center justify-between h-full mx-8 ">
               <div
-                className=" order-first h-8 w-8 text-white cursor-pointer"
+                className="order-first w-8 h-8 text-white cursor-pointer "
                 onClick={handleClickButtonLeft}
               >
                 <ChevronLeftIcon />
@@ -72,14 +72,14 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
                       node.addEventListener("transitionend", done, false)
                     }
                   >
-                    <h3 className=" font-AltoneBold text-5xl text-white">
+                    <h3 className="text-5xl text-white font-AltoneBold">
                       {infoBanner[posicionInfo].text}
                     </h3>
                   </CSSTransition>
                 </SwitchTransition>
               </div>
               <div
-                className=" order-last h-8 w-8 text-white cursor-pointer"
+                className="order-last w-8 h-8 text-white cursor-pointer "
                 onClick={handleClickButtonRight}
               >
                 <ChevronRightIcon />
@@ -87,7 +87,7 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
             </div>
             <div className="  w-full h-[8rem] flex justify-center items-end ">
               <ChevronDoubleDownIcon
-                className=" w-10 h-10 text-white cursor-pointer hover:opacity-30 transition-all ease-in-out duration-100"
+                className="w-10 h-10 text-white transition-all duration-100 ease-in-out cursor-pointer hover:opacity-30"
                 onClick={() => desplazarBannerHotel()}
               />
             </div>
