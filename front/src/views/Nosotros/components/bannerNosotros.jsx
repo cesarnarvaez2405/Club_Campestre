@@ -21,7 +21,7 @@ export const BannerNosotros = ({ titulo, componente }) => {
             <span
               className={` text-white  ${
                 componente === "elClub" ? "text-7xl" : "text-6xl"
-              } font-Tommy font-semibold`}
+              }  font-semibold`}
             >
               {titulo}
             </span>
