@@ -66,23 +66,30 @@ export const deportes = [
 export const menuServicios = [
   {
     titulo: "Eventos Sociales",
+    id: 0,
   },
   {
     titulo: "Capilla",
+    id: 1,
   },
   {
     titulo: "Piscinas y tobogán",
+    id: 2,
   },
   {
     titulo: "Escualas deportivas",
+    id: 3,
   },
   {
     titulo: "Escenarios deportivos",
+    id: 4,
   },
   {
     titulo: "Restaurante internacional",
+    id: 5,
   },
   {
     titulo: "Sede infantil",
+    id: 6,
   },
 ];

@@ -1,9 +1,12 @@
 import React from "react";
+import { BannerInfoHotel } from "./components/bannerInfoHotel";
 
 export const Hotel = () => {
   return (
     <>
-      <h2>Hotel</h2>
+      <div>
+        <BannerInfoHotel />
+      </div>
     </>
   );
 };

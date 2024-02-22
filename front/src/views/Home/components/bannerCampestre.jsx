@@ -8,6 +8,7 @@ import { infoBanner } from "../data/infoBanner";
 import fondo from "../../../style/images/campoGolf.jpg";
 import videoFondo from "../../../style/images/secuencia.mp4";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { VideoYoutube } from "../../../components/videoYoutube";
 
 export const BannerCampestre = ({ desplazarBannerHotel }) => {
   const [posicionInfo, setPosicionInfo] = useState(0);
@@ -52,6 +53,7 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
             >
               <source src={videoFondo} type="video/mp4" />
             </video>
+            {/* <VideoYoutube videoId="ddxdGn9dRxQ" width={1980} height={1100} /> */}
           </div>
           <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[18%] lg:top-[25%] top-[45%] ">
             <div className=" flex  items-center h-full justify-between mx-8">
