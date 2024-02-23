@@ -93,3 +93,42 @@ export const menuServicios = [
     id: 6,
   },
 ];
+
+export const menuCanjes = [
+  {
+    id: "bogota",
+  },
+  {
+    id: "medellin",
+  },
+  {
+    id: "cali",
+  },
+  {
+    id: "pereira",
+  },
+  {
+    id: "ibague",
+  },
+  {
+    id: "bucaramanga",
+  },
+  {
+    id: "barranquilla",
+  },
+  {
+    id: "sanAndres",
+  },
+  {
+    id: "monteria",
+  },
+  {
+    id: "cucuta",
+  },
+  {
+    id: "armenia",
+  },
+  {
+    id: "palmira",
+  },
+];

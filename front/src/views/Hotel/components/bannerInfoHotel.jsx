@@ -7,7 +7,7 @@ export const BannerInfoHotel = () => {
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem]  z-10 flex top-0">
         <div className=" w-full h-full block z-20">
           <div className="relative w-full 2xl:h-[46rem] xl:h-[40rem] h-[40rem] overflow-hidden">
-            <VideoYoutube videoId="ddxdGn9dRxQ" width={1980} height={1100} />
+            <VideoYoutube videoId="ddxdGn9dRxQ" width={1920} height={1080} />
           </div>
         </div>
         <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[23%] xl:top-[18%] lg:top-[25%] top-[45%] ">

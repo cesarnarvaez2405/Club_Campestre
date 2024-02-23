@@ -13,7 +13,7 @@ export const BannerHotel = React.forwardRef((props, ref) => {
             src="https://i.ibb.co/vZ0R8mg/Hotel-Club-Campestre.png"
             alt="Hotel-Club-Campestre"
             border="0"
-            className="w-[12rem]"
+            className="w-[12rem] object-contain"
           ></img>
           <div className=" h-full w-[40%]  grid grid-cols-5 ">
             <div className="flex flex-col items-center justify-center ">

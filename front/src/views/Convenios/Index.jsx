@@ -1,10 +1,13 @@
 import React from "react";
+import { Canjes } from "./components/canjes";
+import { Listado } from "./components/listado";
 
 export const Convenios = () => {
   return (
     <>
       <div>
-        <h2>Convenios</h2>
+        <Canjes />
+        <Listado />
       </div>
     </>
   );

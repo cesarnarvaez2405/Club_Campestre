@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { linkRutas } from "../routes/Rutas";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
+import { onSelect } from "../store/Auth/menuStore";
+import { useDispatch, useSelector } from "react-redux";
 
 const primerasRutas = linkRutas.slice(0, 3);
 const ultimasRutas = linkRutas.slice(3, 7);
 
 export const Menu = () => {
+  const { nameMenu } = useSelector((state) => state.menu);
+
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const { status } = useAuthUtils();
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    dispatch(onSelect(location.pathname));
+  }, [location]);
+
   return (
     <>
       {status === "no autenticado" && (
@@ -47,12 +58,22 @@ export const Menu = () => {
             </div>
 
             <div className="flex items-center justify-center col-start-5">
-              <img
-                src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
-                alt="Logo-club"
-                border="0"
-                className="h-32"
-              ></img>
+              {nameMenu !== "/hotel" && (
+                <img
+                  src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
+                  alt="Logo-club"
+                  border="0"
+                  className="h-32 bg-center object-contain"
+                ></img>
+              )}
+
+              {nameMenu === "/hotel" && (
+                <img
+                  src="https://i.ibb.co/vZ0R8mg/Hotel-Club-Campestre.png"
+                  alt="Hotel-Club-Campestre"
+                  border="0"
+                ></img>
+              )}
             </div>
             <div className="flex flex-row justify-start w-full col-span-4 pl-10">
               {ultimasRutas
