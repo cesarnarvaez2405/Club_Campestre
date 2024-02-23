@@ -24,7 +24,7 @@ export const Listado = () => {
                   ciudadCanje === servicio.id && "bg-slate-400"
                 }`}
               >
-                <span>{servicio.id} </span>
+                <span className=" capitalize">{servicio.id} </span>
               </button>
             ))}
           </div>
