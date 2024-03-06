@@ -43,6 +43,7 @@ export class NoticiasController {
         rowId: true,
         titulo: true,
         tags: true,
+        sumario: true,
         fechaCreacion: true,
         fechaModificacion: true,
         portada: true,

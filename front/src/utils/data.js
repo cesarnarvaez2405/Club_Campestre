@@ -69,20 +69,16 @@ export const menuServicios = [
     id: 0,
   },
   {
-    titulo: "Capilla",
-    id: 1,
-  },
-  {
-    titulo: "Piscinas y tobogán",
-    id: 2,
-  },
-  {
-    titulo: "Escualas deportivas",
+    titulo: "Escuelas deportivas",
     id: 3,
   },
   {
     titulo: "Escenarios deportivos",
     id: 4,
+  },
+  {
+    titulo: "Piscinas y tobogán",
+    id: 2,
   },
   {
     titulo: "Restaurante internacional",
@@ -91,6 +87,10 @@ export const menuServicios = [
   {
     titulo: "Sede infantil",
     id: 6,
+  },
+  {
+    titulo: "Capilla",
+    id: 1,
   },
 ];
 

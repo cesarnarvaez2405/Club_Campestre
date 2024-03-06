@@ -15,6 +15,9 @@ export class Noticia extends entityBase {
   @Column('varchar', { nullable: false })
   titulo: string;
 
+  @Column('varchar', { nullable: false })
+  sumario: string;
+
   @Column({ type: 'text', nullable: false })
   cuerpo: string;
 

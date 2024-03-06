@@ -215,6 +215,17 @@ export const ContenidoInstalaciones = () => {
           </div>
         )}
 
+        {opcionServicio === 3 && (
+          <div className=" flex justify-center items-center pt-10 flex-col">
+            <img
+              src="https://i.ibb.co/QpTzKrr/escuelas-Deportivas.png"
+              alt="escuelas-Deportivas"
+              border="0"
+            ></img>
+            <div className="border-t border-amber-300 w-[40rem] mt-3 "></div>
+          </div>
+        )}
+
         {opcionServicio === 5 && (
           <div>
             <div className=" flex justify-center items-center pt-10 flex-col">
@@ -245,6 +256,17 @@ export const ContenidoInstalaciones = () => {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {opcionServicio === 6 && (
+          <div className=" flex justify-center items-center pt-10 flex-col">
+            <img
+              src="https://i.ibb.co/njtPPzM/sede-Infantil.png"
+              alt="sede-Infantil"
+              border="0"
+            ></img>
+            <div className="border-t border-amber-300 w-[40rem] mt-3 "></div>
           </div>
         )}
       </div>

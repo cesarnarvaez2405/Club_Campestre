@@ -2,11 +2,21 @@ import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+
+import { EditorProvider } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import { Color } from "@tiptap/extension-color";
+import TextStyle from "@tiptap/extension-text-style";
+import ListItem from "@tiptap/extension-list-item";
+import TextAlign from "@tiptap/extension-text-align";
+import Placeholder from "@tiptap/extension-placeholder";
+import Document from "@tiptap/extension-document";
+
+import Swal from "sweetalert2";
 import { AlertError } from "../../../../../components/Util/alertError";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
-import Swal from "sweetalert2";
+import { MenuBarUtils } from "../../../../../components/Util/MenuBarUtils";
+import { Dot } from "../../../../../components/Util/Dot";
 
 export const RegistrarNoticia = ({
   obtenerNoticias,
@@ -14,7 +24,6 @@ export const RegistrarNoticia = ({
   estaEditando,
 }) => {
   const [tags, setTags] = useState([]);
-  const [contenido, setContenido] = useState("");
   const { obtenerTags, guardar } = useRegistrarNoticia();
 
   const animatedComponents = makeAnimated();
@@ -33,15 +42,11 @@ export const RegistrarNoticia = ({
       setTags(tagsEncontrados);
     }
     if (estaEditando) {
-      console.log(noticia);
       const { titulo, cuerpo, portada } = noticia;
       const tagsEditar = noticia.tags;
       setValue("titulo", titulo);
       setValue("portada", portada);
       setValue("tags", tags);
-      // const tagsEditar = tags.filter((tag) =>
-      //     dato[0].skills.some((skill) => skill.skillId === tag.value)
-      //   );
       setContenido(cuerpo);
     }
     encontrarTags();
@@ -53,7 +58,6 @@ export const RegistrarNoticia = ({
 
   const guardarNoticia = async (event) => {
     const respuesta = await guardar(event);
-
     if (respuesta) {
       Swal.fire({
         title: "El tamaño del archivo excede el límite de 3MB",
@@ -62,11 +66,42 @@ export const RegistrarNoticia = ({
       });
       reset();
       setTags([]);
-      console.log(tags);
     }
     reset();
     await obtenerNoticias();
   };
+
+  const CustomDocument = Document.extend({
+    content: "heading block*",
+  });
+
+  const extensions = [
+    CustomDocument,
+    Color.configure({ types: [TextStyle.name, ListItem.name] }),
+    TextStyle.configure({ types: [ListItem.name] }),
+    TextAlign.configure({
+      types: ["heading", "paragraph"],
+    }),
+    StarterKit.configure({
+      bulletList: {
+        keepMarks: true,
+        keepAttributes: true, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+      },
+      orderedList: {
+        keepMarks: true,
+        keepAttributes: true, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+      },
+    }),
+    Placeholder.configure({
+      placeholder: ({ node }) => {
+        if (node.type.name === "heading") {
+          return "What’s the title?";
+        }
+
+        return "Can you add some further context?";
+      },
+    }),
+  ];
 
   return (
     <>
@@ -81,8 +116,8 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal">
-                TÍtulo
+              <h3 className="text-xl  font-AltoneNormal flex">
+                TÍtulo <Dot />
                 <span className="pl-3 text-sm  font-AltoneNormal">
                   "Escriba tu titulo mas creativo"
                 </span>
@@ -105,6 +140,39 @@ export const RegistrarNoticia = ({
               )}
             </div>
           </div>
+
+          <div className="flex flex-row gap-5">
+            <div className="flex items-center justify-center ">
+              <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
+                1
+              </span>
+            </div>
+
+            <div className="flex flex-col items-start justify-center ">
+              <h3 className="text-xl  font-AltoneNormal flex">
+                Sumario <Dot />
+                <span className="pl-3 text-sm  font-AltoneNormal">
+                  "Destaca tu noticia en el sumario"
+                </span>
+              </h3>
+              <input
+                className={` 2xl:w-[50rem] lg:w-[40rem] md:w-[25rem] w-[20rem] p-2 bg-slate-300 text-black rounded-md border shadow-lg focus:ring-1 hover:border-blue-500 transition-all duration-100 focus:outline-none ${
+                  errors.sumario &&
+                  "border-red-500 outline-none border-2 ring-red-500"
+                }`}
+                type="text"
+                name="sumario"
+                id="sumario"
+                placeholder="sumario"
+                {...register("sumario", {
+                  required: "El sumario es obligatorio",
+                })}
+              />
+              {errors.sumario && (
+                <AlertError> {errors.sumario.message} </AlertError>
+              )}
+            </div>
+          </div>
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
@@ -113,8 +181,9 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal">
+              <h3 className="text-xl  font-AltoneNormal flex">
                 Portada
+                <Dot />
                 <span className="pl-3 text-sm  font-AltoneNormal">
                   "Selecciona la mejor imagen como portada"
                 </span>
@@ -149,8 +218,9 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal">
+              <h3 className="text-xl  font-AltoneNormal flex">
                 Tags
+                <Dot />
                 <span className="pl-3 text-sm  font-AltoneNormal">
                   "Escoja los tags adecuados a la noticia"
                 </span>
@@ -189,38 +259,18 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal">
-                Cuerpo
+              <h3 className="text-xl  font-AltoneNormal flex">
+                Cuerpo <Dot />
                 <span className="pl-3 text-sm  font-AltoneNormal">
                   "Diseña la Noticia a tu gusto"
                 </span>
               </h3>
-              <div className=" 2xl:w-[50rem] lg:w-[40rem] md:w-[25rem] w-[20rem] ">
-                <Controller
-                  name="cuerpo"
-                  control={control}
-                  rules={{ required: "El contenido son obligatorios" }}
-                  render={({ field }) => (
-                    <ReactQuill
-                      value={contenido}
-                      onChange={handleChange}
-                      theme="snow"
-                      modules={{
-                        toolbar: [
-                          [{ header: [1, 2, 3, 4, 5, 6, false] }],
-                          ["bold", "italic", "underline", "strike"],
-                          [{ list: "ordered" }, { list: "bullet" }],
-                          ["link", "image"],
-                          ["clean"],
-                        ],
-                      }}
-                      {...field}
-                    />
-                  )}
-                />
-                {errors.cuerpo && (
-                  <AlertError> {errors.cuerpo.message} </AlertError>
-                )}
+
+              <div className=" border rounded-lg  2xl:w-[50rem] lg:w-[40rem] md:w-[25rem] w-[20rem]  ">
+                <EditorProvider
+                  slotBefore={<MenuBarUtils />}
+                  extensions={extensions}
+                ></EditorProvider>
               </div>
             </div>
           </div>

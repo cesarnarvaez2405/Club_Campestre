@@ -24,7 +24,8 @@ export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
       <div className="grid grid-cols-3 gap-4 mb-10">
         {itemsToDisplay.map((item, index) => (
           <div key={index} className="border p-4">
-            <h3 className=" font-semibold text-base">"{item.titulo}"</h3>
+            <h3 className=" font-semibold text-base">{item.titulo}</h3>
+            <span>{item.sumario} </span>
             <div className=" mt-2 grid grid-cols-3">
               {item.tags.map((tag, index) => (
                 <div key={index} className=" my-4">
@@ -37,7 +38,7 @@ export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
                 </div>
               ))}
             </div>
-            <div className=" grid grid-rows-2 justify-end text-sm">
+            <div className=" grid grid-rows-2 justify-start text-sm">
               <div className=" flex flex-row gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

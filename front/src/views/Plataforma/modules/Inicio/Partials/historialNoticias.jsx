@@ -27,6 +27,7 @@ export const HistorialNoticias = ({ noticias, obtenerNoticias, editar }) => {
       confirmButtonColor: "#06B357",
       cancelButtonColor: "#d33",
       confirmButtonText: "Confirmar",
+      cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
         await eliminarNoticia(item);
