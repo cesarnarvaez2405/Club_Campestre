@@ -4,7 +4,7 @@ import { Column, Entity, ManyToMany } from 'typeorm';
 
 @Entity({ name: 'tags' })
 export class Tags extends entityBase {
-  @Column('character varying', {
+  @Column('varchar', {
     name: 'prefijo_tag',
     unique: true,
     nullable: false,

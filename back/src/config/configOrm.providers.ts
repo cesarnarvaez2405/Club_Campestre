@@ -19,9 +19,9 @@ export const databaseProviders = [
     provide: 'DATA_SOURCE',
     useFactory: async () => {
       const dataSource = new DataSource({
-        type: 'postgres',
+        type: 'mysql',
         host: process.env.HOST_DB,
-        port: parseInt(process.env.PORT_DB, 10) || 5432,
+        port: parseInt(process.env.PORT_DB, 10) || 3306,
         username: process.env.USER_DB,
         password: process.env.PASS_DB,
         database: process.env.NAME_DB,
@@ -29,6 +29,8 @@ export const databaseProviders = [
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
         logging: false,
+        charset: 'utf8mb4_unicode_ci',
+        timezone: 'Z',
       });
 
       console.info('🐘 Conectado a la DB:', dataSource.options.database);
