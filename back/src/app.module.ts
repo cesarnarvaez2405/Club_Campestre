@@ -17,6 +17,10 @@ import { join } from 'path';
       rootPath: join(__dirname, process.env.ROUTE_DOCS),
       serveRoot: '/uploads',
     }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'),
+      serveRoot: '/',
+    }),
     UsuarioModule,
     AuthModule,
     TagsModule,
