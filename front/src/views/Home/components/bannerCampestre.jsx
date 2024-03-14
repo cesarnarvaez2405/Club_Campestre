@@ -12,6 +12,8 @@ import { VideoYoutube } from "../../../components/videoYoutube";
 
 export const BannerCampestre = ({ desplazarBannerHotel }) => {
   const [posicionInfo, setPosicionInfo] = useState(0);
+  const videoFondo =
+    "https://www.weltweitpersonal.com/clubcampestre/2024/03/Secuencia.mp4";
 
   const handleClickButtonRight = () => {
     if (posicionInfo < infoBanner.length - 1) {
@@ -44,7 +46,7 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-slate-600 z-10 flex top-0">
         <div className="z-20 block w-full h-full ">
           <div className="relative w-full 2xl:h-[50rem] xl:h-[40rem] h-[40rem] overflow-hidden">
-            {/* <video
+            <video
               autoPlay
               loop
               muted
@@ -52,8 +54,8 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
               className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
             >
               <source src={videoFondo} type="video/mp4" />
-            </video> */}
-            <VideoYoutube videoId="ddxdGn9dRxQ" width={1980} height={1100} />
+            </video>
+            {/* <VideoYoutube videoId="ddxdGn9dRxQ" width={1980} height={1100} /> */}
           </div>
           <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[18%] lg:top-[25%] top-[45%] ">
             <div className="flex items-center justify-between h-full mx-8 ">

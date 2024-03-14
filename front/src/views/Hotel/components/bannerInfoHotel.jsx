@@ -2,12 +2,23 @@ import React from "react";
 import { VideoYoutube } from "../../../components/videoYoutube";
 
 export const BannerInfoHotel = () => {
+  const videoFondo =
+    "https://www.weltweitpersonal.com/clubcampestre/2024/03/Secuencia.mp4";
   return (
     <>
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem]  z-10 flex top-0">
         <div className=" w-full h-full block z-20">
           <div className="relative w-full 2xl:h-[46rem] xl:h-[40rem] h-[40rem] overflow-hidden">
-            <VideoYoutube videoId="ddxdGn9dRxQ" width={1920} height={1080} />
+            {/* <VideoYoutube videoId="ddxdGn9dRxQ" width={1920} height={1080} /> */}
+            <video
+              autoPlay
+              loop
+              muted
+              controls={false}
+              className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
+            >
+              <source src={videoFondo} type="video/mp4" />
+            </video>
           </div>
         </div>
         <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[23%] xl:top-[18%] lg:top-[25%] top-[45%] ">

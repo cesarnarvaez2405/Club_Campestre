@@ -3,7 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
-import { EditorProvider } from "@tiptap/react";
+import { EditorProvider, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Color } from "@tiptap/extension-color";
 import TextStyle from "@tiptap/extension-text-style";
@@ -11,6 +11,7 @@ import ListItem from "@tiptap/extension-list-item";
 import TextAlign from "@tiptap/extension-text-align";
 import Placeholder from "@tiptap/extension-placeholder";
 import Document from "@tiptap/extension-document";
+import Image from "@tiptap/extension-image";
 
 import Swal from "sweetalert2";
 import { AlertError } from "../../../../../components/Util/alertError";
@@ -25,6 +26,7 @@ export const RegistrarNoticia = ({
 }) => {
   const [tags, setTags] = useState([]);
   const { obtenerTags, guardar } = useRegistrarNoticia();
+  const [contenido, setContenido] = useState("");
 
   const animatedComponents = makeAnimated();
   const {
@@ -50,13 +52,15 @@ export const RegistrarNoticia = ({
       setContenido(cuerpo);
     }
     encontrarTags();
-  }, []);
+    console.log(contenido);
+  }, [contenido]);
 
   const handleChange = (texto) => {
     setContenido(texto);
   };
 
   const guardarNoticia = async (event) => {
+    console.log(contenido);
     const respuesta = await guardar(event);
     if (respuesta) {
       Swal.fire({
@@ -76,6 +80,7 @@ export const RegistrarNoticia = ({
   });
 
   const extensions = [
+    Image,
     CustomDocument,
     Color.configure({ types: [TextStyle.name, ListItem.name] }),
     TextStyle.configure({ types: [ListItem.name] }),
@@ -102,6 +107,14 @@ export const RegistrarNoticia = ({
       },
     }),
   ];
+
+  const editor = useEditor({
+    extensions,
+    content: "",
+    onUpdate: ({ editor }) => {
+      setContenido(editor.getHTML());
+    },
+  });
 
   return (
     <>
@@ -268,8 +281,9 @@ export const RegistrarNoticia = ({
 
               <div className=" border rounded-lg  2xl:w-[50rem] lg:w-[40rem] md:w-[25rem] w-[20rem]  ">
                 <EditorProvider
-                  slotBefore={<MenuBarUtils />}
                   extensions={extensions}
+                  slotBefore={<MenuBarUtils />}
+                  editor={editor}
                 ></EditorProvider>
               </div>
             </div>

@@ -23,6 +23,7 @@ export const useRegistrarNoticia = () => {
       return "El tamaño del archivo excede el límite de 3MB";
     }
     const imagen = await subirImagenImgbb(portada[0]);
+
     const { display_url } = imagen.data;
     const tagsIds = tags.map((tag) => tag.value);
     const noticiaACrear = {
@@ -37,9 +38,27 @@ export const useRegistrarNoticia = () => {
     await noticiasService.addNoticia(noticiaACrear);
   };
 
+  const guardarImagenesRegistro = async (imagenes) => {
+    const imagenesGuardadas = [];
+    for (const imagen of imagenes) {
+      if (imagen && imagen.size > 3145728) {
+        Swal.fire({
+          title: "El tamaño del archivo excede el límite de 3MB",
+          text: "La imagen tiene que ser menos a 3mb",
+          icon: "error",
+        });
+      }
+      const imagenSubida = await subirImagenImgbb(imagen);
+      imagenesGuardadas.push(imagenSubida.data.display_url);
+    }
+
+    return imagenesGuardadas;
+  };
+
   return {
     obtenerTags,
     subirImagenesCuerpo,
     guardar,
+    guardarImagenesRegistro,
   };
 };
