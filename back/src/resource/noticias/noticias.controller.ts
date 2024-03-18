@@ -28,7 +28,7 @@ export class NoticiasController {
   }
 
   @Get()
-  @Auth(Role.Admin)
+  @Auth()
   async findAll() {
     return this.noticiasService.findAll({
       relations: ['tags', 'usuarioCreacion', 'usuarioModificacion'],

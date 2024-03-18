@@ -3,6 +3,7 @@ import { GoogleMaps } from "./Partials/googleMaps";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import { Link } from "react-router-dom";
 import API from "../api/apiNode";
+import { FooterTitle } from "./FooterTitle";
 
 const apiKeyGoogle = API.googleMap;
 
@@ -124,6 +125,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+      <FooterTitle />
     </>
   );
 };

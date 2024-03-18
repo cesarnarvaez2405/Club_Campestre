@@ -1,7 +1,6 @@
 import React from "react";
 import { BannerNosotros } from "../components/bannerNosotros";
 import { ContenidoElCLub } from "../components/contenidoElCLub";
-import { Footer } from "../../../components/Footer";
 
 export const ElClub = () => {
   return (
@@ -9,7 +8,6 @@ export const ElClub = () => {
       <div className=" w-full flex flex-col">
         <BannerNosotros titulo={"El Club"} componente={"elClub"} />
         <ContenidoElCLub />
-        <Footer />
       </div>
     </>
   );

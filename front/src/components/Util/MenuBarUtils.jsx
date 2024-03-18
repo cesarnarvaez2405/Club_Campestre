@@ -20,21 +20,12 @@ export const MenuBarUtils = () => {
     return null;
   }
 
-  const addImage = () => {
-    const url = window.prompt("URL");
-
-    if (url) {
-      editor.chain().focus().setImage({ src: url }).run();
-    }
-  };
-
   const guardarImagenes = async () => {
     const respuesta = await guardarImagenesRegistro(imagenes);
     if (respuesta) {
       respuesta.forEach((url, index) => {
         editor.chain().focus().setImage({ src: url }).run();
         if (index < respuesta.length - 1) {
-          // No agregar un salto de línea después de la última imagen
           editor.chain().insertContent("\n").run();
         }
       });

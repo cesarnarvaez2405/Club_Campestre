@@ -15,8 +15,6 @@ axios.interceptors.request.use((request) => {
   return request;
 });
 
-let response = [];
-
 /**
  * Modulo para realizar las peticiones http API
  * @module export - Functions
@@ -25,7 +23,7 @@ let response = [];
 export default {
   async login(body) {
     try {
-      response = await axios.post(
+      const response = await axios.post(
         `${API.node}campestre-api/v1/auth/login`,
         body
       );
@@ -37,8 +35,20 @@ export default {
 
   async usuario() {
     try {
-      response = await axios.get(
+      const response = await axios.get(
         `${API.node}campestre-api/v1/auth/perfil`,
+        configApi
+      );
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async getUsuarios() {
+    try {
+      const response = await axios.get(
+        `${API.node}campestre-api/v1/usuario`,
         configApi
       );
       return response.data;

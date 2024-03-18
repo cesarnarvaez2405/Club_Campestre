@@ -15,8 +15,10 @@ export class UsuarioService {
     return await this.usuarioRepository.save(usuario);
   }
 
-  findAll() {
-    return `This action returns all usuario`;
+  async findAll() {
+    return await this.usuarioRepository.find({
+      select: ['email', 'estaActivo', 'nombre', 'rol', 'rowId'],
+    });
   }
 
   findOne(id: number) {

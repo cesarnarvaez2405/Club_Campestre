@@ -12,6 +12,7 @@ import {
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
+import { Auth } from '../auth/decorators/auth.decorators';
 
 @Controller('usuario')
 export class UsuarioController {
@@ -23,8 +24,8 @@ export class UsuarioController {
   }
 
   @Get()
+  @Auth()
   findAll() {
-    throw new NotFoundException();
     return this.usuarioService.findAll();
   }
 

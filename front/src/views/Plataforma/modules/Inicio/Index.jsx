@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Dashboard } from "./modules/Dashboard";
 import { Noticias } from "./modules/Noticias";
+import { Usuarios } from "./modules/Usuarios";
+import { useAuthUtils } from "../../../../hooks/Utils/useAuthUtils";
 
 export const Inicio = () => {
+  const { cerrarSeccion } = useAuthUtils();
+
   const [tab, setTab] = useState(0);
   return (
     <>
@@ -49,10 +53,20 @@ export const Inicio = () => {
                   <a
                     onClick={() => setTab(3)}
                     className={` bg-opacity-30 flex items-center  py-1.5 px-4 rounded space-x-2 cursor-pointer   ${
-                      tab === 2 ? "bg-gray-500" : ""
+                      tab === 3 ? "bg-gray-500" : ""
                     } `}
                   >
                     <span>Perfil</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    onClick={cerrarSeccion}
+                    className={` bg-opacity-30 flex items-center  py-1.5 px-4 rounded space-x-2 cursor-pointer   ${
+                      tab === 4 ? "bg-gray-500" : ""
+                    } `}
+                  >
+                    <span>Cerrar Seccion</span>
                   </a>
                 </li>
               </ul>
@@ -61,7 +75,7 @@ export const Inicio = () => {
           <div className="flex-1 w-full">
             {tab === 0 && <Dashboard></Dashboard>}
             {tab === 1 && <Noticias></Noticias>}
-            {/* {tab === 2 && <Trayectoria></Trayectoria>} */}
+            {tab === 2 && <Usuarios></Usuarios>}
           </div>
         </div>
       </div>

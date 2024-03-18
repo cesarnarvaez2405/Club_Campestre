@@ -3,7 +3,6 @@ import { BannerCampestre } from "./components/bannerCampestre";
 import { BannerHotel } from "./components/bannerHotel";
 import { BannerSerSocio } from "../../components/BannerSerSocio";
 import { SeccionNoticias } from "./components/seccionNoticias";
-import { Footer } from "../../components/Footer";
 import { useNoticiasUtils } from "./hooks/useNoticiasUtils";
 import { getFormatDate } from "../../utils/timeFormat";
 
@@ -39,7 +38,6 @@ export const Home = () => {
           <BannerSerSocio />
         </div>
         <SeccionNoticias noticias={noticias} />
-        <Footer />
       </div>
     </>
   );

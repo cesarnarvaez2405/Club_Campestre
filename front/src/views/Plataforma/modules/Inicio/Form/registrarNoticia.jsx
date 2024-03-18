@@ -52,7 +52,6 @@ export const RegistrarNoticia = ({
       setContenido(cuerpo);
     }
     encontrarTags();
-    console.log(contenido);
   }, [contenido]);
 
   const handleChange = (texto) => {
@@ -80,7 +79,11 @@ export const RegistrarNoticia = ({
   });
 
   const extensions = [
-    Image,
+    Image.configure({
+      HTMLAttributes: {
+        class: "w-40",
+      },
+    }),
     CustomDocument,
     Color.configure({ types: [TextStyle.name, ListItem.name] }),
     TextStyle.configure({ types: [ListItem.name] }),
@@ -157,7 +160,7 @@ export const RegistrarNoticia = ({
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
-                1
+                2
               </span>
             </div>
 
@@ -189,7 +192,7 @@ export const RegistrarNoticia = ({
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
-                2
+                3
               </span>
             </div>
 
@@ -226,7 +229,7 @@ export const RegistrarNoticia = ({
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
-                3
+                4
               </span>
             </div>
 
@@ -267,7 +270,7 @@ export const RegistrarNoticia = ({
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
-                4
+                5
               </span>
             </div>
 
@@ -291,7 +294,7 @@ export const RegistrarNoticia = ({
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
-                5
+                6
               </span>
             </div>
 

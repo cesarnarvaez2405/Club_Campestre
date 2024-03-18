@@ -26,7 +26,7 @@ export const Login = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="bg-gradient-to-r from-red-700 to-amber-300 w-[100%] h-screen flex justify-center items-center animate-color-change-2x ">
           <div className="flex items-center justify-center">
-            <div className="bg-gray-900 border-[4px]  border-gray-900 shadow-2xl shadow-black rounded-2xl hover:shadow-lg transition-all duration-200">
+            <div className="bg-gray-900 border-[4px]  border-gray-900 shadow-2xl shadow-black rounded-2xl  transition-all duration-200">
               <div className="mx-auto flex items-center space-y-4 py-24 px-16 font-semibold text-gray-500 flex-col">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

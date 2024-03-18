@@ -4,6 +4,7 @@ import { AppRouter } from "./routes/appRouter";
 import { Menu } from "./components/Menu";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { Footer } from "./components/Footer";
 
 export const ClubCampestreApp = () => {
   return (
@@ -12,6 +13,7 @@ export const ClubCampestreApp = () => {
         <BrowserRouter>
           <Menu key="menu" />
           <AppRouter />
+          <Footer />
         </BrowserRouter>
       </Provider>
     </>
