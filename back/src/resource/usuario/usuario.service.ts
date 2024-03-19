@@ -3,15 +3,18 @@ import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { Repository } from 'typeorm';
 import { Usuario } from './entities/usuario.entity';
+import { SendEmailService } from '../send-email/send-email.service';
 
 @Injectable()
 export class UsuarioService {
   constructor(
     @Inject('USUARIO_REPOSITORY')
     private readonly usuarioRepository: Repository<Usuario>,
+    private readonly sendEmailService: SendEmailService,
   ) {}
   async create(createUsuarioDto: CreateUsuarioDto) {
     const usuario = this.usuarioRepository.create(createUsuarioDto);
+    await this.sendEmailService.sendUserConfirmation();
     return await this.usuarioRepository.save(usuario);
   }
 
