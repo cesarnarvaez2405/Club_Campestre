@@ -37,8 +37,7 @@ export class SendEmailService {
         to: email,
         from: 'cesar.teacher24@gmail.com',
         subject: 'Bienvenido a nuestra plataforma',
-        text: 'usuario creado',
-        // template: 'creacionUsuario',
+        template: 'creacionUsuario', //ruta a la plantilla
       })
       .then(() => {
         console.info(`email se envio correctamente`);
