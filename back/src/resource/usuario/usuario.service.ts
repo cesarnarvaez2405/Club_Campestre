@@ -14,7 +14,7 @@ export class UsuarioService {
   ) {}
   async create(createUsuarioDto: CreateUsuarioDto) {
     const usuario = this.usuarioRepository.create(createUsuarioDto);
-    await this.sendEmailService.sendUserConfirmation();
+    await this.sendEmailService.sendUserConfirmation(usuario);
     return await this.usuarioRepository.save(usuario);
   }
 
@@ -24,8 +24,14 @@ export class UsuarioService {
     });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} usuario`;
+  async findOne(rowId: number, options?: any): Promise<Usuario> {
+    const usuario = await this.usuarioRepository.findOne({
+      where: { rowId },
+    });
+    if (!usuario) {
+      throw new NotFoundException('No se encuentra el usuario');
+    }
+    return usuario;
   }
 
   async buscarPorEmail(email: string): Promise<Usuario> {
@@ -56,7 +62,8 @@ export class UsuarioService {
     return `This action updates a #${id} usuario`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} usuario`;
+  async remove(rowId: number): Promise<any> {
+    await this.findOne(rowId);
+    return await this.usuarioRepository.delete(rowId);
   }
 }

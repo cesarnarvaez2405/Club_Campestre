@@ -39,7 +39,7 @@ export class NoticiasService {
       ...options,
     });
     if (!noticia) {
-      throw new NotFoundException('No se encuentra el registro');
+      throw new NotFoundException('No se encuentra la noticia');
     }
 
     return noticia;

@@ -3,6 +3,7 @@ import { CreateSendEmailDto } from './dto/create-send-email.dto';
 import { UpdateSendEmailDto } from './dto/update-send-email.dto';
 import { MailerService } from '@nestjs-modules/mailer';
 import { join } from 'path';
+import { Usuario } from '../usuario/entities/usuario.entity';
 
 @Injectable()
 export class SendEmailService {
@@ -28,13 +29,16 @@ export class SendEmailService {
     return `This action removes a #${id} sendEmail`;
   }
 
-  async sendUserConfirmation(): Promise<Boolean> {
+  async sendUserConfirmation(usuario: Usuario): Promise<Boolean> {
+    const { email } = usuario;
+
     return await this.mailerService
       .sendMail({
-        to: 'desarrolladorerpsoftware8.itm@gmail.com',
+        to: email,
         from: 'cesar.teacher24@gmail.com',
         subject: 'Bienvenido a nuestra plataforma',
-        template: './templates/creacionUsuario/html.pug',
+        text: 'usuario creado',
+        // template: 'creacionUsuario',
       })
       .then(() => {
         console.info(`email se envio correctamente`);

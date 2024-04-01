@@ -35,6 +35,13 @@ import { SendEmailModule } from './resource/send-email/send-email.module';
           pass: process.env.MAIL_PASS,
         },
       },
+      // template: {
+      //   dir: __dirname + '/templates',
+      //   adapter: new PugAdapter(),
+      //   options: {
+      //     strict: true,
+      //   },
+      // },
     }),
     UsuarioModule,
     AuthModule,

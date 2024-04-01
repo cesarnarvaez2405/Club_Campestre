@@ -8,11 +8,14 @@ import {
   Delete,
   ForbiddenException,
   NotFoundException,
+  HttpCode,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { Auth } from '../auth/decorators/auth.decorators';
+import { Role } from '../common/enums/rol.enum';
 
 @Controller('usuario')
 export class UsuarioController {
@@ -39,8 +42,15 @@ export class UsuarioController {
     return this.usuarioService.update(+id, updateUsuarioDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.usuarioService.remove(+id);
+  @Delete(':rowId')
+  @Auth(Role.Admin)
+  @HttpCode(204)
+  remove(@Param('rowId') rowId: number) {
+    try {
+      this.usuarioService.remove(+rowId);
+      return null;
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 }

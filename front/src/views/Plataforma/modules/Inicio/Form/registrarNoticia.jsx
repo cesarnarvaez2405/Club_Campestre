@@ -59,19 +59,21 @@ export const RegistrarNoticia = ({
   };
 
   const guardarNoticia = async (event) => {
-    console.log(contenido);
-    const respuesta = await guardar(event);
-    if (respuesta) {
-      Swal.fire({
-        title: "El tamaño del archivo excede el límite de 3MB",
-        text: "La imagen tiene que ser menos a 3mb",
-        icon: "error",
-      });
-      reset();
-      setTags([]);
-    }
-    reset();
-    await obtenerNoticias();
+    console.log(event);
+    const html = editor.getHTML();
+    console.log(html);
+    // const respuesta = await guardar(event);
+    // if (respuesta) {
+    //   Swal.fire({
+    //     title: "El tamaño del archivo excede el límite de 3MB",
+    //     text: "La imagen tiene que ser menos a 3mb",
+    //     icon: "error",
+    //   });
+    //   reset();
+    //   setTags([]);
+    // }
+    // reset();
+    // await obtenerNoticias();
   };
 
   const CustomDocument = Document.extend({
@@ -113,7 +115,6 @@ export const RegistrarNoticia = ({
 
   const editor = useEditor({
     extensions,
-    content: "",
     onUpdate: ({ editor }) => {
       setContenido(editor.getHTML());
     },

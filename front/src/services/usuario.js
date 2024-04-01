@@ -1,6 +1,9 @@
 import axios from "axios";
 import API from "../api/apiNode";
-import { alertErrorResponse } from "../utils/alertResponseHttpUtils";
+import {
+  alertErrorResponse,
+  alertSuccessReponse,
+} from "../utils/alertResponseHttpUtils";
 
 const configApi = {
   headers: {
@@ -52,6 +55,31 @@ export default {
         configApi
       );
       return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async addUsuario(usuario) {
+    try {
+      const response = await axios.post(
+        `${API.node}campestre-api/v1/auth/register`,
+        usuario
+      );
+      alertSuccessReponse(response);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async deleteUsuario(usuarioId) {
+    try {
+      const response = await axios.delete(
+        `${API.node}campestre-api/v1/usuario/${usuarioId}`,
+        configApi
+      );
+      alertSuccessReponse(response);
     } catch (error) {
       alertErrorResponse(error);
     }

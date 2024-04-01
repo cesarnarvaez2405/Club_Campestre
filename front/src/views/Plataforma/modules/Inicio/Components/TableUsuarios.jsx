@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const TableUsuarios = ({ items, itemsPerPage }) => {
+export const TableUsuarios = ({ items, itemsPerPage, onDelete, onEdit }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -22,29 +22,44 @@ export const TableUsuarios = ({ items, itemsPerPage }) => {
     <>
       <div className="grid grid-cols-4 gap-4 mb-10 mt-10">
         {itemsToDisplay.map((item, index) => (
-          <div
-            key={index}
-            className=" p-3 bg-amber-100 flex flex-col font-AltoneNormal"
-          >
-            <span>
-              Nombre: <small>{item.nombre}</small>
+          <div key={index} className=" p-3 bg-amber-100 flex flex-col rounded">
+            <span className=" text-sm flex gap-2">
+              <p className=" font-semibold">Nombre:</p> {item.nombre}
             </span>
-            <span>
-              Email: <small>{item.email} </small>
+
+            <span className=" text-sm flex gap-2">
+              <p className=" font-semibold">Email:</p> {item.email}
             </span>
-            <span>
-              Rol: <small> {item.rol}</small>
+
+            <span className=" text-sm flex gap-2">
+              <p className=" font-semibold">Rol: </p> {item.rol}
             </span>
-            <span>
-              Estado:
-              <small
-                className={` bg-green-600 text-white ml-2 rounded-md px-2 py-1 ${
-                  item.estaActivo == false && "bg-red-600"
+            <span className="text-sm flex gap-2">
+              <p className=" font-semibold">Estado: </p>
+              <p
+                className={`text-green-600 ml-2 rounded-mdfont-semibold ${
+                  item.estaActivo == false && "text-red-600"
                 }`}
               >
-                {item.estaActivo ? "True" : "False"}
-              </small>
+                {item.estaActivo ? "Activo" : "Inactivo"}
+              </p>
             </span>
+            <div className=" pt-2">
+              <button
+                onClick={() => onDelete(item)}
+                className=" bg-red-600 px-2  rounded-md text-white  hover:bg-red-900 duration-150 ease-in-out"
+              >
+                Eliminar
+              </button>
+              <button
+                onClick={() => onEdit(item)}
+                className=" bg-yellow-600 px-2 mx-2 rounded-md text-white hover:bg-yellow-900 duration-150 ease-in-out"
+              >
+                <span className=" flex justify-center items-center">
+                  Editar
+                </span>
+              </button>
+            </div>
           </div>
         ))}
       </div>

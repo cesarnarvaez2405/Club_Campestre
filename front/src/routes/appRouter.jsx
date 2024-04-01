@@ -11,6 +11,8 @@ import { Spa } from "../views/Spa/Index";
 import { Login } from "../views/Plataforma/modules/Login/index";
 import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
 import { Inicio } from "../views/Plataforma/modules/Inicio/Index";
+import { SpinnerLoading } from "../components/SpinnerLoading";
+import { DotsLoading } from "../components/DotsLoading";
 
 export const AppRouter = () => {
   const { checkAuthToken, status } = useAuthUtils();
@@ -19,7 +21,23 @@ export const AppRouter = () => {
     checkAuthToken();
   }, []);
   if (status === "checking") {
-    return <h3>Cargando ...</h3>;
+    return (
+      <>
+        <div className=" h-screen w-full flex justify-center items-center bg-gray-400">
+          <div className=" flex flex-col justify-center items-center">
+            <img
+              src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
+              alt="Logo-club"
+              border="0"
+              className="h-48 bg-center object-contain"
+            ></img>
+            <div className=" flex gap-3">
+              <DotsLoading />
+            </div>
+          </div>
+        </div>
+      </>
+    );
   }
 
   return (
