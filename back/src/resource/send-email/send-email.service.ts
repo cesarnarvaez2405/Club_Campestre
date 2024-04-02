@@ -4,6 +4,7 @@ import { UpdateSendEmailDto } from './dto/update-send-email.dto';
 import { MailerService } from '@nestjs-modules/mailer';
 import { join } from 'path';
 import { Usuario } from '../usuario/entities/usuario.entity';
+import { TercerosInteresado } from '../terceros-interesados/entities/terceros-interesado.entity';
 
 @Injectable()
 export class SendEmailService {
@@ -30,14 +31,41 @@ export class SendEmailService {
   }
 
   async sendUserConfirmation(usuario: Usuario): Promise<Boolean> {
-    const { email } = usuario;
+    const { email, nombre } = usuario;
 
     return await this.mailerService
       .sendMail({
         to: email,
         from: 'cesar.teacher24@gmail.com',
         subject: 'Bienvenido a nuestra plataforma',
-        template: 'creacionUsuario', //ruta a la plantilla
+        template: 'creacionUsuario',
+        context: {
+          email,
+          nombre,
+        },
+      })
+      .then(() => {
+        console.info(`email se envio correctamente`);
+        return true;
+      })
+      .catch((error) => {
+        console.error('Email-No-enviado****-=====>>>');
+        console.error(error);
+        return false;
+      });
+  }
+
+  async sendTerceroInteresadoNotificacion(
+    terceroInteresado: TercerosInteresado,
+  ): Promise<Boolean> {
+    const { nombre, email, telefono, notas } = terceroInteresado;
+
+    return await this.mailerService
+      .sendMail({
+        to: 'desarrolladorerpsoftware8.itm@gmail.com',
+        from: 'cesar.teacher24@gmail.com',
+        subject: `${nombre}, quiere contactarse contigo para mas informacion - Club Campestre Web`,
+        template: 'creacionUsuario',
       })
       .then(() => {
         console.info(`email se envio correctamente`);

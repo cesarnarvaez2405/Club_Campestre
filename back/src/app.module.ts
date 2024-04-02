@@ -11,6 +11,7 @@ import { NoticiasModule } from './resource/noticias/noticias.module';
 import { DocsModule } from './resource/docs/docs.module';
 import { join } from 'path';
 import { SendEmailModule } from './resource/send-email/send-email.module';
+import { TercerosInteresadosModule } from './resource/terceros-interesados/terceros-interesados.module';
 
 @Module({
   imports: [
@@ -49,6 +50,7 @@ import { SendEmailModule } from './resource/send-email/send-email.module';
     NoticiasModule,
     DocsModule,
     SendEmailModule,
+    TercerosInteresadosModule,
   ],
   controllers: [],
   providers: [],
