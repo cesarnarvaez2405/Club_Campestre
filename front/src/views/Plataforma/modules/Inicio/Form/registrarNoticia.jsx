@@ -26,6 +26,8 @@ export const RegistrarNoticia = ({
   noticiaAEditar,
   estaEditando,
   tags,
+  setTab,
+  portadaEditar,
 }) => {
   const { guardar } = useRegistrarNoticia();
 
@@ -37,7 +39,6 @@ export const RegistrarNoticia = ({
     formState: { errors },
     reset,
     setValue,
-    setTab,
   } = useForm();
 
   const CustomDocument = Document.extend({
@@ -84,10 +85,10 @@ export const RegistrarNoticia = ({
 
   useEffect(() => {
     if (estaEditando) {
-      const { titulo, sumario, portada } = noticiaAEditar;
+      const { titulo, sumario } = noticiaAEditar;
       setValue("titulo", titulo);
       setValue("sumario", sumario);
-      setValue("portada", portada);
+      setValue("portada", portadaEditar);
       const tagsSelect = tags
         .filter((tag) =>
           noticiaAEditar.tags.some(
@@ -100,6 +101,11 @@ export const RegistrarNoticia = ({
         }));
       setValue("tags", tagsSelect);
     }
+
+    return () => {
+      reset();
+      setContenido("");
+    };
   }, []);
 
   const guardarNoticia = async (event) => {
@@ -122,7 +128,7 @@ export const RegistrarNoticia = ({
   return (
     <>
       <form onSubmit={handleSubmit(guardarNoticia)}>
-        <div className="flex flex-col items-start justify-start h-full gap-10 px-20 py-5 bg-white  2xl:px-56">
+        <div className="flex flex-col items-start justify-start h-full gap-10 px-20 py-5 bg-white 2xl:px-56">
           <h2 className="pt-3 text-2xl font-semibold ">Crea tu Noticia</h2>
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
@@ -132,9 +138,9 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal flex">
+              <h3 className="flex text-xl font-AltoneNormal">
                 TÍtulo <Dot />
-                <span className="pl-3 text-sm  font-AltoneNormal">
+                <span className="pl-3 text-sm font-AltoneNormal">
                   "Escriba tu titulo mas creativo"
                 </span>
               </h3>
@@ -165,9 +171,9 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal flex">
+              <h3 className="flex text-xl font-AltoneNormal">
                 Sumario <Dot />
-                <span className="pl-3 text-sm  font-AltoneNormal">
+                <span className="pl-3 text-sm font-AltoneNormal">
                   "Destaca tu noticia en el sumario"
                 </span>
               </h3>
@@ -197,10 +203,10 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal flex">
+              <h3 className="flex text-xl font-AltoneNormal">
                 Portada
                 <Dot />
-                <span className="pl-3 text-sm  font-AltoneNormal">
+                <span className="pl-3 text-sm font-AltoneNormal">
                   "Selecciona la mejor imagen como portada"
                 </span>
               </h3>
@@ -234,10 +240,10 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal flex">
+              <h3 className="flex text-xl font-AltoneNormal">
                 Tags
                 <Dot />
-                <span className="pl-3 text-sm  font-AltoneNormal">
+                <span className="pl-3 text-sm font-AltoneNormal">
                   "Escoja los tags adecuados a la noticia"
                 </span>
               </h3>
@@ -275,9 +281,9 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <h3 className="text-xl  font-AltoneNormal flex">
+              <h3 className="flex text-xl font-AltoneNormal">
                 Cuerpo <Dot />
-                <span className="pl-3 text-sm  font-AltoneNormal">
+                <span className="pl-3 text-sm font-AltoneNormal">
                   "Diseña la Noticia a tu gusto"
                 </span>
               </h3>

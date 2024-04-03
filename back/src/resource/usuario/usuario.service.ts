@@ -58,8 +58,10 @@ export class UsuarioService {
     return usuario;
   }
 
-  update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return `This action updates a #${id} usuario`;
+  async update(rowId: number, actualizar: UpdateUsuarioDto) {
+    const usuario = await this.findOne(rowId);
+    this.usuarioRepository.merge(usuario, actualizar);
+    return await this.usuarioRepository.save(usuario);
   }
 
   async remove(rowId: number): Promise<any> {

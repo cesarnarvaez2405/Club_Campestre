@@ -18,9 +18,14 @@ export const useUsuarios = () => {
     await usuarioService.deleteUsuario(usuarioId);
   };
 
+  const actualizarUsuario = async (usuarioId, body) => {
+    await usuarioService.updateUsuario(usuarioId, body);
+  };
+
   return {
     obtenerUsuarios,
     registrarUsuario,
     eliminarUsuario,
+    actualizarUsuario,
   };
 };

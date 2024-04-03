@@ -73,6 +73,20 @@ export default {
     }
   },
 
+  async updateUsuario(usuarioId, body) {
+    try {
+      const response = await axios.patch(
+        `${API.node}campestre-api/v1/usuario/${usuarioId}`,
+        body,
+        configApi
+      );
+      alertSuccessReponse(response);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
   async deleteUsuario(usuarioId) {
     try {
       const response = await axios.delete(

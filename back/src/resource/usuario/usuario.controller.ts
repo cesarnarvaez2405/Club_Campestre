@@ -37,9 +37,14 @@ export class UsuarioController {
     return this.usuarioService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
-    return this.usuarioService.update(+id, updateUsuarioDto);
+  @Patch(':rowId')
+  @Auth(Role.Admin)
+  @HttpCode(204)
+  update(
+    @Param('rowId') rowId: string,
+    @Body() updateUsuarioDto: UpdateUsuarioDto,
+  ) {
+    return this.usuarioService.update(parseInt(rowId), updateUsuarioDto);
   }
 
   @Delete(':rowId')

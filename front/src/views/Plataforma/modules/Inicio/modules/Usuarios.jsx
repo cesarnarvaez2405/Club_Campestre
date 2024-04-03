@@ -9,7 +9,12 @@ import Swal from "sweetalert2";
 import { Dot } from "../../../../../components/Util/Dot";
 
 export const Usuarios = () => {
-  const { obtenerUsuarios, registrarUsuario, eliminarUsuario } = useUsuarios();
+  const {
+    obtenerUsuarios,
+    registrarUsuario,
+    eliminarUsuario,
+    actualizarUsuario,
+  } = useUsuarios();
 
   const {
     register,
@@ -61,8 +66,9 @@ export const Usuarios = () => {
     setAbrirModal(true);
   };
 
-  const onEdit = (event) => {
-    console.log(event);
+  const onEdit = async (event) => {
+    await actualizarUsuario(usuarioIdEditar, event);
+    limpiar();
   };
 
   const handleDelete = async (usuario) => {
@@ -97,17 +103,17 @@ export const Usuarios = () => {
 
   return (
     <>
-      <div className=" w-full h-full ">
+      <div className="w-full h-full ">
         <div className=" h-[5rem] w-full flex justify-center items-center ">
-          <h2 className=" text-3xl font-AltoneBold text-white">
+          <h2 className="text-3xl text-white font-AltoneBold">
             Gestion de Usuarios
           </h2>
         </div>
 
-        <div className=" w-full  px-7 mb-10 ">
-          <div className=" w-full h-full bg-white py-5 2xl:px-56">
-            <div className=" flex justify-between items-center">
-              <h3 className=" font-AltoneNormal text-xl">
+        <div className="w-full mb-10 px-7">
+          <div className="w-full h-full py-5 bg-white 2xl:px-56">
+            <div className="flex items-center justify-between ">
+              <h3 className="text-xl font-AltoneNormal">
                 Listados de usuarios
               </h3>
               <button
@@ -132,16 +138,16 @@ export const Usuarios = () => {
               <div
                 tabIndex="-1"
                 aria-hidden="true"
-                className=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0  max-h-full bg-white shadow dark:bg-gray-700 dark:bg-opacity-60"
+                className="fixed top-0 left-0 right-0 z-50 items-center justify-center w-full max-h-full overflow-x-hidden overflow-y-auto bg-gray-700 shadow md:inset-0 bg-opacity-60"
               >
-                <div className="relative p-4 w-full max-w-2xl max-h-full left-1/3 top-1/4 ">
+                <div className="relative w-full max-w-2xl max-h-full p-4 left-1/3 top-1/4 ">
                   <form
                     onSubmit={handleSubmit(
                       quiereEditar ? onEdit : confirmarUsuario
                     )}
                   >
                     <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                      <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                      <div className="flex items-center justify-between p-4 border-b rounded-t md:p-5 dark:border-gray-600">
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                           {!quiereEditar && <p>Registrar usuario</p>}
                           {quiereEditar && <p>Editar usuario</p>}
@@ -149,7 +155,7 @@ export const Usuarios = () => {
                         <button
                           type="button"
                           onClick={cerrarModal}
-                          className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto dark:hover:bg-gray-600 dark:hover:text-white"
                           data-modal-hide="default-modal"
                         >
                           <svg
@@ -171,7 +177,7 @@ export const Usuarios = () => {
                         </button>
                       </div>
 
-                      <div className="p-4 md:p-5 space-y-4">
+                      <div className="p-4 space-y-4 md:p-5">
                         <p className="text-base leading-relaxed text-black dark:text-white">
                           Completa todos los campos para poder
                           {!quiereEditar && <span> registrar</span>}
@@ -180,16 +186,16 @@ export const Usuarios = () => {
                         </p>
 
                         {!quiereEditar && (
-                          <p className=" text-sm text-white">
+                          <p className="text-sm text-black dark:text-white ">
                             <strong>Nota: </strong>Los usuario que registraras
                             solamente podra crear noticias pero no puede crar
                             otros usuario
                           </p>
                         )}
 
-                        <div className=" grid grid-cols-2 gap-2">
-                          <div className=" flex flex-col flex-wrap">
-                            <small className=" text-white flex">
+                        <div className="grid grid-cols-2 gap-2 ">
+                          <div className="flex flex-col flex-wrap ">
+                            <small className="flex text-black dark:text-white ">
                               Nombre <Dot />
                             </small>
                             <input
@@ -209,8 +215,8 @@ export const Usuarios = () => {
                               <AlertError> {errors.nombre.message} </AlertError>
                             )}
                           </div>
-                          <div className=" flex flex-col">
-                            <small className=" text-white flex">
+                          <div className="flex flex-col ">
+                            <small className="flex text-black dark:text-white ">
                               Email
                               <Dot />
                             </small>
@@ -233,8 +239,8 @@ export const Usuarios = () => {
                           </div>
 
                           {!quiereEditar && (
-                            <div className=" flex flex-col">
-                              <small className=" text-white flex">
+                            <div className="flex flex-col ">
+                              <small className="flex text-black dark:text-white ">
                                 Password
                                 <Dot />
                               </small>
@@ -260,8 +266,8 @@ export const Usuarios = () => {
                           )}
 
                           {!quiereEditar && (
-                            <div className=" flex flex-col">
-                              <small className=" text-white flex">
+                            <div className="flex flex-col ">
+                              <small className="flex text-black dark:text-white ">
                                 Confirmacion password
                                 <Dot />
                               </small>
@@ -288,8 +294,8 @@ export const Usuarios = () => {
                         </div>
 
                         {passwordsEquals && (
-                          <div className=" bg-red-600 bg-opacity-65 px-3 py-1 rounded-lg">
-                            <small className=" text-white">
+                          <div className="px-3 py-1 bg-red-600 rounded-lg bg-opacity-65">
+                            <small className="text-white ">
                               la <strong>contraseña de confirmación </strong>
                               debe ser idéntica a la primera contraseña que
                               ingreses. Sin coincidencia, no podrás registrar al
@@ -298,9 +304,9 @@ export const Usuarios = () => {
                           </div>
                         )}
                       </div>
-                      <div className="flex flex-row items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                      <div className="flex flex-row items-center p-4 border-t border-gray-200 rounded-b md:p-5 dark:border-gray-600">
                         <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
-                          <div className=" flex flex-row gap-3">
+                          <div className="flex flex-row gap-3 ">
                             {!estaGuardando && !quiereEditar && (
                               <p>Registrar</p>
                             )}

@@ -15,6 +15,7 @@ export const Noticias = () => {
   const [estaEditando, setEstaEditando] = useState(false);
   const [contenido, setContenido] = useState("");
   const [tags, setTags] = useState([]);
+  const [portadaEditar, setPortadaEditar] = useState();
 
   async function encontrarNoticias() {
     const noticias = await obtenerNoticias();
@@ -30,10 +31,20 @@ export const Noticias = () => {
     setTags(tagsEncontrados);
   }
 
+  const getFileUrl = async (url, nombre) => {
+    const response = await fetch(url);
+    const data = await response.blob();
+    return new File([data], nombre, {
+      type: response.headers.get("content-type"),
+    });
+  };
+
   const editar = async (item) => {
     setNoticiaAEditar(item);
     setEstaEditando(true);
     setContenido(item.cuerpo);
+    const portada = await getFileUrl(item.portada, "portadaImagen");
+    setPortadaEditar(portada);
     setTab(1);
   };
 
@@ -43,15 +54,15 @@ export const Noticias = () => {
   }, []);
   return (
     <>
-      <div className=" w-full h-full ">
+      <div className="w-full h-full ">
         <div className=" h-[5rem] w-full flex justify-center items-center ">
-          <h2 className=" text-3xl font-AltoneBold text-white">
+          <h2 className="text-3xl text-white font-AltoneBold">
             Gestion de Noticias
           </h2>
         </div>
         <div className=" w-full h-[3rem]  px-7">
-          <div className=" w-full h-full bg-white rounded-2xl shadow-lg ">
-            <div className=" h-full grid grid-cols-2">
+          <div className="w-full h-full bg-white shadow-lg rounded-2xl">
+            <div className="grid h-full grid-cols-2 ">
               <div
                 className={` flex justify-center items-center border-r-2 hover:border-b-2 rounded-bl-2xl border-blue-900 ${
                   tab === 0 && "border-blue-900 rounded-bl-2xl border-b-2 "
@@ -60,8 +71,9 @@ export const Noticias = () => {
                 <button
                   onClick={() => {
                     setTab(0);
+                    setEstaEditando(false);
                   }}
-                  className=" w-full h-full font-AltoneNormal ease-in-out duration-200 hover:text-gray-500"
+                  className="w-full h-full duration-200 ease-in-out font-AltoneNormal hover:text-gray-500"
                 >
                   <span>Historial Noticias</span>
                 </button>
@@ -72,9 +84,10 @@ export const Noticias = () => {
                 }`}
               >
                 <button
-                  className=" w-full h-full font-AltoneNormal ease-in-out duration-200 hover:text-gray-500 "
+                  className="w-full h-full duration-200 ease-in-out font-AltoneNormal hover:text-gray-500"
                   onClick={() => {
                     setTab(1);
+                    setEstaEditando(false);
                   }}
                 >
                   <span className=" font-AltoneNormal">Crea tu noticia</span>
@@ -83,8 +96,8 @@ export const Noticias = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full  px-7 pt-5 mb-10 ">
-          <div className=" w-full h-full bg-white">
+        <div className="w-full pt-5 mb-10 px-7">
+          <div className="w-full h-full bg-white ">
             {tab === 0 && (
               <HistorialNoticias
                 obtenerNoticias={encontrarNoticias}
@@ -103,6 +116,7 @@ export const Noticias = () => {
                 setContenido={setContenido}
                 tags={tags}
                 setTab={setTab}
+                portadaEditar={portadaEditar}
               ></RegistrarNoticia>
             )}
           </div>
