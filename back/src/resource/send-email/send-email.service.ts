@@ -62,10 +62,16 @@ export class SendEmailService {
 
     return await this.mailerService
       .sendMail({
-        to: 'desarrolladorerpsoftware8.itm@gmail.com',
-        from: 'cesar.teacher24@gmail.com',
+        to: 'clubcampestredeneiva1@gmail.com',
+        from: 'no.reply@clubcampestre.com',
         subject: `${nombre}, quiere contactarse contigo para mas informacion - Club Campestre Web`,
-        template: 'creacionUsuario',
+        template: 'notificacionTerceroInteresado',
+        context: {
+          email,
+          nombre,
+          telefono,
+          notas,
+        },
       })
       .then(() => {
         console.info(`email se envio correctamente`);

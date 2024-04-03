@@ -49,7 +49,7 @@ export const Inicio = () => {
                     <span>Usuarios</span>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     onClick={() => setTab(3)}
                     className={` bg-opacity-30 flex items-center  py-1.5 px-4 rounded space-x-2 cursor-pointer   ${
@@ -58,7 +58,7 @@ export const Inicio = () => {
                   >
                     <span>Perfil</span>
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     onClick={cerrarSeccion}

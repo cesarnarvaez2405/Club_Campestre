@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, set } from "react-hook-form";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
@@ -20,13 +20,14 @@ import { MenuBarUtils } from "../../../../../components/Util/MenuBarUtils";
 import { Dot } from "../../../../../components/Util/Dot";
 
 export const RegistrarNoticia = ({
+  setContenido,
+  contenido,
   obtenerNoticias,
-  noticia,
+  noticiaAEditar,
   estaEditando,
+  tags,
 }) => {
-  const [tags, setTags] = useState([]);
-  const { obtenerTags, guardar } = useRegistrarNoticia();
-  const [contenido, setContenido] = useState("");
+  const { guardar } = useRegistrarNoticia();
 
   const animatedComponents = makeAnimated();
   const {
@@ -36,45 +37,8 @@ export const RegistrarNoticia = ({
     formState: { errors },
     reset,
     setValue,
+    setTab,
   } = useForm();
-
-  useEffect(() => {
-    async function encontrarTags() {
-      const tagsEncontrados = await obtenerTags();
-      setTags(tagsEncontrados);
-    }
-    if (estaEditando) {
-      const { titulo, cuerpo, portada } = noticia;
-      const tagsEditar = noticia.tags;
-      setValue("titulo", titulo);
-      setValue("portada", portada);
-      setValue("tags", tags);
-      setContenido(cuerpo);
-    }
-    encontrarTags();
-  }, [contenido]);
-
-  const handleChange = (texto) => {
-    setContenido(texto);
-  };
-
-  const guardarNoticia = async (event) => {
-    console.log(event);
-    const html = editor.getHTML();
-    console.log(html);
-    // const respuesta = await guardar(event);
-    // if (respuesta) {
-    //   Swal.fire({
-    //     title: "El tamaño del archivo excede el límite de 3MB",
-    //     text: "La imagen tiene que ser menos a 3mb",
-    //     icon: "error",
-    //   });
-    //   reset();
-    //   setTags([]);
-    // }
-    // reset();
-    // await obtenerNoticias();
-  };
 
   const CustomDocument = Document.extend({
     content: "heading block*",
@@ -115,10 +79,45 @@ export const RegistrarNoticia = ({
 
   const editor = useEditor({
     extensions,
-    onUpdate: ({ editor }) => {
-      setContenido(editor.getHTML());
-    },
+    content: contenido,
   });
+
+  useEffect(() => {
+    if (estaEditando) {
+      const { titulo, sumario, portada } = noticiaAEditar;
+      setValue("titulo", titulo);
+      setValue("sumario", sumario);
+      setValue("portada", portada);
+      const tagsSelect = tags
+        .filter((tag) =>
+          noticiaAEditar.tags.some(
+            (tagSeleccionado) => tagSeleccionado.rowId === tag.rowId
+          )
+        )
+        .map((tag) => ({
+          value: tag.rowId,
+          label: tag.nombre,
+        }));
+      setValue("tags", tagsSelect);
+    }
+  }, []);
+
+  const guardarNoticia = async (event) => {
+    event.cuerpo = contenido;
+    const respuesta = await guardar(event);
+    if (respuesta) {
+      Swal.fire({
+        title: "El tamaño del archivo excede el límite de 3MB",
+        text: "La imagen tiene que ser menos a 3mb",
+        icon: "error",
+      });
+      reset();
+    }
+    reset();
+    await setContenido("");
+    await setTab(0);
+    await obtenerNoticias();
+  };
 
   return (
     <>
@@ -288,6 +287,10 @@ export const RegistrarNoticia = ({
                   extensions={extensions}
                   slotBefore={<MenuBarUtils />}
                   editor={editor}
+                  content={contenido}
+                  onUpdate={({ editor }) => {
+                    setContenido(editor.getHTML());
+                  }}
                 ></EditorProvider>
               </div>
             </div>
