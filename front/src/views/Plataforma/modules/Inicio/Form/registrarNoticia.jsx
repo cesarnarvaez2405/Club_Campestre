@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm, Controller, set } from "react-hook-form";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import { TrashIcon } from "@heroicons/react/16/solid";
 
 import { EditorProvider, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
@@ -18,6 +19,7 @@ import { AlertError } from "../../../../../components/Util/alertError";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
 import { MenuBarUtils } from "../../../../../components/Util/MenuBarUtils";
 import { Dot } from "../../../../../components/Util/Dot";
+import { SpinnerLoading } from "../../../../../components/SpinnerLoading";
 
 export const RegistrarNoticia = ({
   setContenido,
@@ -29,7 +31,11 @@ export const RegistrarNoticia = ({
   setTab,
   portadaEditar,
 }) => {
-  const { guardar } = useRegistrarNoticia();
+  const [imagenActual, setImagenActual] = useState(null);
+  const [noticiaId, setNoticiaId] = useState(null);
+  const [estaGuardando, setEstaGuardando] = useState(false);
+
+  const { guardar, actualizar } = useRegistrarNoticia();
 
   const animatedComponents = makeAnimated();
   const {
@@ -85,10 +91,12 @@ export const RegistrarNoticia = ({
 
   useEffect(() => {
     if (estaEditando) {
-      const { titulo, sumario } = noticiaAEditar;
+      const { titulo, sumario, rowId } = noticiaAEditar;
       setValue("titulo", titulo);
       setValue("sumario", sumario);
-      setValue("portada", portadaEditar);
+      setImagenActual(portadaEditar);
+      setNoticiaId(rowId);
+
       const tagsSelect = tags
         .filter((tag) =>
           noticiaAEditar.tags.some(
@@ -105,10 +113,13 @@ export const RegistrarNoticia = ({
     return () => {
       reset();
       setContenido("");
+      setImagenActual(null);
+      setEstaGuardando(false);
     };
   }, []);
 
   const guardarNoticia = async (event) => {
+    setEstaGuardando(true);
     event.cuerpo = contenido;
     const respuesta = await guardar(event);
     if (respuesta) {
@@ -117,8 +128,23 @@ export const RegistrarNoticia = ({
         text: "La imagen tiene que ser menos a 3mb",
         icon: "error",
       });
+      setEstaGuardando(false);
       reset();
     }
+    reset();
+
+    await setContenido("");
+    await setTab(0);
+    await obtenerNoticias();
+  };
+
+  const editarNoticia = async (event) => {
+    setEstaGuardando(true);
+    event.cuerpo = contenido;
+    if (imagenActual) {
+      delete event.portada;
+    }
+    await actualizar(event, noticiaId);
     reset();
     await setContenido("");
     await setTab(0);
@@ -127,9 +153,13 @@ export const RegistrarNoticia = ({
 
   return (
     <>
-      <form onSubmit={handleSubmit(guardarNoticia)}>
+      <form
+        onSubmit={handleSubmit(estaEditando ? editarNoticia : guardarNoticia)}
+      >
         <div className="flex flex-col items-start justify-start h-full gap-10 px-20 py-5 bg-white 2xl:px-56">
-          <h2 className="pt-3 text-2xl font-semibold ">Crea tu Noticia</h2>
+          <h2 className="pt-3 text-2xl font-semibold ">
+            {estaEditando ? "Edita la noticia" : "Crea tu Noticia"}
+          </h2>
           <div className="flex flex-row gap-5">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
@@ -210,23 +240,42 @@ export const RegistrarNoticia = ({
                   "Selecciona la mejor imagen como portada"
                 </span>
               </h3>
-              <div className="">
-                <input
-                  type="file"
-                  name="portada"
-                  id="file-input"
-                  accept=".png, .jpeg, .jpg"
-                  maxLength="3145728"
-                  {...register("portada", {
-                    required: "La imagen es obligatoria",
-                  })}
-                  className="block w-[100%] border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600
+              <div className=" flex">
+                {imagenActual && (
+                  <div className="flex justify-center items-center gap-4">
+                    <img
+                      src={URL.createObjectURL(imagenActual)}
+                      alt="Imagen actual"
+                      className=" w-24"
+                    />
+                    <div
+                      onClick={() => setImagenActual(null)}
+                      className=" cursor-pointer"
+                    >
+                      <TrashIcon className=" w-5 h-5" fill="#AB0A0A" />
+                    </div>
+                  </div>
+                )}
+                {!imagenActual && (
+                  <div className="">
+                    <input
+                      type="file"
+                      name="portada"
+                      id="file-input"
+                      accept=".png, .jpeg, .jpg"
+                      maxLength="3145728"
+                      {...register("portada", {
+                        required: "La imagen es obligatoria",
+                      })}
+                      className="block w-[100%] border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600
     file:bg-gray-50 file:border-0 file:me-4
     file:py-3 file:px-4
     dark:file:bg-gray-700 dark:file:text-gray-400"
-                />
-                {errors.portada && (
-                  <AlertError> {errors.portada.message} </AlertError>
+                    />
+                    {errors.portada && (
+                      <AlertError> {errors.portada.message} </AlertError>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
@@ -309,8 +358,9 @@ export const RegistrarNoticia = ({
             </div>
 
             <div className="flex flex-col items-start justify-center ">
-              <button className="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-[#1a195f] hover:bg-white hover:text-[#1a195f] focus:text-[#1a195f] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200">
-                Guardar
+              <button className=" flex justify-center items-center gap-5 py-2 px-6 rounded-l-xl rounded-t-xl bg-[#1a195f] hover:bg-slate-600 hover:text-white focus:text-[#1a195f] focus:bg-gray-600 text-gray-50 font-bold leading-loose transition duration-200">
+                {estaEditando ? "Actualizar" : "Guardar"}
+                {estaGuardando && <SpinnerLoading />}
               </button>
             </div>
           </div>

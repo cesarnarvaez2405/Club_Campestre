@@ -38,6 +38,23 @@ export const useRegistrarNoticia = () => {
     await noticiasService.addNoticia(noticiaACrear);
   };
 
+  const actualizar = async (noticiaAEditar, noticiaId) => {
+    const tagsIds = noticiaAEditar.tags.map((tag) => tag.value);
+    noticiaAEditar.tagsIds = tagsIds;
+
+    delete noticiaAEditar.tags;
+
+    if (noticiaAEditar.portada) {
+      const file = noticiaAEditar.portada[0];
+      if (file && file.size > 3145728) {
+        return "El tamaño del archivo excede el límite de 3MB";
+      }
+      const imagen = await subirImagenImgbb(file);
+      noticiaAEditar.portada = imagen.data.display_url;
+    }
+    await noticiasService.actualizar(noticiaId, noticiaAEditar);
+  };
+
   const guardarImagenesRegistro = async (imagenes) => {
     const imagenesGuardadas = [];
     for (const imagen of imagenes) {
@@ -60,5 +77,6 @@ export const useRegistrarNoticia = () => {
     subirImagenesCuerpo,
     guardar,
     guardarImagenesRegistro,
+    actualizar,
   };
 };

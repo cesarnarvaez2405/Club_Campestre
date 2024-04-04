@@ -71,6 +71,20 @@ export default {
     }
   },
 
+  async actualizar(rowId, body) {
+    try {
+      response = await axios.patch(
+        `${API.node}campestre-api/v1/noticias/${rowId}`,
+        body,
+        configApi
+      );
+      alertSuccessReponse(response);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
   async eliminar(id) {
     try {
       response = await axios.delete(

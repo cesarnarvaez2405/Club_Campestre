@@ -67,6 +67,7 @@ export class NoticiasController {
 
   @Patch(':rowId')
   @Auth(Role.Admin)
+  @HttpCode(204)
   async update(
     @Param('rowId') rowId: number,
     @Body() updateNoticiaDto: UpdateNoticiaDto,

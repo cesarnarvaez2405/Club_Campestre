@@ -22,7 +22,7 @@ export class NoticiasService {
       usuarioModificacion: {
         rowId: createNoticiaDto.usuarioModificacionId,
       } as Usuario,
-      tags: tags,
+      tags,
     });
     return await this.noticiaRepository.save(noticia);
   }
