@@ -20,6 +20,9 @@ export const SeccionNoticias = ({ noticias }) => {
                 <span className="font-semibold text-white ">
                   {noticia.titulo}
                 </span>
+                <div className=" my-3 text-sm text-white">
+                  <p>{noticia.sumario}</p>
+                </div>
               </div>
               <div className="absolute top-0 right-0 px-2 py-1  bg-amber-300">
                 <span className="font-semibold ">{noticia.fechaCreacion}</span>

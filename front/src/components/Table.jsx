@@ -25,7 +25,9 @@ export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
         {itemsToDisplay.map((item, index) => (
           <div key={index} className="border p-4">
             <h3 className=" font-semibold text-base">{item.titulo}</h3>
-            <span>{item.sumario} </span>
+            <div className=" mt-3 text-sm">
+              <span>{item.sumario} </span>
+            </div>
             <div className=" mt-2 grid grid-cols-3">
               {item.tags.map((tag, index) => (
                 <div key={index} className=" my-4">
@@ -33,7 +35,7 @@ export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
                     key={index}
                     className=" text-sm bg-slate-200 px-2 py-1 rounded-md"
                   >
-                    {tag.prefijoTag}
+                    {tag.nombre}
                   </span>
                 </div>
               ))}
