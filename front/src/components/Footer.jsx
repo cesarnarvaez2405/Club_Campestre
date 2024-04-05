@@ -36,10 +36,20 @@ export const Footer = () => {
               Corporacion Club Campestre de Neiva
             </span>
             <span className="text-white text-wrap font-AltoneNormal">
-              Telefonos:
-              <span className="pl-2 font-sans ">
-                3175021927 - 3157829360 - 3155661284
-              </span>
+              Comunicaciones:
+              <span className="pl-2 font-sans ">+57 31750219274</span>
+            </span>
+            <span className="text-white text-wrap font-AltoneNormal">
+              Comercial:
+              <span className="pl-2 font-sans ">+57 3152340525</span>
+            </span>
+            <span className="text-white text-wrap font-AltoneNormal">
+              Recepción:
+              <span className="pl-2 font-sans ">+57 3155661284</span>
+            </span>
+            <span className="text-white text-wrap font-AltoneNormal">
+              Eventos:
+              <span className="pl-2 font-sans ">+57 3164449895</span>
             </span>
             <span className="text-white text-wrap font-AltoneNormal">
               Email: comunicaciones@clubcampestreneiva.com
