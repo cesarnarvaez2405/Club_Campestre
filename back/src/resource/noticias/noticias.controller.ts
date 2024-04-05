@@ -56,10 +56,11 @@ export class NoticiasController {
   }
 
   @Get(':rowId')
-  @Auth(Role.Admin)
   async findOne(@Param('rowId') rowId: number) {
     try {
-      return this.noticiasService.findOne(+rowId);
+      return this.noticiasService.findOne(+rowId, {
+        relations: ['tags', 'usuarioCreacion'],
+      });
     } catch (error) {
       throw new InternalServerErrorException(error);
     }

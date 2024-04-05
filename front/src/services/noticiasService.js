@@ -39,6 +39,18 @@ export default {
     }
   },
 
+  async getNoticia(noticiaId) {
+    try {
+      response = await axios.get(
+        `${API.node}campestre-api/v1/noticias/${noticiaId}`,
+        configApi
+      );
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
   async buscarNoticiasPersonalizado(parametros) {
     try {
       const url = `${API.node}campestre-api/v1/noticias/buscar-personalizado`;

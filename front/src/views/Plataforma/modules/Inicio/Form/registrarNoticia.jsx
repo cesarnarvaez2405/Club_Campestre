@@ -54,7 +54,7 @@ export const RegistrarNoticia = ({
   const extensions = [
     Image.configure({
       HTMLAttributes: {
-        class: "w-40",
+        class: "max-w-full h-auto",
       },
     }),
     CustomDocument,
@@ -156,7 +156,7 @@ export const RegistrarNoticia = ({
       <form
         onSubmit={handleSubmit(estaEditando ? editarNoticia : guardarNoticia)}
       >
-        <div className="flex flex-col items-start justify-start h-full gap-10 px-20 py-5 bg-white 2xl:px-56">
+        <div className="flex flex-col items-start justify-start h-full gap-10 px-20 py-5 bg-white 2xl:px-56 ">
           <h2 className="pt-3 text-2xl font-semibold ">
             {estaEditando ? "Edita la noticia" : "Crea tu Noticia"}
           </h2>
