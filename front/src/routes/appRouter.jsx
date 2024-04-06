@@ -13,6 +13,7 @@ import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
 import { Inicio } from "../views/Plataforma/modules/Inicio/Index";
 import { SpinnerLoading } from "../components/SpinnerLoading";
 import { DotsLoading } from "../components/DotsLoading";
+import { NoticiaDetalle } from "../views/Noticias/Partials/noticiaDetalle";
 
 export const AppRouter = () => {
   const { checkAuthToken, status } = useAuthUtils();
@@ -23,15 +24,15 @@ export const AppRouter = () => {
   if (status === "checking") {
     return (
       <>
-        <div className=" h-screen w-full flex justify-center items-center bg-gray-400">
-          <div className=" flex flex-col justify-center items-center">
+        <div className="flex items-center justify-center w-full h-screen bg-gray-400 ">
+          <div className="flex flex-col items-center justify-center ">
             <img
               src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
               alt="Logo-club"
               border="0"
-              className="h-48 bg-center object-contain"
+              className="object-contain h-48 bg-center"
             ></img>
-            <div className=" flex gap-3">
+            <div className="flex gap-3 ">
               <DotsLoading />
             </div>
           </div>
@@ -61,6 +62,7 @@ export const AppRouter = () => {
         <Route path="/convenios" element={<Convenios />} />
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/spa" element={<Spa />} />
+        <Route path="/noticia/:id" element={<NoticiaDetalle />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </>
