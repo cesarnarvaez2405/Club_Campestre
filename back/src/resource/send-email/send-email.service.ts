@@ -62,7 +62,7 @@ export class SendEmailService {
 
     return await this.mailerService
       .sendMail({
-        to: 'clubcampestredeneiva1@gmail.com',
+        to: process.env.EMAIL_DESTINY,
         from: 'no.reply@clubcampestre.com',
         subject: `${nombre}, quiere contactarse contigo para mas informacion - Club Campestre Web`,
         template: 'notificacionTerceroInteresado',
