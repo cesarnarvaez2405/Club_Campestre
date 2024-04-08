@@ -4,6 +4,8 @@ import { BannerDescripcion } from "./components/bannerDescripcion";
 import { FotosHotel } from "./components/fotosHotel";
 import { Habitaciones } from "./components/habitaciones";
 import { BannerServicios } from "./components/bannerServicios";
+import { Politicas } from "./components/politicas";
+import { ReservaAhora } from "./components/reservaAhora";
 
 export const Hotel = () => {
   return (
@@ -12,8 +14,10 @@ export const Hotel = () => {
         <BannerInfoHotel />
         <BannerDescripcion />
         <FotosHotel />
-        <BannerServicios />
         <Habitaciones />
+        <BannerServicios />
+        <Politicas />
+        <ReservaAhora />
       </div>
     </>
   );

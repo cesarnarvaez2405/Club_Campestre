@@ -11,16 +11,18 @@ export const BannerDescripcion = () => {
         <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
         <div className=" w-[50rem] py-7 text-justify font-thin ">
           <p>
-            Descubre la serenidad en nuestras 10 cabañas cómodas y acogedoras,
-            donde cada detalle ha sido cuidadosamente diseñado para ofrecerte
-            una experiencia inolvidable. Disfruta de un baño privado con agua
-            caliente, aire acondicionado y televisor de pantalla plana con señal
-            por cable de alta definición. Además, podrás relajarte con productos
-            de higiene personal gratuitos y un minibar a tu disposición.
-            Experimenta la magia del departamento del Huila a través de la
-            decoración inspirada en sus paisajes y sitios turísticos,
-            sumergiéndote en un encuentro único con la naturaleza mientras te
-            hospedas en el corazón del Club Campestre de Neiva
+            Las cabañas de nuestro Hotel gozan de la preferencia de propios y
+            visitantes que eligen al Huila como destino turístico, pues ven en
+            esta la mejor combinación entre descanso y comodidad.
+            <br />
+            <br />
+            En las diez confortables cabañas que tenemos, nuestros huéspedes
+            pueden disfrutar del contacto con la naturaleza y el confort de cada
+            una de las habitaciones que han sido decoradas con imágenes de
+            bellos paisajes y sitios turísticos de nuestro Departamento,
+            enamorándolos con nuestros paraísos huilense, disfrutando de un
+            excelente ambiente que se adorna con la frescura de la naturaleza
+            que lo rodea.
           </p>
         </div>
       </div>
