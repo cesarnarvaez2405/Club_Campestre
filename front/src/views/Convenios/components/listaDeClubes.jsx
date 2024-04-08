@@ -15,6 +15,11 @@ export const ListaDeClubes = ({ convenios, ciudad }) => {
         <div className=" grid grid-cols-3 gap-10">
           {clubes.map((club, idx) => (
             <div className=" px-6 border border-gray-300 rounded-lg py-3">
+              <img
+                src={club.imagen}
+                alt={club.nombre}
+                className="w-full h-32 object-contain mb-2"
+              />
               <h3 className="text-lg font-semibold pb-2">{club.nombre}</h3>
               <p>
                 <span className=" font-light">Direccion: </span>
@@ -41,17 +46,6 @@ export const ListaDeClubes = ({ convenios, ciudad }) => {
             </div>
           ))}
         </div>
-
-        {/* <ul>
-          {clubes.map((club, idx) => (
-            <li key={idx}>
-              <h3 className="text-lg font-medium mb-1">{club.nombre}</h3>
-              <p>{club.direccion}</p>
-              <p>Teléfono: {club.telefonos}</p>
-              <p>Email: {club.email}</p>
-            </li>
-          ))}
-        </ul> */}
       </div>
     );
   } else {

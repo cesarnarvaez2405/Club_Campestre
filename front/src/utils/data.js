@@ -205,10 +205,13 @@ export const menuCanjes = [
     id: "barranquilla",
   },
   {
-    id: "sanAndres",
+    id: "cartagena",
   },
   {
     id: "monteria",
+  },
+  {
+    id: "valledupar",
   },
   {
     id: "cucuta",
@@ -218,6 +221,15 @@ export const menuCanjes = [
   },
   {
     id: "palmira",
+  },
+  {
+    id: "manizales",
+  },
+  {
+    id: "popayan",
+  },
+  {
+    id: "girardot",
   },
 ];
 
