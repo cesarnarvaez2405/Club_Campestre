@@ -2,8 +2,7 @@ import React from "react";
 import { VideoYoutube } from "../../../components/videoYoutube";
 
 export const BannerInfoHotel = () => {
-  const videoFondo =
-    "https://www.weltweitpersonal.com/clubcampestre/2024/03/Secuencia.mp4";
+  const videoFondo = "https://clubcampestreneiva.site/secuencia.mp4";
   return (
     <>
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem]  z-10 flex top-0">

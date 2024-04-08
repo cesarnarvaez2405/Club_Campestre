@@ -12,8 +12,7 @@ import { VideoYoutube } from "../../../components/videoYoutube";
 
 export const BannerCampestre = ({ desplazarBannerHotel }) => {
   const [posicionInfo, setPosicionInfo] = useState(0);
-  const videoFondo =
-    "https://www.weltweitpersonal.com/clubcampestre/2024/03/Secuencia.mp4";
+  const videoFondo = "https://clubcampestreneiva.site/secuencia.mp4";
 
   const handleClickButtonRight = () => {
     if (posicionInfo < infoBanner.length - 1) {

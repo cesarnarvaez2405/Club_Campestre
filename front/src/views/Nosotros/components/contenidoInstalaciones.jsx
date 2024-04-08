@@ -1,124 +1,55 @@
 import React, { useEffect, useState } from "react";
-import { salones, menuServicios, deportes } from "../../../utils/data";
-import restaurante from "../../../style/images/restaurante.png";
+import {
+  salones,
+  menuServicios,
+  deportes,
+  escenariosDeportivos,
+  imagesGuarderia,
+  imagesCapilla,
+  imagesPiscinas,
+  imagesRestaurante,
+  imagesGastro,
+} from "../../../utils/data";
 import ImageGallery from "react-image-gallery";
 import { RViewer, RViewerTrigger } from "react-viewerjs";
-import PhotoAlbum from "react-photo-album";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "../style/instalaciones.css";
 
+const videoFondo =
+  "https://clubcampestreneiva.site/gastrobar_club_campestre.mp4";
+
 export const ContenidoInstalaciones = () => {
   const [imagenesSalones, setImagenesSalones] = useState([]);
+  const [imagenesRestaurante, setImagenesRestaurante] = useState([]);
   const [opcionServicio, setOpcionServicio] = useState(0);
   const [verHorarios, setVerHorarios] = useState(false);
   const [atencionSocio, setAtencionSocio] = useState(false);
+  const [imagenesEscenarios, setImagenesEscenarios] = useState([]);
+  const [isHovered, setIsHovered] = useState({
+    isHover: false,
+    indexHover: null,
+  });
 
   useEffect(() => {
     const nuevasImagenesSalones = salones.map((salon) => salon.imagen);
     setImagenesSalones(nuevasImagenesSalones);
+
+    const nuevasImagenesEscenarios = escenariosDeportivos.map(
+      (escenario) => escenario.imagen
+    );
+    setImagenesEscenarios(nuevasImagenesEscenarios);
+
+    const nuevasImagenesRestaurante = imagesRestaurante.map(
+      (restaurante) => restaurante.imagen
+    );
+
+    setImagenesRestaurante(nuevasImagenesRestaurante);
   }, []);
-
-  const imagesPiscinas = [
-    {
-      original: "https://i.ibb.co/SmsTJYY/IMG-6801.jpg",
-      thumbnail: "https://i.ibb.co/SmsTJYY/IMG-6801.jpg",
-      src: "https://i.ibb.co/SmsTJYY/IMG-6801.jpg",
-    },
-    {
-      original:
-        "https://i.ibb.co/8714TrL/DJI-0349-MP4-00-00-15-43-Imagen-fija001.jpg",
-      thumbnail:
-        "https://i.ibb.co/8714TrL/DJI-0349-MP4-00-00-15-43-Imagen-fija001.jpg",
-      src: "https://i.ibb.co/8714TrL/DJI-0349-MP4-00-00-15-43-Imagen-fija001.jpg",
-    },
-    {
-      original: "https://i.ibb.co/5YSV0mv/IMG-6802.jpg",
-      thumbnail: "https://i.ibb.co/5YSV0mv/IMG-6802.jpg/",
-      src: "https://i.ibb.co/5YSV0mv/IMG-6802.jpg",
-    },
-    {
-      original: "https://i.ibb.co/qrpknXr/IMG-6803.jpg",
-      thumbnail: "https://i.ibb.co/qrpknXr/IMG-6803.jpg/",
-      src: "https://i.ibb.co/qrpknXr/IMG-6803.jpg",
-    },
-    {
-      original: "https://i.ibb.co/rsrGRJ9/IMG-6804.jpg",
-      thumbnail: "https://i.ibb.co/rsrGRJ9/IMG-6804.jpg/",
-      src: "https://i.ibb.co/rsrGRJ9/IMG-6804.jpg",
-    },
-    {
-      original: "https://i.ibb.co/5Gp61sH/IMG-6807.jpg",
-      thumbnail: "https://i.ibb.co/5Gp61sH/IMG-6807.jpg/",
-      src: "https://i.ibb.co/5Gp61sH/IMG-6807.jpg",
-    },
-    {
-      original:
-        "https://i.ibb.co/Tc0pJ8f/Whats-App-Image-2023-03-22-at-10-43-25-AM-2.jpg",
-      thumbnail:
-        "https://i.ibb.co/Tc0pJ8f/Whats-App-Image-2023-03-22-at-10-43-25-AM-2.jpg/",
-      src: "https://i.ibb.co/Tc0pJ8f/Whats-App-Image-2023-03-22-at-10-43-25-AM-2.jpg",
-    },
-    {
-      original:
-        "https://i.ibb.co/drks9WY/DJI-0349-MP4-00-00-02-16-Imagen-fija002.jpg",
-      thumbnail:
-        "https://i.ibb.co/drks9WY/DJI-0349-MP4-00-00-02-16-Imagen-fija002.jpg",
-      src: "https://i.ibb.co/drks9WY/DJI-0349-MP4-00-00-02-16-Imagen-fija002.jpg",
-    },
-  ];
-
-  const imagesGuarderia = [
-    {
-      original: "https://i.ibb.co/X3JH9r3/DSC-0943.jpg",
-      thumbnail: "https://i.ibb.co/X3JH9r3/DSC-0943.jpg",
-      src: "https://i.ibb.co/X3JH9r3/DSC-0943.jpg",
-    },
-    {
-      original: "https://i.ibb.co/8cM8P8n/DSC-0923.jpg",
-      thumbnail: "https://i.ibb.co/8cM8P8n/DSC-0923.jpg",
-      src: "https://i.ibb.co/8cM8P8n/DSC-0923.jpg",
-    },
-  ];
-
-  const imagesCapilla = [
-    {
-      original:
-        "https://i.ibb.co/QHshg1L/Whats-App-Image-2017-11-06-at-11-44-23-AM.jpg",
-      thumbnail:
-        "https://i.ibb.co/QHshg1L/Whats-App-Image-2017-11-06-at-11-44-23-AM.jpg",
-      src: "https://i.ibb.co/QHshg1L/Whats-App-Image-2017-11-06-at-11-44-23-AM.jpg",
-    },
-    {
-      original:
-        "https://i.ibb.co/TMB9KY6/Whats-App-Image-2017-11-06-at-11-44-28-AM.jpg",
-      thumbnail:
-        "https://i.ibb.co/TMB9KY6/Whats-App-Image-2017-11-06-at-11-44-28-AM.jpg",
-      src: "https://i.ibb.co/TMB9KY6/Whats-App-Image-2017-11-06-at-11-44-28-AM.jpg",
-    },
-    {
-      original: "https://i.ibb.co/x29GTB9/IMG-8348.jpg",
-      thumbnail: "https://i.ibb.co/x29GTB9/IMG-8348.jpg",
-      src: "https://i.ibb.co/x29GTB9/IMG-8348.jpg",
-    },
-    {
-      original: "https://i.ibb.co/M1g33bS/IMG-8351.jpg",
-      thumbnail: "https://i.ibb.co/M1g33bS/IMG-8351.jpg",
-      src: "https://i.ibb.co/M1g33bS/IMG-8351.jpg",
-    },
-  ];
-
-  const photos = [
-    { src: "https://picsum.photos/id/1018/250/150/", width: 250, height: 150 },
-    { src: "https://picsum.photos/id/1015/250/150/", width: 100, height: 120 },
-    { src: "https://picsum.photos/id/1015/250/150/", width: 110, height: 50 },
-    { src: "https://picsum.photos/id/1015/250/150/", width: 100, height: 120 },
-    { src: "https://picsum.photos/id/1018/250/150/", width: 250, height: 150 },
-  ];
 
   return (
     <>
       <div className=" w-full h-full bg-zinc-800 ">
-        <div className=" w-full h-16 divide-x divide-amber-300 py-2 2xl:px-[16rem] lg:px-[2rem] grid grid-cols-7 justify-center items-center ">
+        <div className=" w-full h-16 divide-x divide-amber-300 py-2 2xl:px-[10rem] lg:px-[2rem] grid grid-cols-8 justify-center items-center ">
           {menuServicios.map((servicio, index) => (
             <button
               onClick={() => setOpcionServicio(servicio.id)}
@@ -258,9 +189,28 @@ export const ContenidoInstalaciones = () => {
                   eventos deportivos de talla Nacional.
                 </p>
               </div>
-              <div className=" flex justify-center items-center py-16">
-                <div className=" w-[60%] ">
-                  <PhotoAlbum layout="masonry" photos={photos} />
+              <div className=" flex justify-center items-center py-5">
+                <div className=" w-[60%]">
+                  <div className=" grid grid-cols-3 justify-center items-center py-[2rem]">
+                    <RViewer imageUrls={imagenesEscenarios}>
+                      {escenariosDeportivos.map((escenario, index) => (
+                        <div className=" flex flex-col gap-5 pr-5 py-3">
+                          <p className=" text-2xl mb-2 font-thin text-white">
+                            {escenario.titulo}
+                          </p>
+                          {escenario.imagen && (
+                            <RViewerTrigger index={index}>
+                              <img
+                                src={escenario.imagen}
+                                alt={escenario.titulo}
+                                className="w-full h-64 object-cover mb-2 shadow-md cursor-pointer"
+                              />
+                            </RViewerTrigger>
+                          )}
+                        </div>
+                      ))}
+                    </RViewer>
+                  </div>
                 </div>
               </div>
             </div>
@@ -428,7 +378,7 @@ export const ContenidoInstalaciones = () => {
                               <img
                                 src={imagen}
                                 alt={imagen}
-                                className="w-full h-64 object-cover mb-2 shadow-md"
+                                className="w-full h-64 object-cover mb-2 shadow-md cursor-pointer"
                               />
                             </RViewerTrigger>
                           ))}
@@ -466,9 +416,39 @@ export const ContenidoInstalaciones = () => {
                 </p>
               </div>
 
-              <div className=" flex justify-center items-center py-16">
-                <div className=" w-[60%] ">
-                  <PhotoAlbum layout="masonry" photos={photos} />
+              <div className="flex justify-center items-center py-10">
+                <div className="w-[60%]">
+                  <div className="grid grid-cols-3 gap-4 ">
+                    {imagesRestaurante.map((restaurante, index) => (
+                      <div key={index}>
+                        <RViewer imageUrls={imagenesRestaurante}>
+                          <div
+                            className="relative"
+                            onMouseEnter={() =>
+                              setIsHovered({ isHover: true, indexHover: index })
+                            }
+                            onMouseLeave={() =>
+                              setIsHovered({ isHover: false, indexHover: null })
+                            }
+                          >
+                            <RViewerTrigger index={index}>
+                              <img
+                                src={restaurante.imagen}
+                                alt={restaurante.nombre}
+                                className="w-full h-64 object-cover mb-2 shadow-md cursor-pointer hover:blur transition-all ease-in-out hover:brightness-75"
+                              />
+                            </RViewerTrigger>
+                            {isHovered.isHover &&
+                              isHovered.indexHover === index && (
+                                <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-2xl font-thin text-white">
+                                  Ver Imagen
+                                </p>
+                              )}
+                          </div>
+                        </RViewer>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -501,6 +481,60 @@ export const ContenidoInstalaciones = () => {
                   autoPlay={true}
                   slideDuration={1000}
                 />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {opcionServicio === 7 && (
+          <div>
+            <div className=" flex justify-center items-center pt-10 flex-col">
+              <img
+                src="https://i.ibb.co/mtzkw4J/gastrobar.png"
+                alt="gastrobar_club_campestre"
+                border="0"
+              ></img>
+              <div className="border-t border-amber-300 w-[40rem] mt-3 "></div>
+            </div>
+            <div className=" grid grid-cols-3 gap-4">
+              <div className=" flex flex-col justify-start items-center pt-32 pl-32">
+                <p className=" text-white font-AltoneBold text-2xl text-center pb-10">
+                  Conozca nuestro nuevo Gastrobar
+                </p>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  controls={false}
+                  className="max-w-screen-sm max-h-screen object-cover border-2 border-white rounded-md shadow-lg shadow-black"
+                >
+                  <source src={videoFondo} type="video/mp4" />
+                </video>
+              </div>
+              <div className=" px-32 py-20 flex flex-col justify-left items-center text-wrap text-white text-justify gap-8 col-start-2 col-span-2">
+                <p className=" pr-20">
+                  El nuevo{" "}
+                  <strong>gastrobar del Club Campestre de Neiva</strong> es un
+                  vibrante espacio que combina la elegancia de un bar con la
+                  delicia de la gastronomía. Ofrece una amplia variedad de
+                  cócteles expertamente preparados, una amplia selección de
+                  licores y exquisitas picadas para satisfacer todos los
+                  paladares. Además, destaca por ser un lugar de entretenimiento
+                  donde los clientes pueden disfrutar de las transmisiones de
+                  algunos partidos y de divertidas sesiones de karaoke. Con una
+                  atmósfera acogedora y un servicio de primera clase, el
+                  gastrobar es el destino perfecto para disfrutar de una noche
+                  inolvidable entre amigos y familiares.
+                </p>
+                <div className=" flex justify-center items-center px-20">
+                  <ImageGallery
+                    items={imagesGastro}
+                    showFullscreenButton={false}
+                    showPlayButton={false}
+                    autoPlay={true}
+                    slideDuration={900}
+                  />
+                </div>
               </div>
             </div>
           </div>

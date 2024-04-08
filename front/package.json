@@ -38,7 +38,8 @@
     "react-viewerjs": "^0.1.9",
     "react-youtube": "^10.1.0",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.10.5"
+    "sweetalert2": "^11.10.5",
+    "yet-another-react-lightbox": "^3.17.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
