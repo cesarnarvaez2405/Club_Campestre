@@ -5,8 +5,8 @@ import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
 import { onSelect } from "../store/Auth/menuStore";
 import { useDispatch, useSelector } from "react-redux";
 
-const primerasRutas = linkRutas.slice(0, 3);
-const ultimasRutas = linkRutas.slice(3, 7);
+const primerasRutas = linkRutas.slice(0, 2);
+const ultimasRutas = linkRutas.slice(2, 5);
 
 export const Menu = () => {
   const { nameMenu } = useSelector((state) => state.menu);
@@ -101,7 +101,7 @@ export const Menu = () => {
       {status === "autenticado" && (
         <div className="absolute z-50 w-full h-36">
           <div className="flex items-center justify-center pt-3 ">
-            <div className="grid items-center h-full grid-cols-8">
+            <div className="grid items-center h-full grid-cols-6">
               <img
                 src="https://i.ibb.co/qY6Z6k1/Logo-club.png"
                 alt="Logo-club"

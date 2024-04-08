@@ -21,21 +21,21 @@ export const linkRutas = [
       // Más enlaces de submenú si los necesitas...
     ],
   },
-  {
-    path: "/noticias",
-    name: "noticias",
-    title: "Noticias",
-  },
+  // {
+  //   path: "/noticias",
+  //   name: "noticias",
+  //   title: "Noticias",
+  // },
   {
     path: "/convenios",
     name: "convenios",
     title: "Convenios",
   },
-  {
-    path: "/eventos",
-    name: "eventos",
-    title: "Eventos",
-  },
+  // {
+  //   path: "/eventos",
+  //   name: "eventos",
+  //   title: "Eventos",
+  // },
   {
     path: "/hotel",
     name: "hotel",
