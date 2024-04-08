@@ -1,4 +1,5 @@
 import React, { createRef, useEffect, useState } from "react";
+import { FaFacebook, FaTiktok, FaInstagram } from "react-icons/fa";
 import { BannerCampestre } from "./components/bannerCampestre";
 import { BannerHotel } from "./components/bannerHotel";
 import { BannerSerSocio } from "../../components/BannerSerSocio";
@@ -38,6 +39,32 @@ export const Home = () => {
           <BannerSerSocio />
         </div>
         <SeccionNoticias noticias={noticias} />
+      </div>
+      <div className="fixed top-52 right-4 flex flex-col gap-2 z-40">
+        <a
+          href="https://www.facebook.com/clubcampestredeneiva?locale=es_LA"
+          target="_blank"
+          rel="noreferrer"
+          className="bg-blue-600 text-white p-2 rounded-full"
+        >
+          <FaFacebook />
+        </a>
+        <a
+          href="https://www.tiktok.com/@clubcampestreneiva"
+          target="_blank"
+          rel="noreferrer"
+          className="bg-black text-white p-2 rounded-full"
+        >
+          <FaTiktok />
+        </a>
+        <a
+          href="https://www.instagram.com/clubcampestreneiva/"
+          target="_blank"
+          rel="noreferrer"
+          className="bg-pink-500 text-white p-2 rounded-full"
+        >
+          <FaInstagram />
+        </a>
       </div>
     </>
   );
