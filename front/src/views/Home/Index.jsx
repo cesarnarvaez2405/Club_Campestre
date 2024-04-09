@@ -35,33 +35,33 @@ export const Home = () => {
       <div>
         <BannerCampestre desplazarBannerHotel={desplazarBannerHotel} />
         <BannerHotel ref={bannerHotelRef} />
-        <div className=" w-full 2xl:h-[20rem] h-[18rem] bg-white ">
+        <div className=' w-full 2xl:h-[20rem] h-[18rem] bg-white sm:max-md:h-[30rem]   '>
           <BannerSerSocio />
         </div>
         <SeccionNoticias noticias={noticias} />
       </div>
-      <div className="fixed top-52 right-4 flex flex-col gap-2 z-40">
+      <div className='fixed top-52 right-4 flex flex-col gap-2 z-40'>
         <a
-          href="https://www.facebook.com/clubcampestredeneiva?locale=es_LA"
-          target="_blank"
-          rel="noreferrer"
-          className="bg-blue-600 text-white p-2 rounded-full"
+          href='https://www.facebook.com/clubcampestredeneiva?locale=es_LA'
+          target='_blank'
+          rel='noreferrer'
+          className='bg-blue-600 text-white p-2 rounded-full'
         >
           <FaFacebook />
         </a>
         <a
-          href="https://www.tiktok.com/@clubcampestreneiva"
-          target="_blank"
-          rel="noreferrer"
-          className="bg-black text-white p-2 rounded-full"
+          href='https://www.tiktok.com/@clubcampestreneiva'
+          target='_blank'
+          rel='noreferrer'
+          className='bg-black text-white p-2 rounded-full'
         >
           <FaTiktok />
         </a>
         <a
-          href="https://www.instagram.com/clubcampestreneiva/"
-          target="_blank"
-          rel="noreferrer"
-          className="bg-pink-500 text-white p-2 rounded-full"
+          href='https://www.instagram.com/clubcampestreneiva/'
+          target='_blank'
+          rel='noreferrer'
+          className='bg-pink-500 text-white p-2 rounded-full'
         >
           <FaInstagram />
         </a>
