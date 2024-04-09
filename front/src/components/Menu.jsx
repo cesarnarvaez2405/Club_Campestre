@@ -150,15 +150,25 @@ export const Menu = () => {
       )}
 
       <div className='absolute z-50 w-full pl-5 pt-10'>
-        <button onClick={handleHamburgerClick} className='md:hidden'>
-          <div
-            className={` h-10 w-10 text-black ${
-              !isMobileMenuOpen ? "text-white" : ""
-            }`}
-          >
-            {!isMobileMenuOpen && <Bars3Icon fill='white' />}
+        <div className=' flex justify-between'>
+          <button onClick={handleHamburgerClick} className='md:hidden'>
+            <div
+              className={` h-10 w-10 text-black ${
+                !isMobileMenuOpen ? "text-white" : ""
+              }`}
+            >
+              {!isMobileMenuOpen && <Bars3Icon fill='white' />}
+            </div>
+          </button>
+          <div className=' pr-10'>
+            <img
+              src='https://i.ibb.co/qY6Z6k1/Logo-club.png'
+              alt='Logo-club'
+              border='0'
+              className='h-16 bg-center object-contain md:hidden '
+            ></img>
           </div>
-        </button>
+        </div>
 
         <div
           className={`fixed top-0 left-0 w-full h-full bg-white transform transition-transform duration-200 ease-in-out ${

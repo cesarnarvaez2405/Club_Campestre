@@ -8,40 +8,40 @@ export const ListaDeClubes = ({ convenios, ciudad }) => {
     const clubes = convenios[ciudadBuscada];
 
     return (
-      <div className=" mt-20 w-[100rem] ">
-        <h2 className="text-xl font-semibold mb-2 uppercase text-blue-950">
+      <div className=' mt-20 w-[100rem] sm:max-md:pt-10 sm:max-md:w-full '>
+        <h2 className='text-xl font-semibold mb-2 uppercase text-blue-950 sm:max-md:pl-2'>
           {ciudad}
         </h2>
-        <div className=" grid grid-cols-3 gap-10">
+        <div className=' grid grid-cols-3 gap-10 sm:max-md:grid-cols-1 sm:max-md:px-5'>
           {clubes.map((club, idx) => (
-            <div className=" px-6 border border-gray-300 rounded-lg py-3">
+            <div className=' px-6 border border-gray-300 rounded-lg py-3'>
               <img
                 src={club.imagen}
                 alt={club.nombre}
-                className="w-full h-32 object-contain mb-2"
+                className='w-full h-32 object-contain mb-2'
               />
-              <h3 className="text-lg font-semibold pb-2">{club.nombre}</h3>
+              <h3 className='text-lg font-semibold pb-2'>{club.nombre}</h3>
               <p>
-                <span className=" font-light">Direccion: </span>
+                <span className=' font-light'>Direccion: </span>
                 {club.direccion}
               </p>
               <p>
-                <span className=" font-light">Teléfono:</span> {club.telefonos}
+                <span className=' font-light'>Teléfono:</span> {club.telefonos}
               </p>
               <p>
-                <span className=" font-light">Celular:</span> {club.celular}
+                <span className=' font-light'>Celular:</span> {club.celular}
               </p>
               <p>
-                <span className=" font-light">Email:</span>{" "}
+                <span className=' font-light'>Email:</span>{" "}
                 <a
-                  className=" underline decoration-amber-300"
+                  className=' underline decoration-amber-300 sm:max-md:text-sm'
                   href={`mailto:${club.email}`}
                 >
                   {club.email}
                 </a>
               </p>
               <p>
-                <span className=" font-light">Fax:</span> {club.fax}
+                <span className=' font-light'>Fax:</span> {club.fax}
               </p>
             </div>
           ))}

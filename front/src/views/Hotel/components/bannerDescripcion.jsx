@@ -3,13 +3,15 @@ import React from "react";
 export const BannerDescripcion = () => {
   return (
     <>
-      <div className=" w-full flex flex-col gap-4 justify-center items-center">
-        <h2 className=" text-xl font-thin italic">
+      <div className=' w-full flex flex-col gap-4 justify-center items-center sm:max-md:py-10 sm:max-md:px-5'>
+        <h2 className=' text-xl font-thin italic'>
           Un oasis de elegancia en el corazón del Club Campestre de Neiva
         </h2>
-        <h2 className=" font-semibold text-xl">Hotel Club Campestre</h2>
-        <div className="border-t border-amber-300 w-[20rem] mt-3 "></div>
-        <div className=" w-[50rem] py-7 text-justify font-thin ">
+        <h2 className=' font-semibold text-xl sm:max-md:pt-10'>
+          Hotel Club Campestre
+        </h2>
+        <div className='border-t border-amber-300 w-[20rem] mt-3 '></div>
+        <div className=' w-[50rem] py-7 text-justify font-thin sm:max-md:w-full sm:max-md:py-2 '>
           <p>
             Las cabañas de nuestro Hotel gozan de la preferencia de propios y
             visitantes que eligen al Huila como destino turístico, pues ven en

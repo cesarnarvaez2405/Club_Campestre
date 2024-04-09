@@ -42,9 +42,9 @@ export const FotosHotel = () => {
 
   return (
     <>
-      <div className=" flex justify-center items-center py-16">
-        <div className=" w-[60%] ">
-          <div className=" flex justify-center items-center">
+      <div className=' flex justify-center items-center py-16 sm:max-md:py-5 '>
+        <div className=' w-[60%] sm:max-md:w-[80%] '>
+          <div className=' flex justify-center items-center'>
             <ImageGallery
               items={imagesHotel}
               showFullscreenButton={false}
