@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import React, { useEffect, useLayoutEffect } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Home } from "../views/Home/Index";
 import { Nosotros } from "../views/Nosotros/Index";
 import { ElClub } from "../views/Nosotros/Sections/elClub";
@@ -11,16 +11,21 @@ import { Spa } from "../views/Spa/Index";
 import { Login } from "../views/Plataforma/modules/Login/index";
 import { useAuthUtils } from "../hooks/Utils/useAuthUtils";
 import { Inicio } from "../views/Plataforma/modules/Inicio/Index";
-import { SpinnerLoading } from "../components/SpinnerLoading";
 import { DotsLoading } from "../components/DotsLoading";
 import { NoticiaDetalle } from "../views/Noticias/Partials/noticiaDetalle";
 
 export const AppRouter = () => {
   const { checkAuthToken, status } = useAuthUtils();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     checkAuthToken();
   }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   if (status === "checking") {
     return (
       <>
