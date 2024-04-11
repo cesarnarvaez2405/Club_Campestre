@@ -1,20 +1,19 @@
 import React from "react";
-import ninosJugando from "../../../style/images/ninosJugando.jpg";
 
 export const ContenidoElCLub = () => {
   return (
     <>
-      <div className=' w-full'>
-        <div className=' w-full xl:px-[10rem] px-[3rem] sm:max-md:px-[2rem] '>
-          <div className=' h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2'>
-            <div className=' col-span-1 flex flex-col justify-start items-end gap-5 sm:max-md:items-center '>
-              <div className=' flex justify-center items-center gap-2'>
-                <strong className=' font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl'>
+      <div className=" w-full">
+        <div className=" w-full xl:px-[10rem] px-[3rem] sm:max-md:px-[2rem] ">
+          <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
+            <div className=" col-span-1 flex flex-col justify-start items-end gap-5 sm:max-md:items-center ">
+              <div className=" flex justify-center items-center gap-2">
+                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
                   Nosotros
                 </strong>
-                <div className=' h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem] '></div>
+                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem] "></div>
               </div>
-              <div className='2xl:pl-10 text-justify pt-5 sm:max-md:pb-5 '>
+              <div className="2xl:pl-10 text-justify pt-5 sm:max-md:pb-5 ">
                 <p>
                   La <strong>Corporación Club Campestre de Neiva</strong>, es
                   una corporación de carácter civil, sin ánimo de lucro, que ha
@@ -26,55 +25,56 @@ export const ContenidoElCLub = () => {
                 </p>
               </div>
             </div>
-            <div className=' w-full h-full'>
+            <div className=" w-full h-full">
               <div
-                className=' 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]'
+                className=" 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
-                  backgroundImage: `url(https://i.ibb.co/dcV1L43/DSC-0987.jpg)`,
+                  backgroundImage: `url(https://i.ibb.co/yVKB4XP/DSC-0987.jpg)`,
                 }}
               ></div>
             </div>
           </div>
-          <div className=' h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2'>
-            <div className=' w-full h-full flex justify-end'>
+          <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
+            <div className=" w-full h-full flex justify-end">
               <div
-                className=' 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px]'
+                className=" 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px]"
                 style={{
-                  backgroundImage: `url(https://i.ibb.co/gPN6cM6/DJI-0517.jpg)`,
+                  backgroundImage: `url(https://i.ibb.co/QvBPhpw/DJI-0517.jpg)`,
                 }}
               ></div>
             </div>
-            <div className=' col-span-1 flex flex-col justify-start items-start  gap-5 '>
-              <div className=' flex justify-center items-center gap-2'>
-                <div className=' h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]'></div>
-                <strong className=' font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl'>
+            <div className=" col-span-1 flex flex-col justify-start items-start  gap-5 ">
+              <div className=" flex justify-center items-center gap-2">
+                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]"></div>
+                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
                   Misión
                 </strong>
               </div>
-              <div className=' 2xl:pl-10 sm:max-md:text-justify '>
+              <div className=" 2xl:pl-10 sm:max-md:text-justify ">
                 <p>
                   El Club Campestre de Neiva es una Corporación que desde hace
-                  70 años le viene aportando empleo y desarrollo al departamento
-                  del Huila. Nuestra misión es ser el epicentro de encuentro
-                  para las familias huilenses, ofreciendo un espacio seguro, de
-                  sano esparcimiento, formación deportiva y oportunidades de
-                  conexión interpersonal. Nos comprometemos a proporcionar
-                  servicios de calidad que fomenten la unión familiar, el
-                  desarrollo personal y la integración social, contribuyendo así
-                  al bienestar y al crecimiento de nuestra comunidad.
+                  72 años que le viene aportando empleo y desarrollo al
+                  departamento del Huila. Nuestra misión es ser el epicentro de
+                  encuentro para las familias huilenses, ofreciendo un espacio
+                  seguro, de sano esparcimiento, formación deportiva y
+                  oportunidades de conexión interpersonal. Nos comprometemos a
+                  proporcionar servicios de calidad que fomenten la unión
+                  familiar, el desarrollo personal y la integración social,
+                  contribuyendo así al bienestar y al crecimiento de nuestra
+                  comunidad.
                 </p>
               </div>
             </div>
           </div>
-          <div className=' h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2 sm:max-md:pt-10'>
-            <div className=' col-span-1 flex flex-col justify-start items-end  gap-5 '>
-              <div className=' flex justify-center items-center gap-2'>
-                <strong className=' font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl'>
+          <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2 sm:max-md:pt-10">
+            <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
+              <div className=" flex justify-center items-center gap-2">
+                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
                   Visión
                 </strong>
-                <div className=' h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]'></div>
+                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]"></div>
               </div>
-              <div className='2xl:pl-10 sm:max-md:text-justify sm:max-md:pb-5 '>
+              <div className="2xl:pl-10 sm:max-md:text-justify sm:max-md:pb-5 ">
                 <p>
                   Nos visualizamos como el principal referente en el ámbito del
                   entretenimiento, el deporte y la convivencia familiar en el
@@ -89,32 +89,32 @@ export const ContenidoElCLub = () => {
                 </p>
               </div>
             </div>
-            <div className=' w-full h-full'>
+            <div className=" w-full h-full">
               <div
-                className=' 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]'
+                className=" 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
-                  backgroundImage: `url(https://i.ibb.co/7Xvrv2q/IMG-5945.jpg)`,
+                  backgroundImage: `url(https://i.ibb.co/GTtfmKP/IMG-5945.jpg`,
                 }}
               ></div>
             </div>
           </div>
-          <div className=' h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2'>
-            <div className=' w-full h-full flex justify-end'>
+          <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
+            <div className=" w-full h-full flex justify-end">
               <div
-                className=' 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px]'
+                className=" 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px]"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/5jYJk7H/DSC-0105.jpg)`,
                 }}
               ></div>
             </div>
-            <div className=' col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] sm:max-md:pb-[2rem] '>
-              <div className=' flex justify-center items-center gap-2'>
-                <div className=' h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]'></div>
-                <strong className=' font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl'>
+            <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] sm:max-md:pb-[2rem] ">
+              <div className=" flex justify-center items-center gap-2">
+                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]"></div>
+                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
                   Historia
                 </strong>
               </div>
-              <div className=' 2xl:pl-10 sm:max-md:text-justify '>
+              <div className=" 2xl:pl-10 sm:max-md:text-justify ">
                 <p>
                   El <strong>Club Campestre de Neiva</strong> fue fundado en el
                   año 1952 en un terreno inicial de aproximadamente 20
@@ -128,59 +128,59 @@ export const ContenidoElCLub = () => {
                   Surcolombiana, se caracteriza por estar en permanente
                   movimiento, ofreciendo sus servicios con estándares
                   importantes a sus socios, además de generar ingresos a
-                  proveedores y trabajo a la región;
+                  proveedores y trabajo a la región.
                 </p>
               </div>
             </div>
           </div>
-          <div className=' h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2 '>
-            <div className=' col-span-1 flex flex-col justify-start items-end  gap-5 '>
-              <div className=' flex justify-center items-center gap-2'>
-                <strong className=' font-AltoneNormal text-3xl font-semibold sm:max-md:text-2xl'>
+          <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2 ">
+            <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
+              <div className=" flex justify-center items-center gap-2">
+                <strong className=" font-AltoneNormal text-3xl font-semibold sm:max-md:text-2xl">
                   Política deportiva
                 </strong>
-                <div className=' h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[5rem]'></div>
+                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[5rem]"></div>
               </div>
-              <div className='2xl:pl-10 sm:max-md:text-justify sm:max-md:pb-5'>
+              <div className="2xl:pl-10 sm:max-md:text-justify sm:max-md:pb-5">
                 <p>
                   Fomentar, estimular, apoyar y acompañar las prácticas
                   deportivas en niños y adolescentes que beneficien su salud e
                   imagen, propiciando el intercambio de conocimientos y
                   reafirmando los lazos de amistad.
                   <br />
-                  <br /> Por ello ha sido prioridad de cada una de las juntas
-                  directivas, fomentar la práctica de las diversas disciplinas y
+                  <br /> Por ello ha sido prioridad de cada una de las Juntas
+                  Directivas, fomentar la práctica de las diversas disciplinas y
                   promover torneos para que, en sana competencia, participen los
                   socios junto con sus familias y amigos.
                 </p>
               </div>
             </div>
-            <div className=' w-full h-full'>
+            <div className=" w-full h-full">
               <div
-                className=' 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px] sm:max-md:ml-1'
+                className=" 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px] sm:max-md:ml-1"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/qFpndvL/DSC00121.jpg)`,
                 }}
               ></div>
             </div>
           </div>
-          <div className=' h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2 '>
-            <div className=' w-full h-full flex justify-end'>
+          <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2 ">
+            <div className=" w-full h-full flex justify-end">
               <div
-                className=' 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px] '
+                className=" 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px] "
                 style={{
-                  backgroundImage: `url(https://i.ibb.co/pfb2QV5/DSC-0971.jpg)`,
+                  backgroundImage: `url(https://i.ibb.co/hRcKVmb/DSC-0971.jpg)`,
                 }}
               ></div>
             </div>
-            <div className=' col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] '>
-              <div className=' flex justify-center items-center gap-2'>
-                <div className=' h-2 2xl:w-[20rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[1rem]'></div>
-                <strong className=' font-AltoneNormal text-3xl font-semibold sm:max-md:text-xl'>
+            <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] ">
+              <div className=" flex justify-center items-center gap-2">
+                <div className=" h-2 2xl:w-[20rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[1rem]"></div>
+                <strong className=" font-AltoneNormal text-3xl font-semibold sm:max-md:text-xl">
                   Política de infraestructura
                 </strong>
               </div>
-              <div className=' 2xl:pl-10 text-justify '>
+              <div className=" 2xl:pl-10 text-justify ">
                 <p>
                   Coherente con las políticas de ingreso, de servicios y
                   fidelización de socios, siempre ha sido imperativo mejorar la

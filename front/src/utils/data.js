@@ -3,14 +3,14 @@ export const salones = [
     nombre: "Salón Principal",
     titulo: "Capacidad Máxima: ",
     subTitulo: "200 personas",
-    imagen: "https://i.ibb.co/VqxNNxD/MG-2127.jpg",
+    imagen: "https://i.ibb.co/rp6hkrZ/salon-Principal.jpg",
   },
   {
     nombre: "Salón Cincuentenario",
     titulo: "Capacidad Máxima: ",
     subTitulo: "130 personas",
     imagen:
-      "https://i.ibb.co/MRYKZHk/Whats-App-Image-2023-10-07-at-10-59-20-AM-1.jpg",
+      "https://i.ibb.co/jfF60NQ/Whats-App-Image-2023-10-07-at-10-59-20-AM-1.jpg",
   },
   {
     nombre: "Salón Guinnes",
@@ -23,7 +23,7 @@ export const salones = [
     titulo: "Capacidad Máxima: ",
     subTitulo: "50 personas",
     imagen:
-      "https://i.ibb.co/Jj8t2ZH/Whats-App-Image-2023-09-21-at-9-14-47-AM.jpg",
+      "https://i.ibb.co/R0ZRrzB/Whats-App-Image-2023-09-21-at-9-14-47-AM.jpg",
   },
 
   {
@@ -31,7 +31,7 @@ export const salones = [
     titulo: "Capacidad Máxima: ",
     subTitulo: "180 personas",
     imagen:
-      "https://i.ibb.co/XCMrkdL/Whats-App-Image-2022-03-25-at-3-49-19-PM-4.jpg",
+      "https://i.ibb.co/YdqsN0x/Whats-App-Image-2022-03-25-at-3-49-19-PM-4.jpg",
   },
 
   {
@@ -47,7 +47,7 @@ export const salones = [
     titulo: "Capacidad Máxima: ",
     subTitulo: "80 personas",
     imagen:
-      "https://i.ibb.co/zH2vbW6/Whats-App-Image-2023-04-15-at-8-48-49-AM-2.jpg",
+      "https://i.ibb.co/vYg0c7s/Whats-App-Image-2023-04-15-at-8-48-49-AM-2.jpg",
   },
 
   {
@@ -55,7 +55,7 @@ export const salones = [
     titulo: "Capacidad Máxima: ",
     subTitulo: "50 personas",
     imagen:
-      "https://i.ibb.co/KDr8tsQ/Whats-App-Image-2023-09-27-at-2-16-49-PM.jpg",
+      "https://i.ibb.co/mD9ZXdW/Whats-App-Image-2023-09-27-at-2-16-49-PM.jpg",
   },
 
   {
@@ -63,39 +63,78 @@ export const salones = [
     titulo: "Capacidad Máxima: ",
     subTitulo: "50 personas",
     imagen:
-      "https://i.ibb.co/w4YQD2f/Whats-App-Image-2023-02-17-at-3-26-10-PM-3.jpg",
+      "https://i.ibb.co/CPqfBcH/Whats-App-Image-2023-02-17-at-3-26-10-PM-3.jpg",
   },
 ];
 
 export const deportes = [
   {
     titulo: "⛳ Golf ",
-    imagenes: [],
+    imagenes: [
+      "https://i.ibb.co/dr7TyR9/7-1.jpg",
+      "https://i.ibb.co/qr0KxjC/7-2.jpg",
+      "https://i.ibb.co/55V6qmq/7-3.jpg",
+      "https://i.ibb.co/NFKcRvz/7-4.jpg",
+      "https://i.ibb.co/kJrQN9f/7-5.jpg",
+      "https://i.ibb.co/QXPJhcC/7-4.jpg",
+      "https://i.ibb.co/nDYRndn/7-5.jpg",
+      "https://i.ibb.co/Dwwkg48/7-1.jpg",
+      "https://i.ibb.co/PTXXgS9/7-2.jpg",
+      "https://i.ibb.co/ZWvBxKB/7-3.jpg",
+    ],
   },
   {
     titulo: "⛹️‍♂️ Baloncesto ",
-    imagenes: [],
+    imagenes: [
+      "https://i.ibb.co/3Rmh9cK/8-3.jpg",
+      "https://i.ibb.co/MS0qbv9/8-4.jpg",
+      "https://i.ibb.co/xYGb7gp/8-5.jpg",
+      "https://i.ibb.co/9nWRhhr/8-1.jpg",
+      "https://i.ibb.co/2gyJVSH/8-2.jpg",
+    ],
   },
   {
     titulo: "⛱️🏐 Vóley Playa ",
-    imagenes: [],
+    imagenes: [
+      "https://i.ibb.co/x6qPv2y/9-2.jpg",
+      "https://i.ibb.co/rk8vR6J/9-3.jpg",
+      "https://i.ibb.co/Tc8TrpL/9-4.jpg",
+      "https://i.ibb.co/TKS5HJW/9-5.jpg",
+      "https://i.ibb.co/F8NfHvH/9-1.jpg",
+    ],
   },
 
   {
     titulo: "🥋 Taekwondo ",
-    imagenes: [],
+    imagenes: [
+      "https://i.ibb.co/yRPTZts/10-3.jpg",
+      "https://i.ibb.co/HX4BxXM/10-4.jpg",
+      "https://i.ibb.co/nsNybtM/10-5.jpg",
+      "https://i.ibb.co/7k5Z87V/10-1.jpg",
+      "https://i.ibb.co/Mc6Qh18/10-2.jpg",
+    ],
   },
   {
     titulo: "⚽ Futbol ",
     imagenes: [
       "https://i.ibb.co/S0sYgwW/DSC-0997.jpg",
       "https://i.ibb.co/QQrNz9K/IMG-20230218-162719.jpg",
+      "https://i.ibb.co/zFZKx7w/11-4.jpg",
+      "https://i.ibb.co/zsdjtvK/11-5.jpg",
+      "https://i.ibb.co/JKhz7fB/11-1.jpg",
+      "https://i.ibb.co/3kDgfmk/11-2.jpg",
+      "https://i.ibb.co/0C7FWrW/11-3.jpg",
     ],
   },
   {
     titulo: "⛸️ Patinaje ",
     imagenes: [
       "https://i.ibb.co/1fBKTdJ/Whats-App-Image-2023-09-14-at-3-41-34-PM.jpg",
+      "https://i.ibb.co/HGn0YBy/12-3.jpg",
+      "https://i.ibb.co/wCRRwCb/12-4.jpg",
+      "https://i.ibb.co/XLqjNhV/12-5.jpg",
+      "https://i.ibb.co/hD1nbmc/12-1.jpg",
+      "https://i.ibb.co/3mHZ0PC/12-2.jpg",
     ],
   },
   {
@@ -103,6 +142,11 @@ export const deportes = [
     imagenes: [
       "https://i.ibb.co/dPWR1wP/DSC-1186.jpg",
       "https://i.ibb.co/WBssB2F/Whats-App-Image-2023-03-22-at-10-43-27-AM-3.jpg",
+      "https://i.ibb.co/tKLB923/13-2.jpg",
+      "https://i.ibb.co/KrcYYjN/13-3.jpg",
+      "https://i.ibb.co/rGSBC0z/13-4.jpg",
+      "https://i.ibb.co/ySY2xbF/13-5.jpg",
+      "https://i.ibb.co/mtxSTFs/13-1.jpg",
     ],
   },
 ];
@@ -110,32 +154,32 @@ export const deportes = [
 export const escenariosDeportivos = [
   {
     titulo: "2 Canchas de Fútbol ",
-    imagen: "https://i.ibb.co/qFpndvL/DSC00121.jpg",
+    imagen: "https://i.ibb.co/VvTDV2B/DSC00121.jpg",
   },
   {
     titulo: "8 Canchas de Tenis ",
-    imagen: "https://i.ibb.co/gPN6cM6/DJI-0517.jpg",
+    imagen: "https://i.ibb.co/QvBPhpw/DJI-0517.jpg",
   },
   {
     titulo: "Piscinas",
-    imagen: "https://i.ibb.co/J5BRzR3/IMG-4965.jpg",
+    imagen: "https://i.ibb.co/vJwBhS6/IMG-4965.jpg",
   },
   {
     titulo: "Campo de Golf ",
-    imagen: "https://i.ibb.co/dcV1L43/DSC-0987.jpg",
+    imagen: "https://i.ibb.co/yVKB4XP/DSC-0987.jpg",
   },
   {
     titulo: "Cancha de Vóley Playa",
-    imagen: "https://i.ibb.co/Hhbpb4q/DSC-0907.jpg",
+    imagen: "https://i.ibb.co/JyK6nm5/DSC-0907.jpg",
   },
   {
     titulo: "Cancha múltiple",
     imagen:
-      "https://i.ibb.co/0K3jPJ1/DJI-0347-MP4-00-00-16-17-Imagen-fija003.jpg",
+      "https://i.ibb.co/j47Mxhx/DJI-0347-MP4-00-00-16-17-Imagen-fija003.jpg",
   },
   {
     titulo: "Pista de Bolos",
-    imagen: "https://i.ibb.co/yX4fQWJ/DSC-8156.jpg",
+    imagen: "https://i.ibb.co/M2k6ZCm/DSC-8156.jpg",
   },
   {
     titulo: "2 Canchas de Mini Fútbol",
@@ -379,11 +423,11 @@ export const imagesPiscinas = [
 export const imagesRestaurante = [
   {
     nombre: "restaurante-club-campestre",
-    imagen: "https://i.ibb.co/jGB2Kq5/IMG-9815.jpg",
+    imagen: "https://i.ibb.co/X75HLyR/IMG-9815.jpg",
   },
   {
     nombre: "restaurante-club-campestre",
-    imagen: "https://i.ibb.co/80gpZsN/IMG-9482.jpg",
+    imagen: "https://i.ibb.co/VQPqfDQ/IMG-9482.jpg",
   },
   {
     nombre: "restaurante-club-campestre",

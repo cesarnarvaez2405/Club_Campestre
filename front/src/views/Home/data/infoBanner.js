@@ -1,6 +1,6 @@
 export const infoBanner = [
   {
-    text: "#Vive Club Campestre",
+    text: "#Viveclubcampestreneiva",
   },
   {
     text: "Naturaleza y Deporte Juntos ",
