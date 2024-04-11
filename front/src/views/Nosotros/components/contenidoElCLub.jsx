@@ -159,7 +159,7 @@ export const ContenidoElCLub = () => {
               <div
                 className=" 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px] sm:max-md:ml-1"
                 style={{
-                  backgroundImage: `url(https://i.ibb.co/qFpndvL/DSC00121.jpg)`,
+                  backgroundImage: `url(https://i.ibb.co/VvTDV2B/DSC00121.jpg)`,
                 }}
               ></div>
             </div>

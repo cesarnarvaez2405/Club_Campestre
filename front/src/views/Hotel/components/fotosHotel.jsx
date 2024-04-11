@@ -4,9 +4,9 @@ import ImageGallery from "react-image-gallery";
 export const FotosHotel = () => {
   const imagesHotel = [
     {
-      original: "https://i.ibb.co/0FJ6s5R/IMG-5945.jpg",
-      thumbnail: "https://i.ibb.co/0FJ6s5R/IMG-5945.jpg",
-      src: "https://i.ibb.co/0FJ6s5R/IMG-5945.jpg",
+      original: "https://i.ibb.co/GTtfmKP/IMG-5945.jpg",
+      thumbnail: "https://i.ibb.co/GTtfmKP/IMG-5945.jpg",
+      src: "https://i.ibb.co/GTtfmKP/IMG-5945.jpg",
     },
     {
       original: "https://i.ibb.co/BGTVkcK/IMG-5975.jpg",
@@ -42,9 +42,9 @@ export const FotosHotel = () => {
 
   return (
     <>
-      <div className=' flex justify-center items-center py-16 sm:max-md:py-5 '>
-        <div className=' w-[60%] sm:max-md:w-[80%] '>
-          <div className=' flex justify-center items-center'>
+      <div className=" flex justify-center items-center py-16 sm:max-md:py-5 ">
+        <div className=" w-[60%] sm:max-md:w-[80%] ">
+          <div className=" flex justify-center items-center">
             <ImageGallery
               items={imagesHotel}
               showFullscreenButton={false}

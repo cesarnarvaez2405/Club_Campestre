@@ -16,7 +16,7 @@ export const salones = [
     nombre: "Salón Guinnes",
     titulo: "Capacidad Máxima: ",
     subTitulo: "50 personas",
-    imagen: "https://i.ibb.co/pfb2QV5/DSC-0971.jpg",
+    imagen: "https://i.ibb.co/hRcKVmb/DSC-0971.jpg",
   },
   {
     nombre: "Salón Azul",
@@ -39,7 +39,7 @@ export const salones = [
     titulo: "Capacidad Máxima: ",
     subTitulo: "60 personas",
     imagen:
-      "https://i.ibb.co/JzZqs5L/Whats-App-Image-2022-03-25-at-4-05-55-PM.jpg",
+      "https://i.ibb.co/HTzkCzx/Whats-App-Image-2022-03-25-at-4-05-55-PM.jpg",
   },
 
   {
