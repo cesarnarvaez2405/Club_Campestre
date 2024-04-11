@@ -1,5 +1,6 @@
 import React from "react";
 import { WifiIcon } from "@heroicons/react/16/solid";
+import "animate.css";
 
 export const BannerHotel = React.forwardRef((props, ref) => {
   return (
@@ -7,7 +8,7 @@ export const BannerHotel = React.forwardRef((props, ref) => {
       <div className=" w-full 2xl:h-[147px] h-[128px] bg-zinc-800 p-2 z-40 ">
         <div
           ref={ref}
-          className="flex flex-row items-center justify-center w-full h-full gap-12 border-2 rounded-md border-amber-300 sm:max-md:pl-2 "
+          className="flex flex-row items-center justify-center w-full h-full gap-12 border-2 rounded-md border-amber-300 sm:max-md:pl-2 animate__animated animate__fadeIn "
         >
           <img
             src="https://i.ibb.co/vZ0R8mg/Hotel-Club-Campestre.png"

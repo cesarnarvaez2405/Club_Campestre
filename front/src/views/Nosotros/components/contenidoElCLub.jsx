@@ -7,11 +7,11 @@ export const ContenidoElCLub = () => {
         <div className=" w-full xl:px-[10rem] px-[3rem] sm:max-md:px-[2rem] ">
           <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
             <div className=" col-span-1 flex flex-col justify-start items-end gap-5 sm:max-md:items-center ">
-              <div className=" flex justify-center items-center gap-2">
-                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
+              <div className="  grid grid-cols-2 w-full items-center gap-2">
+                <strong className=" font-AltoneNormal text-end text-5xl font-semibold sm:max-md:text-3xl">
                   Nosotros
                 </strong>
-                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem] "></div>
+                <div className=" h-2 w-full bg-amber-300 "></div>
               </div>
               <div className="2xl:pl-10 text-justify pt-5 sm:max-md:pb-5 ">
                 <p>
@@ -27,7 +27,7 @@ export const ContenidoElCLub = () => {
             </div>
             <div className=" w-full h-full">
               <div
-                className=" 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
+                className=" w-[430px] h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/yVKB4XP/DSC-0987.jpg)`,
                 }}
@@ -37,20 +37,20 @@ export const ContenidoElCLub = () => {
           <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
             <div className=" w-full h-full flex justify-end">
               <div
-                className=" 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px]"
+                className=" w-[430px] h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/QvBPhpw/DJI-0517.jpg)`,
                 }}
               ></div>
             </div>
             <div className=" col-span-1 flex flex-col justify-start items-start  gap-5 ">
-              <div className=" flex justify-center items-center gap-2">
-                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]"></div>
-                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
+              <div className=" grid grid-cols-2 w-full items-center gap-2">
+                <div className=" h-2 w-full bg-amber-300 "></div>
+                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl text-start">
                   Misión
                 </strong>
               </div>
-              <div className=" 2xl:pl-10 sm:max-md:text-justify ">
+              <div className=" 2xl:pl-10 text-justify ">
                 <p>
                   El Club Campestre de Neiva es una Corporación que desde hace
                   72 años que le viene aportando empleo y desarrollo al
@@ -68,13 +68,13 @@ export const ContenidoElCLub = () => {
           </div>
           <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2 sm:max-md:pt-10">
             <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
-              <div className=" flex justify-center items-center gap-2">
-                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
+              <div className=" grid grid-cols-2 w-full items-center gap-2">
+                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl text-end">
                   Visión
                 </strong>
-                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]"></div>
+                <div className=" h-2 w-full bg-amber-300"></div>
               </div>
-              <div className="2xl:pl-10 sm:max-md:text-justify sm:max-md:pb-5 ">
+              <div className="2xl:pl-10 text-justify sm:max-md:pb-5 ">
                 <p>
                   Nos visualizamos como el principal referente en el ámbito del
                   entretenimiento, el deporte y la convivencia familiar en el
@@ -91,7 +91,7 @@ export const ContenidoElCLub = () => {
             </div>
             <div className=" w-full h-full">
               <div
-                className=" 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
+                className=" w-[430px] h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/GTtfmKP/IMG-5945.jpg`,
                 }}
@@ -101,20 +101,20 @@ export const ContenidoElCLub = () => {
           <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
             <div className=" w-full h-full flex justify-end">
               <div
-                className=" 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px]"
+                className=" w-[430px] h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/5jYJk7H/DSC-0105.jpg)`,
                 }}
               ></div>
             </div>
             <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] sm:max-md:pb-[2rem] ">
-              <div className=" flex justify-center items-center gap-2">
-                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[8rem]"></div>
-                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl">
+              <div className=" grid grid-cols-2 w-full items-center gap-2">
+                <div className=" h-2 w-full bg-amber-300 "></div>
+                <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl text-start">
                   Historia
                 </strong>
               </div>
-              <div className=" 2xl:pl-10 sm:max-md:text-justify ">
+              <div className=" 2xl:pl-10 text-justify ">
                 <p>
                   El <strong>Club Campestre de Neiva</strong> fue fundado en el
                   año 1952 en un terreno inicial de aproximadamente 20
@@ -133,15 +133,15 @@ export const ContenidoElCLub = () => {
               </div>
             </div>
           </div>
-          <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2 ">
+          <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2 ">
             <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
-              <div className=" flex justify-center items-center gap-2">
-                <strong className=" font-AltoneNormal text-3xl font-semibold sm:max-md:text-2xl">
+              <div className=" grid grid-cols-2 w-full items-center gap-2">
+                <strong className=" font-AltoneNormal text-3xl font-semibold text-end">
                   Política deportiva
                 </strong>
-                <div className=" h-2 2xl:w-[30rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[5rem]"></div>
+                <div className=" h-2 w-full bg-amber-300 "></div>
               </div>
-              <div className="2xl:pl-10 sm:max-md:text-justify sm:max-md:pb-5">
+              <div className="2xl:pl-10 text-justify sm:max-md:pb-5">
                 <p>
                   Fomentar, estimular, apoyar y acompañar las prácticas
                   deportivas en niños y adolescentes que beneficien su salud e
@@ -157,7 +157,7 @@ export const ContenidoElCLub = () => {
             </div>
             <div className=" w-full h-full">
               <div
-                className=" 2xl:w-[430px] xl:w-[380px] 2xl:h-full h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px] sm:max-md:ml-1"
+                className=" w-[430px] h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/VvTDV2B/DSC00121.jpg)`,
                 }}
@@ -167,16 +167,16 @@ export const ContenidoElCLub = () => {
           <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2 ">
             <div className=" w-full h-full flex justify-end">
               <div
-                className=" 2xl:w-[430px] w-[380px] 2xl:h-full h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-0 sm:max-md:w-full sm:max-md:mb-10 sm:max-md:h-[300px] "
+                className=" w-[430px] h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-1 sm:max-md:w-full sm:max-md:h-[300px]"
                 style={{
                   backgroundImage: `url(https://i.ibb.co/hRcKVmb/DSC-0971.jpg)`,
                 }}
               ></div>
             </div>
             <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] ">
-              <div className=" flex justify-center items-center gap-2">
-                <div className=" h-2 2xl:w-[20rem] xl:w-[20rem] w-[13rem] bg-amber-300 sm:max-md:w-[1rem]"></div>
-                <strong className=" font-AltoneNormal text-3xl font-semibold sm:max-md:text-xl">
+              <div className=" grid grid-cols-2 w-full items-center gap-2">
+                <div className=" h-2 w-full bg-amber-300"></div>
+                <strong className=" font-AltoneNormal text-3xl font-semibold sm:max-md:text-xl text-start">
                   Política de infraestructura
                 </strong>
               </div>

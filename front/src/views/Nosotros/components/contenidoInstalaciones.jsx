@@ -49,7 +49,7 @@ export const ContenidoInstalaciones = () => {
   return (
     <>
       <div className=" w-full h-full bg-zinc-800  ">
-        <div className=" w-full h-16 divide-x divide-amber-300 py-2 2xl:px-[10rem] lg:px-[2rem] grid grid-cols-8 justify-center items-center sm:max-md:grid-cols-3 sm:max-md:grid-row-3 sm:max-md:gap-3 sm:max-md:h-24 sm:max-md:px-2 sm:max-md:py-5  ">
+        <div className=" w-full h-16 divide-x divide-amber-300 py-2 2xl:px-[10rem] lg:px-[2rem] grid grid-cols-8 justify-center items-center sm:max-md:grid-cols-3 sm:max-md:grid-row-3 sm:max-md:gap-3 sm:max-md:h-24 sm:max-md:px-2 sm:max-md:py-5 animate__animated animate__fadeIn  ">
           {menuServicios.map((servicio, index) => (
             <button
               onClick={() => setOpcionServicio(servicio.id)}
@@ -62,7 +62,7 @@ export const ContenidoInstalaciones = () => {
           ))}
         </div>
         {opcionServicio == 0 && (
-          <div>
+          <div className="animate__animated animate__fadeIn">
             <div className=" flex justify-center items-center pt-10 flex-col sm:max-md:pt-16">
               <img
                 src="https://i.ibb.co/dpgQ9TD/titulo-Evento-Sociales23png.png"
@@ -125,7 +125,7 @@ export const ContenidoInstalaciones = () => {
         )}
 
         {opcionServicio === 1 && (
-          <div>
+          <div className="animate__animated animate__fadeIn">
             <div className=" flex justify-center items-center pt-10 flex-col">
               <img
                 src="https://i.ibb.co/nbF8SSV/Sin-t-tulo-5.png"
@@ -145,7 +145,7 @@ export const ContenidoInstalaciones = () => {
                 </p>
               </div>
 
-              <div className=" flex justify-center items-center sm:max-md:w-[22rem]">
+              <div className=" flex justify-center items-center sm:max-md:w-[22rem] animate__animated animate__fadeIn">
                 <ImageGallery
                   items={imagesCapilla}
                   showFullscreenButton={false}
@@ -160,7 +160,7 @@ export const ContenidoInstalaciones = () => {
         )}
 
         {opcionServicio === 4 && (
-          <div>
+          <div className="animate__animated animate__fadeIn">
             <div className=" flex justify-center items-center pt-10 flex-col">
               <img
                 src="https://i.ibb.co/C0r5k5H/escenarios-Depor.png"
@@ -220,7 +220,7 @@ export const ContenidoInstalaciones = () => {
         )}
 
         {opcionServicio === 2 && (
-          <div>
+          <div className="animate__animated animate__fadeIn">
             <div className=" flex justify-center items-center pt-10 flex-col">
               <img
                 src="https://i.ibb.co/SRPShQM/piscinas-YTobogan.png"
@@ -244,7 +244,7 @@ export const ContenidoInstalaciones = () => {
                 </p>
               </div>
 
-              <div className="flex justify-center items-center sm:max-md:w-[22rem]">
+              <div className="flex justify-center items-center sm:max-md:w-[22rem] animate__animated animate__fadeIn">
                 <ImageGallery
                   items={imagesPiscinas}
                   showFullscreenButton={false}
@@ -259,7 +259,7 @@ export const ContenidoInstalaciones = () => {
         )}
 
         {opcionServicio === 3 && (
-          <div className=" flex justify-center items-center sm:max-md:items-start pt-10 flex-col ">
+          <div className=" flex justify-center items-center sm:max-md:items-start pt-10 flex-col animate__animated animate__fadeIn ">
             <img
               src="https://i.ibb.co/QpTzKrr/escuelas-Deportivas.png"
               alt="escuelas-Deportivas"
@@ -398,8 +398,8 @@ export const ContenidoInstalaciones = () => {
         )}
 
         {opcionServicio === 5 && (
-          <div>
-            <div className=" flex justify-center items-center pt-10 flex-col sm:max-md:pt-20">
+          <div className="animate__animated animate__fadeIn">
+            <div className=" flex justify-center items-center pt-10 flex-col sm:max-md:pt-20 ">
               <img
                 src="https://i.ibb.co/SPTQbfj/restaurante-Internacional.png"
                 alt="restaurante-Internacional"
@@ -461,7 +461,7 @@ export const ContenidoInstalaciones = () => {
         )}
 
         {opcionServicio === 6 && (
-          <div className=" flex justify-center items-center pt-10 flex-col">
+          <div className=" flex justify-center items-center pt-10 flex-col animate__animated animate__fadeIn">
             <img
               src="https://i.ibb.co/njtPPzM/sede-Infantil.png"
               alt="sede-Infantil"
@@ -478,7 +478,7 @@ export const ContenidoInstalaciones = () => {
                 </p>
               </div>
 
-              <div className=" flex justify-center items-center">
+              <div className=" flex justify-center items-center animate__animated animate__fadeIn">
                 <ImageGallery
                   items={imagesGuarderia}
                   showFullscreenButton={false}
@@ -493,8 +493,8 @@ export const ContenidoInstalaciones = () => {
         )}
 
         {opcionServicio === 7 && (
-          <div>
-            <div className=" flex justify-center items-center pt-10 flex-col sm:max-md:pt-20">
+          <div className="animate__animated animate__fadeIn">
+            <div className=" flex justify-center items-center pt-10 flex-col sm:max-md:pt-20 ">
               <img
                 src="https://i.ibb.co/mtzkw4J/gastrobar.png"
                 alt="gastrobar_club_campestre"
@@ -512,7 +512,7 @@ export const ContenidoInstalaciones = () => {
                   loop
                   muted
                   controls={false}
-                  className="max-w-screen-sm max-h-screen object-cover border-2 border-white rounded-md shadow-lg shadow-black"
+                  className="max-w-screen-sm max-h-screen object-cover border-2 border-white rounded-md shadow-lg shadow-black animate__animated animate__fadeIn"
                 >
                   <source src={videoFondo} type="video/mp4" />
                 </video>
@@ -532,7 +532,7 @@ export const ContenidoInstalaciones = () => {
                   gastrobar es el destino perfecto para disfrutar de una noche
                   inolvidable entre amigos y familiares.
                 </p>
-                <div className=" flex justify-center items-center px-20 sm:max-md:px-1">
+                <div className=" flex justify-center items-center px-20 sm:max-md:px-1 animate__animated animate__fadeIn">
                   <ImageGallery
                     items={imagesGastro}
                     showFullscreenButton={false}

@@ -23,7 +23,7 @@ export const BannerNosotros = ({ titulo, componente }) => {
         <div className=" w-full 2xl:h-[45rem] h-[35rem] absolute top-0 flex justify-center items-center z-30">
           <div className=" flex flex-col 2xl:text-xl 2xl:px-[30rem] px-56 text-center gap-6">
             <h1
-              className={` text-white font-AltoneBold  ${
+              className={` text-white font-AltoneBold animate__animated animate__fadeInDown  ${
                 componente === "elClub"
                   ? "text-7xl sm:max-md:text-5xl"
                   : "text-6xl sm:max-md:text-5xl"
