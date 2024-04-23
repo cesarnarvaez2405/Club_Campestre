@@ -58,6 +58,7 @@ export const RegistrarNoticia = ({
       },
     }),
     CustomDocument,
+    ListItem,
     Color.configure({ types: [TextStyle.name, ListItem.name] }),
     TextStyle.configure({ types: [ListItem.name] }),
     TextAlign.configure({
@@ -322,14 +323,14 @@ export const RegistrarNoticia = ({
             </div>
           </div>
 
-          <div className="flex flex-row gap-5">
+          <div className="flex flex-row gap-5 w-full">
             <div className="flex items-center justify-center ">
               <span className=" bg-blue-950 px-[9px] py-[1px] rounded-full text-white font-sans font-semibold">
                 5
               </span>
             </div>
 
-            <div className="flex flex-col items-start justify-center ">
+            <div className="flex flex-col items-start justify-center w-full ">
               <h3 className="flex text-xl font-AltoneNormal">
                 Cuerpo <Dot />
                 <span className="pl-3 text-sm font-AltoneNormal">
@@ -337,7 +338,7 @@ export const RegistrarNoticia = ({
                 </span>
               </h3>
 
-              <div className=" border rounded-lg  2xl:w-[50rem] lg:w-[40rem] md:w-[25rem] w-[20rem]  ">
+              <div className=" border rounded-lg w-full ">
                 <EditorProvider
                   extensions={extensions}
                   slotBefore={<MenuBarUtils />}

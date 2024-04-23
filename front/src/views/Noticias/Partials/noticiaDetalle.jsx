@@ -4,6 +4,8 @@ import { useNoticias } from "../Hooks/useNoticias";
 import { getFormatDate } from "../../../utils/timeFormat";
 import { ClockIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
+import styles from "../Style/noticia.module.css";
+
 export const NoticiaDetalle = () => {
   const { id } = useParams();
   const { obtenerNoticia } = useNoticias();
@@ -65,6 +67,7 @@ export const NoticiaDetalle = () => {
               </div>
               <div className=" pt-14">
                 <div
+                  className={styles.noticia}
                   dangerouslySetInnerHTML={{
                     __html: noticia && noticia.cuerpo,
                   }}

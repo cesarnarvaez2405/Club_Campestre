@@ -12,7 +12,7 @@ export const MenuBarUtils = () => {
   const { editor } = useCurrentEditor();
   const { guardarImagenesRegistro } = useRegistrarNoticia();
 
-  const [selectedHeadingLevel, setSelectedHeadingLevel] = useState();
+  const [selectedHeadingLevel, setSelectedHeadingLevel] = useState(3);
   const [imagenes, setImagenes] = useState([]);
   const [verModalImagenes, setVerModalImagenes] = useState(false);
 
@@ -176,12 +176,20 @@ export const MenuBarUtils = () => {
             h6
           </option>
         </select>
-        <a onClick={() => editor.chain().focus().setHorizontalRule().run()}>
+        {/* <a onClick={() => editor.chain().focus().setHorizontalRule().run()}>
           horizontal rule
         </a>
         <a onClick={() => editor.chain().focus().setHardBreak().run()}>
           hard break
+        </a> */}
+
+        <a
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          className={editor.isActive("bulletList") ? "is-active" : ""}
+        >
+          <div>toggleBulletList</div>
         </a>
+
         <a
           className=" cursor-pointer"
           onClick={() => editor.chain().focus().undo().run()}

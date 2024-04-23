@@ -1,0 +1,41 @@
+.noticia img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .noticia ul {
+    list-style-type: disc; /* Tipo de marcador de lista (puntos) */
+    padding-left: 20px; /* Espacio para el marcador de lista */
+  }
+  
+  .noticia li {
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+  }
+
+  .noticia h1 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .noticia h2 {
+    font-size: 25px;
+  }
+
+  .noticia h3 {
+    font-size: 20px;
+  }
+
+  .noticia h4 {
+    font-size: 14px;
+  }
+  
+  .noticia h5 {
+    font-size: 11px;
+  }
+
+  .noticia h6 {
+    font-size: 6px;
+  }
