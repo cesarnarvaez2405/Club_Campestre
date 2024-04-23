@@ -50,7 +50,7 @@ export const BannerSerSocio = () => {
             <br />
             <br />
             <span className="text-xl text-amber-400 font-semibold text-center">
-              #ViveClubCampestre
+              #ViveClubCampestreNeiva
             </span>
           </p>
         </div>

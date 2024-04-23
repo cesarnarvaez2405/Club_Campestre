@@ -9,7 +9,31 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 export const BannerCampestre = ({ desplazarBannerHotel }) => {
   const [posicionInfo, setPosicionInfo] = useState(0);
+
   const videoFondo = "https://clubcampestreneiva.site/secuencia.mp4";
+
+  const videosFondo = [
+    {
+      src: "https://clubcampestreneiva.site/Lago_Club_Campestre_1080P.mp4",
+      title: "Video del lago del Club Campestre de Neiva",
+    },
+    {
+      src: "https://clubcampestreneiva.site/Campo_Golf_1080P.mp4",
+      title: "Video del campo de Golf Club Campestre Neiva",
+    },
+    {
+      src: "https://clubcampestreneiva.site/Cancha_Multiple_1080P.mp4",
+      title: "Video de la Cancha Multiple Club Campestre Neiva",
+    },
+    {
+      src: "https://clubcampestreneiva.site/Piscina_Club_Campestre_1080P.mp4",
+      title: "Video de la Piscina Club Campestre Neiva",
+    },
+    {
+      src: "https://clubcampestreneiva.site/Canchas_Tenis_Club_Campestre_Neiva_1080P.mp4",
+      title: "Video de las Canchas de tenis del Club Campestre de Neiva",
+    },
+  ];
 
   const handleClickButtonRight = () => {
     if (posicionInfo < infoBanner.length - 1) {
@@ -33,25 +57,37 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(handleClickButtonRight, 10000);
+    const intervalId = setInterval(handleClickButtonRight, 5700);
     return () => clearInterval(intervalId);
   }, [posicionInfo]);
 
   return (
     <>
-      <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-slate-600 z-10 flex top-0">
+      <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-black  z-10 flex top-0">
         <div className="z-20 block w-full h-full ">
           <div className="relative w-full 2xl:h-[50rem] xl:h-[40rem] h-[40rem] overflow-hidden">
-            <video
-              autoPlay
-              loop
-              muted
-              controls={false}
-              className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
-            >
-              <source src={videoFondo} type="video/mp4" />
-            </video>
-            {/* <VideoYoutube videoId="ddxdGn9dRxQ" width={1980} height={1100} /> */}
+            <SwitchTransition>
+              <CSSTransition
+                classNames="fade"
+                key={videosFondo[posicionInfo].title}
+                addEndListener={(node, done) =>
+                  node.addEventListener("transitionend", done, false)
+                }
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  controls={false}
+                  className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
+                >
+                  <source
+                    src={videosFondo[posicionInfo].src}
+                    type="video/mp4"
+                  />
+                </video>
+              </CSSTransition>
+            </SwitchTransition>
           </div>
           <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[22%] lg:top-[25%] top-[45%] sm:max-md:top-[30%] ">
             <div className="flex items-center justify-between h-full mx-8 sm:max-md:mx-2 ">
