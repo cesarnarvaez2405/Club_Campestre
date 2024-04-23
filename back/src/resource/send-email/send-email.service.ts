@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { CreateSendEmailDto } from './dto/create-send-email.dto';
 import { UpdateSendEmailDto } from './dto/update-send-email.dto';
 import { MailerService } from '@nestjs-modules/mailer';
-import { join } from 'path';
 import { Usuario } from '../usuario/entities/usuario.entity';
 import { TercerosInteresado } from '../terceros-interesados/entities/terceros-interesado.entity';
 
@@ -36,7 +35,7 @@ export class SendEmailService {
     return await this.mailerService
       .sendMail({
         to: email,
-        from: 'cesar.teacher24@gmail.com',
+        from: 'no.reply@clubcampestre.com',
         subject: 'Bienvenido a nuestra plataforma',
         template: 'creacionUsuario',
         context: {
@@ -82,5 +81,29 @@ export class SendEmailService {
         console.error(error);
         return false;
       });
+  }
+
+  async sendOlvidoPasswordEmail(
+    token: string,
+    usuario: Partial<Usuario>,
+  ): Promise<boolean> {
+    try {
+      const { email } = usuario;
+      await this.mailerService.sendMail({
+        to: email,
+        from: 'cesar.teacher24@gmail.com',
+        subject: 'Bienvenido a nuestra plataforma',
+        template: 'notificacionTerceroInteresado',
+        context: {
+          email,
+        },
+      });
+      console.info(`Correo electrónico enviado correctamente`);
+      return true;
+    } catch (error) {
+      console.error('Error al enviar el correo electrónico:');
+      console.error(error);
+      return false;
+    }
   }
 }

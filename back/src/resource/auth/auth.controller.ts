@@ -6,6 +6,7 @@ import {
   UseGuards,
   Req,
   InternalServerErrorException,
+  Query,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
@@ -15,6 +16,7 @@ import { Role } from '../common/enums/rol.enum';
 import { Auth } from './decorators/auth.decorators';
 import { UsuarioActivo } from '../common/decorators/usuarioActivo.decorators';
 import { UsuarioActivoInterface } from '../common/interface/usuarioActivo.interface';
+import { ForgotPasswordDto } from './dto/forgotPassword.dto';
 
 interface RequestWithUser extends Request {
   usuario: {
@@ -56,6 +58,18 @@ export class AuthController {
   perfil(@UsuarioActivo() usuario: UsuarioActivoInterface) {
     try {
       return this.authService.perfil(usuario);
+    } catch (error) {
+      throw new InternalServerErrorException(error.message);
+    }
+  }
+
+  @Post('olvido-password')
+  olvidoPassword(
+    @Body()
+    forgotPasswordDto: ForgotPasswordDto,
+  ) {
+    try {
+      return this.authService.olvidoPassword(forgotPasswordDto);
     } catch (error) {
       throw new InternalServerErrorException(error.message);
     }

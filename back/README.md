@@ -1,38 +1,60 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://clubcampestreneiva.site/Logo_club_campestre_image.png" width="200" alt="Nest Logo" /></a>
 </p>
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">Servidor - Backend de la Corporacion Club Campestre de Neiva</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+
+  ![](https://img.shields.io/badge/Nestjs-E0234E.svg?style=for-the-badge&logo=nestjs)
+![](https://img.shields.io/badge/.ENV-ECD53F.svg?style=for-the-badge&logo=dotenv&logoColor=black)
+![](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+![](https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white)
+![](https://img.shields.io/badge/Typeform-262627.svg?style=for-the-badge&logo=Typeform&logoColor=white)
+![](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&color=white)
+![](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white)
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descripcion
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Club Campestre de neiva](clubcampestreneiva.com) Proyecto desarrollado para la plataforma web del club campestre
 
-## Installation
+## Instalacion
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+# 💻Entornos
+
+## Variables de entorno:
+
+Para la creación de los archivos de variables de entorno, se pueden usar como base los ficheros con la estructura de `example.**.env`.
+
+**⚠️Nota:** Si presenta problemas para ejecutar las variables de entorno en un PC con windows, pruebe instalando la siguiente dependencia de forma global: `npm install -g win-node-env`
+
+### **Entorno de Desarrollo:**
+
+Crear el fichero `.env.development` con base en el archivo `example.development.env` y configurar las variables necesarias.
+
+### **Entorno de Producción:**
+
+Crear el fichero `.env.production` con base en el archivo `example.production.env` y configurar las variables necesarias.
+
+```sh
+# Comandos para crear los ficheros de variables de entorno
+
+# Situarse en el backend
+cd back
+
+# Crear las variables para Desarrollo:
+touch .env
+
+```
+
+## Ejecutar
 
 ```bash
 # development
@@ -45,29 +67,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
+## Soporte
 
-# e2e tests
-$ npm run test:e2e
+La empresa VIBRANIUM es la encargada de realizar soporte al software, si tienes alguna informacion comunicate al correo cesar.teacher24@gmail.com
 
-# test coverage
-$ npm run test:cov
-```
+## Involucrados
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - [Cesar Andres Narvaez](https://kamilmysliwiec.com)
+- LinkedIn - [@cesarnarvaez](www.linkedin.com/in/cesar-andres-narvaez-reyes-6b048b1b9)

@@ -6,12 +6,14 @@ import {
 import { UsuarioService } from '../usuario/usuario.service';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
+import { SendEmailService } from '../send-email/send-email.service';
 
 @Injectable()
 export class AuthService {
   constructor(
     private readonly usuarioService: UsuarioService,
     private readonly jwtService: JwtService,
+    private readonly sendEmailService: SendEmailService,
   ) {}
 
   async register(registro) {
@@ -38,7 +40,6 @@ export class AuthService {
     }
 
     const payload = { email: tieneEmail.email, rol: tieneEmail.rol };
-
     const token = await this.jwtService.signAsync(payload);
 
     return {
@@ -50,5 +51,13 @@ export class AuthService {
   async perfil(perfil) {
     const { email } = perfil;
     return await this.usuarioService.buscarPorEmail(email);
+  }
+
+  async olvidoPassword(body) {
+    const { email } = body;
+    const usuario = await this.usuarioService.buscarPorEmail(email);
+    const payload = { rowId: usuario.rowId, email: usuario.email };
+    const token = await this.jwtService.signAsync(payload);
+    return await this.sendEmailService.sendOlvidoPasswordEmail(token, payload);
   }
 }
