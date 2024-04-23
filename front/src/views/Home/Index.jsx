@@ -40,7 +40,7 @@ export const Home = () => {
         </div>
         <SeccionNoticias noticias={noticias} />
       </div>
-      <div className="fixed z-40 flex flex-col gap-2 top-52 right-4 animate__animated animate__bounceInRight">
+      <div className="fixed z-40 flex flex-col gap-2 top-52 right-4 ">
         <a
           href="https://www.facebook.com/clubcampestredeneiva?locale=es_LA"
           target="_blank"

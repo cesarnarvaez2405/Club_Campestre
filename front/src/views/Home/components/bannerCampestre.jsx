@@ -10,8 +10,6 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 export const BannerCampestre = ({ desplazarBannerHotel }) => {
   const [posicionInfo, setPosicionInfo] = useState(0);
 
-  const videoFondo = "https://clubcampestreneiva.site/secuencia.mp4";
-
   const videosFondo = [
     {
       src: "https://clubcampestreneiva.site/Lago_Club_Campestre_1080P.mp4",
