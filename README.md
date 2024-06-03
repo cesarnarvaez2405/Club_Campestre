@@ -1,6 +1,6 @@
-<!-- <p align="center">
+<p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://clubcampestreneiva.site/Logo_club_campestre_image.png" width="200" alt="Nest Logo" /></a>
-</p> -->
+</p>
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
@@ -8,7 +8,7 @@
   <p align="center">Corporacion Club Campestre de Neiva</p>
     <p align="center">
 
-  ![](https://img.shields.io/badge/Node.js-E0234E.svg?style=for-the-badge&logo=nestjs)
+![](https://img.shields.io/badge/Node.js-E0234E.svg?style=for-the-badge&logo=nestjs)
 ![](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
 ![](https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white)
 ![](https://img.shields.io/badge/Typeform-262627.svg?style=for-the-badge&logo=Typeform&logoColor=white)
@@ -19,6 +19,7 @@
 ![](https://img.shields.io/badge/.ENV-ECD53F.svg?style=for-the-badge&logo=dotenv&logoColor=black)
 ![](https://img.shields.io/badge/reacttable-FF4154.svg?style=for-the-badge&logo=reacttable&color=white)
 ![](https://img.shields.io/badge/javascript-000000.svg?style=for-the-badge&logo=javascript)
+
 </p>
 
 ## Descripcion
