@@ -21,13 +21,15 @@ export const Autenticador = () => {
 
     try {
       const usuarioLogeado = await usuarios.login(usuario);
-      localStorage.setItem("token", usuarioLogeado.token);
-      dispatch(
-        onLogin({
-          email: usuarioLogeado.payload.email,
-          rol: usuarioLogeado.payload.rol,
-        })
-      );
+      if (usuarioLogeado.token) {
+        localStorage.setItem("token", usuarioLogeado.token);
+        dispatch(
+          onLogin({
+            email: usuarioLogeado.payload.email,
+            rol: usuarioLogeado.payload.rol,
+          })
+        );
+      }
     } catch (error) {
       dispatch(onLogout("Credenciales incorrectas"));
     }

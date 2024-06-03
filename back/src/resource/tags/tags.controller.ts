@@ -21,11 +21,7 @@ export class TagsController {
   @Post()
   @Auth(Role.Admin)
   async create(@Body() createTagDto: CreateTagDto) {
-    try {
-      return await this.tagsService.create(createTagDto);
-    } catch (error) {
-      throw new InternalServerErrorException(error);
-    }
+    return await this.tagsService.create(createTagDto);
   }
 
   @Get()
