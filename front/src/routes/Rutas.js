@@ -9,8 +9,8 @@ export const linkRutas = [
     title: "Nosotros",
     subMenu: [
       {
-        path: "/nosotros/ElClub",
-        name: "ElClub",
+        path: "/nosotros/el-club",
+        name: "el-club",
         title: "El Club",
       },
       {
