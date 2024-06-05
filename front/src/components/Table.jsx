@@ -28,7 +28,7 @@ export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
             <div className=" mt-3 text-sm">
               <span>{item.sumario} </span>
             </div>
-            <div className=" mt-2 grid grid-cols-3">
+            <div className=" mt-2 flex gap-3">
               {item.tags.map((tag, index) => (
                 <div key={index} className=" my-4">
                   <span

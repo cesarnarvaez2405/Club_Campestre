@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm, Controller, set } from "react-hook-form";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import { TrashIcon } from "@heroicons/react/16/solid";
+import { TrashIcon, TagIcon, PlusIcon } from "@heroicons/react/16/solid";
 
 import { EditorProvider, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
@@ -16,6 +16,7 @@ import Image from "@tiptap/extension-image";
 
 import Swal from "sweetalert2";
 import { AlertError } from "../../../../../components/Util/alertError";
+import { ModalRegistrarTags } from "../Components/ModalRegistrarTags";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
 import { MenuBarUtils } from "../../../../../components/Util/MenuBarUtils";
 import { Dot } from "../../../../../components/Util/Dot";
@@ -34,8 +35,9 @@ export const RegistrarNoticia = ({
   const [imagenActual, setImagenActual] = useState(null);
   const [noticiaId, setNoticiaId] = useState(null);
   const [estaGuardando, setEstaGuardando] = useState(false);
+  const [estaAbiertoModalTag, setEstaAbiertoModalTag] = useState(false);
 
-  const { guardar, actualizar } = useRegistrarNoticia();
+  const { guardar, actualizar, obtenerTags } = useRegistrarNoticia();
 
   const animatedComponents = makeAnimated();
   const {
@@ -150,6 +152,16 @@ export const RegistrarNoticia = ({
     await setContenido("");
     await setTab(0);
     await obtenerNoticias();
+  };
+
+  const abrirModal = () => {
+    setEstaAbiertoModalTag(true);
+  };
+
+  const cerrarModalTags = async () => {
+    setEstaAbiertoModalTag(false);
+    const tagsNuevos = await obtenerTags();
+    tags = tagsNuevos;
   };
 
   return (
@@ -297,28 +309,37 @@ export const RegistrarNoticia = ({
                   "Escoja los tags adecuados a la noticia"
                 </span>
               </h3>
-              <div className="">
-                <Controller
-                  name="tags"
-                  control={control}
-                  rules={{ required: "Los tags son obligatorios" }}
-                  render={({ field }) => (
-                    <Select
-                      components={animatedComponents}
-                      closeMenuOnSelect={false}
-                      isMulti
-                      options={tags.map((tag) => ({
-                        value: tag.rowId,
-                        label: tag.nombre,
-                      }))}
-                      className="w-full "
-                      {...field}
-                    />
+              <div className=" flex gap-4 justify-center items-center">
+                <div>
+                  <Controller
+                    name="tags"
+                    control={control}
+                    rules={{ required: "Los tags son obligatorios" }}
+                    render={({ field }) => (
+                      <Select
+                        components={animatedComponents}
+                        closeMenuOnSelect={false}
+                        isMulti
+                        options={tags.map((tag) => ({
+                          value: tag.rowId,
+                          label: tag.nombre,
+                        }))}
+                        className="w-full "
+                        {...field}
+                      />
+                    )}
+                  />
+                  {errors.tags && (
+                    <AlertError> {errors.tags.message} </AlertError>
                   )}
-                />
-                {errors.tags && (
-                  <AlertError> {errors.tags.message} </AlertError>
-                )}
+                </div>
+                <div
+                  className=" flex bg-blue-950 justify-center items-center rounded-full py-1 px-1 cursor-pointer hover:shadow-sm hover:shadow-black hover:transition-all hover:ease-in-out"
+                  onClick={abrirModal}
+                >
+                  <PlusIcon className=" w-3 h-3 text-white" />
+                  <TagIcon className=" w-5 h-5 text-white" />
+                </div>
               </div>
             </div>
           </div>
@@ -367,6 +388,9 @@ export const RegistrarNoticia = ({
           </div>
         </div>
       </form>
+      {estaAbiertoModalTag && (
+        <ModalRegistrarTags cerrarModal={cerrarModalTags} />
+      )}
     </>
   );
 };

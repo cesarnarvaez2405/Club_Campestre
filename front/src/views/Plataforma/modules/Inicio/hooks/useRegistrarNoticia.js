@@ -12,6 +12,10 @@ export const useRegistrarNoticia = () => {
     return tags;
   };
 
+  const crearTags = async (datos) => {
+    await tagsService.crearTag(datos);
+  };
+
   const subirImagenesCuerpo = async (image) => {
     return await "../../uploads/hola.png";
   };
@@ -78,5 +82,6 @@ export const useRegistrarNoticia = () => {
     guardar,
     guardarImagenesRegistro,
     actualizar,
+    crearTags,
   };
 };
