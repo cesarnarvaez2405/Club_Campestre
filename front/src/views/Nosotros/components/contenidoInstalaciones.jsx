@@ -104,6 +104,7 @@ export const ContenidoInstalaciones = () => {
                             src={deporte.imagen}
                             alt={deporte.nombre}
                             className="w-full h-64 object-cover mb-2 shadow-md sm:max-md:h-36"
+                            loading="lazy"
                           />
                         </RViewerTrigger>
 
