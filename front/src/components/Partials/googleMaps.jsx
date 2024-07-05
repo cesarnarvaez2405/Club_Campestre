@@ -1,17 +1,17 @@
-import React, { useEffect, useRef } from "react";
+// import React, { useEffect, useRef } from "react";
 
-export const GoogleMaps = ({ center, zoom }) => {
-  const ref = useRef();
+// export const GoogleMaps = ({ center, zoom }) => {
+//   const ref = useRef();
 
-  useEffect(() => {
-    new window.google.maps.Map(ref.current, {
-      center,
-      zoom,
-    });
-  });
-  return (
-    <>
-      <div ref={ref} id="map" />
-    </>
-  );
-};
+//   useEffect(() => {
+//     new window.google.maps.Map(ref.current, {
+//       center,
+//       zoom,
+//     });
+//   });
+//   return (
+//     <>
+//       <div ref={ref} id="map" />
+//     </>
+//   );
+// };
