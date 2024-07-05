@@ -153,32 +153,38 @@ export const deportes = [
 export const escenariosDeportivos = [
   {
     titulo: "2 Canchas de Fútbol ",
-    imagen: "https://i.ibb.co/VvTDV2B/DSC00121.jpg",
+    imagen:
+      "https://clubcampestreneiva.site/IMG/Escenarios/escenario_deportivo_club_campestre_(3).jpg",
   },
   {
     titulo: "8 Canchas de Tenis ",
-    imagen: "https://i.ibb.co/QvBPhpw/DJI-0517.jpg",
+    imagen:
+      "https://clubcampestreneiva.site/IMG/Escenarios/escenario_deportivo_club_campestre_(2).jpg",
   },
   {
     titulo: "Piscinas",
-    imagen: "https://i.ibb.co/vJwBhS6/IMG-4965.jpg",
+    imagen:
+      "https://clubcampestreneiva.site/IMG/Escenarios/escenario_deportivo_club_campestre_(4).jpg",
   },
   {
     titulo: "Campo de Golf ",
-    imagen: "https://i.ibb.co/yVKB4XP/DSC-0987.jpg",
+    imagen:
+      "https://clubcampestreneiva.site/IMG/Escenarios/escenario_deportivo_club_campestre_(5).jpg",
   },
   {
     titulo: "Cancha de Vóley Playa",
-    imagen: "https://i.ibb.co/JyK6nm5/DSC-0907.jpg",
+    imagen:
+      "https://clubcampestreneiva.site/IMG/Escenarios/escenario_deportivo_club_campestre_(4).jpg",
   },
   {
     titulo: "Cancha múltiple",
     imagen:
-      "https://i.ibb.co/j47Mxhx/DJI-0347-MP4-00-00-16-17-Imagen-fija003.jpg",
+      "https://clubcampestreneiva.site/IMG/Escenarios/escenario_deportivo_club_campestre_(1).jpg",
   },
   {
     titulo: "Pista de Bolos",
-    imagen: "https://i.ibb.co/M2k6ZCm/DSC-8156.jpg",
+    imagen:
+      "https://clubcampestreneiva.site/IMG/Escenarios/escenario_deportivo_club_campestre_(6).jpg",
   },
   {
     titulo: "2 Canchas de Mini Fútbol",
@@ -294,25 +300,29 @@ export const imagesCapilla = [
     original:
       "https://i.ibb.co/QHshg1L/Whats-App-Image-2017-11-06-at-11-44-23-AM.jpg",
     thumbnail:
-      "https://i.ibb.co/QHshg1L/Whats-App-Image-2017-11-06-at-11-44-23-AM.jpg",
+      "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre.jpg",
     src: "https://i.ibb.co/QHshg1L/Whats-App-Image-2017-11-06-at-11-44-23-AM.jpg",
   },
   {
     original:
-      "https://i.ibb.co/TMB9KY6/Whats-App-Image-2017-11-06-at-11-44-28-AM.jpg",
+      "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_1080_(2).jpg",
     thumbnail:
-      "https://i.ibb.co/TMB9KY6/Whats-App-Image-2017-11-06-at-11-44-28-AM.jpg",
-    src: "https://i.ibb.co/TMB9KY6/Whats-App-Image-2017-11-06-at-11-44-28-AM.jpg",
+      "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_400_(2).jpeg",
+    src: "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_1080_(2).jpg",
   },
   {
-    original: "https://i.ibb.co/x29GTB9/IMG-8348.jpg",
-    thumbnail: "https://i.ibb.co/x29GTB9/IMG-8348.jpg",
-    src: "https://i.ibb.co/x29GTB9/IMG-8348.jpg",
+    original:
+      "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_1080_(3).jpg",
+    thumbnail:
+      "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_400_(3).jpeg",
+    src: "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_1080_(3).jpg",
   },
   {
-    original: "https://i.ibb.co/M1g33bS/IMG-8351.jpg",
-    thumbnail: "https://i.ibb.co/M1g33bS/IMG-8351.jpg",
-    src: "https://i.ibb.co/M1g33bS/IMG-8351.jpg",
+    original:
+      "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_1080_(4).jpg",
+    thumbnail:
+      "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_400_(4).jpeg",
+    src: "https://clubcampestreneiva.site/IMG/Capilla/capilla_club_campestre_1080_(4).jpg",
   },
 ];
 
