@@ -21,9 +21,9 @@ export const Footer = () => {
               Rivera - Huila
             </span>
             <div className="w-48 h-48 pt-3 sm:max-md:h-72 ">
-              <Wrapper apiKey={apiKeyGoogle}>
+              {/* <Wrapper apiKey={apiKeyGoogle}>
                 <GoogleMaps center={center} zoom={zoom} />
-              </Wrapper>
+              </Wrapper> */}
             </div>
           </div>
           <div className="flex flex-col items-center justify-start">
