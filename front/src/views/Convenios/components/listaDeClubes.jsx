@@ -8,11 +8,11 @@ export const ListaDeClubes = ({ convenios, ciudad }) => {
     const clubes = convenios[ciudadBuscada];
 
     return (
-      <div className=' mt-20 w-[100rem] sm:max-md:pt-10 sm:max-md:w-full '>
-        <h2 className='text-xl font-semibold mb-2 uppercase text-blue-950 sm:max-md:pl-2'>
+      <div className=' mt-20 sm:max-md:pt-10 sm:max-md:w-full '>
+        <h2 className='text-xl font-semibold mb-2 uppercase text-blue-950 sm:max-md:pl-2 text-center'>
           {ciudad}
         </h2>
-        <div className=' grid grid-cols-3 gap-10 sm:max-md:grid-cols-1 sm:max-md:px-5'>
+        <div className=' grid grid-cols-3 gap-10 sm:max-md:grid-cols-1 sm:max-md:px-5 md:px-8'>
           {clubes.map((club, idx) => (
             <div className=' px-6 border border-gray-300 rounded-lg py-3'>
               <img
