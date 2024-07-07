@@ -11,7 +11,7 @@ export const ClubCampestreApp = () => {
     <>
       <Provider store={store}>
         <BrowserRouter>
-          <Menu key="menu" />
+          <Menu />
           <AppRouter />
           <Footer />
         </BrowserRouter>

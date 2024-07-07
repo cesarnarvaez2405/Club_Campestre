@@ -1,8 +1,8 @@
 import React from "react";
 import { BannerNosotros } from "../components/bannerNosotros";
-import { ContenidoInstalaciones } from "../components/contenidoInstalaciones";
+import { ContenidoInstalaciones } from "./Components/contenidoInstalaciones";
 
-export const Instalaciones = () => {
+export const Servicios = () => {
   return (
     <>
       <div className="w-full flex flex-col">

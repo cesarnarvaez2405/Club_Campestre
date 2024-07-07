@@ -1,9 +1,8 @@
 import React, { useEffect, useLayoutEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Home } from "../views/Home/Index";
-import { Nosotros } from "../views/Nosotros/Index";
-import { ElClub } from "../views/Nosotros/Sections/elClub";
-import { Instalaciones } from "../views/Nosotros/Sections/instalaciones";
+import { ElClub } from "../views/Nosotros/ElClub/index";
+import { Servicios } from "../views/Nosotros/Servicios/index";
 import { Eventos } from "../views/Eventos/Index";
 import { Convenios } from "../views/Convenios/Index";
 import { Hotel } from "../views/Hotel/Index";
@@ -62,7 +61,7 @@ export const AppRouter = () => {
         <Route path="/" element={<Home />} />
         {/* <Route path="/nosotros" element={<Nosotros />} /> */}
         <Route path="/nosotros/el-club" element={<ElClub />} />
-        <Route path="/nosotros/servicios" element={<Instalaciones />} />
+        <Route path="/nosotros/servicios" element={<Servicios />} />
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/convenios" element={<Convenios />} />
         <Route path="/hotel" element={<Hotel />} />
