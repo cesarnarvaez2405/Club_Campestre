@@ -4,43 +4,52 @@ export const Habitaciones = () => {
   const habitaciones = [
     {
       nombre: "Tatacoa",
-      imagen: "https://i.ibb.co/tcsJ1Rz/IMG-8429-HDR-1.jpg",
+      imagen: "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(3).jpg",
     },
     {
       nombre: "San Agustin",
-      imagen: "https://i.ibb.co/xXJpBM5/HAY-7467.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(5).jpg",
     },
     {
       nombre: "Yuma",
-      imagen: "https://i.ibb.co/PjjH777/HAY-7445.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(7).jpg",
     },
     {
       nombre: "Bordones",
-      imagen: "https://i.ibb.co/ZzfWqrP/HAY-7464.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(4).jpg",
     },
     {
       nombre: "Guacharos",
-      imagen: "https://i.ibb.co/ZzfWqrP/HAY-7464.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(4).jpg",
     },
     {
       nombre: "Oasis",
-      imagen: "https://i.ibb.co/HHdVGjM/HAY-7457.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(3).jpg",
     },
     {
       nombre: "San Pedro",
-      imagen: "https://i.ibb.co/j5St6ZB/HAY-7442.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(6).jpg",
     },
     {
       nombre: "Cedral",
-      imagen: "https://i.ibb.co/BwjNjwc/HAY-7450.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(1).jpg",
     },
     {
       nombre: "Guadalupe",
-      imagen: "https://i.ibb.co/PjjH777/HAY-7445.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(7).jpg",
     },
     {
       nombre: "Guatipan",
-      imagen: "https://i.ibb.co/k4qRBXY/HAY-7454.jpg",
+      imagen:
+        "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Hotel_club(2).jpg",
     },
   ];
 

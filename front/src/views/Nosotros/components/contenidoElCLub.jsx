@@ -11,7 +11,7 @@ export const ContenidoElCLub = () => {
                 <strong className=" font-AltoneNormal text-end text-5xl font-semibold sm:max-md:text-3xl">
                   Nosotros
                 </strong>
-                <div className=" h-2 w-full bg-amber-300 "></div>
+                <div className=" h-2 w-full bg-amber-300 " />
               </div>
               <div className="2xl:pl-10 text-justify pt-5 sm:max-md:pb-5 ">
                 <p>
@@ -26,26 +26,26 @@ export const ContenidoElCLub = () => {
               </div>
             </div>
             <div className=" w-full h-full">
-              <div
+              <img
+                src="https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(3).jpg"
                 className=" w-[430px] h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
-                style={{
-                  backgroundImage: `url(https://i.ibb.co/yVKB4XP/DSC-0987.jpg)`,
-                }}
-              ></div>
+                alt="Campo de golf club campestre"
+                border="0"
+              />
             </div>
           </div>
           <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
             <div className=" w-full h-full flex justify-end">
-              <div
+              <img
                 className=" w-[430px] h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-1 sm:max-md:w-full sm:max-md:h-[300px]"
-                style={{
-                  backgroundImage: `url(https://i.ibb.co/QvBPhpw/DJI-0517.jpg)`,
-                }}
-              ></div>
+                src="https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(7).jpg"
+                alt=""
+                border="0"
+              />
             </div>
             <div className=" col-span-1 flex flex-col justify-start items-start  gap-5 ">
               <div className=" grid grid-cols-2 w-full items-center gap-2">
-                <div className=" h-2 w-full bg-amber-300 "></div>
+                <div className=" h-2 w-full bg-amber-300 " />
                 <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl text-start">
                   Misión
                 </strong>
@@ -90,26 +90,24 @@ export const ContenidoElCLub = () => {
               </div>
             </div>
             <div className=" w-full h-full">
-              <div
+              <img
+                src="https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(1).jpg"
+                alt="Hotel club campestre"
                 className=" w-[430px] h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
-                style={{
-                  backgroundImage: `url(https://i.ibb.co/GTtfmKP/IMG-5945.jpg`,
-                }}
-              ></div>
+              />
             </div>
           </div>
           <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
             <div className=" w-full h-full flex justify-end">
-              <div
+              <img
+                src="https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(2).jpg"
                 className=" w-[430px] h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-1 sm:max-md:w-full sm:max-md:h-[300px]"
-                style={{
-                  backgroundImage: `url(https://i.ibb.co/5jYJk7H/DSC-0105.jpg)`,
-                }}
-              ></div>
+                alt="Evento san pedro, club campestre"
+              />
             </div>
             <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] sm:max-md:pb-[2rem] ">
               <div className=" grid grid-cols-2 w-full items-center gap-2">
-                <div className=" h-2 w-full bg-amber-300 "></div>
+                <div className=" h-2 w-full bg-amber-300 " />
                 <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl text-start">
                   Historia
                 </strong>
@@ -156,22 +154,20 @@ export const ContenidoElCLub = () => {
               </div>
             </div>
             <div className=" w-full h-full">
-              <div
+              <img
+                src="https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(5).jpg"
                 className=" w-[430px] h-[300px] bg-white ml-10 bg-center bg-no-repeat bg-cover sm:max-md:ml-1 sm:max-md:w-full sm:max-md:h-[300px]"
-                style={{
-                  backgroundImage: `url(https://i.ibb.co/VvTDV2B/DSC00121.jpg)`,
-                }}
-              ></div>
+                alt="Cancha de futbol club campestre"
+              />
             </div>
           </div>
           <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2 ">
             <div className=" w-full h-full flex justify-end">
-              <div
+              <img
+                src="https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(4).jpg"
+                alt="Salon de eventos club camepestre"
                 className=" w-[430px] h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-1 sm:max-md:w-full sm:max-md:h-[300px]"
-                style={{
-                  backgroundImage: `url(https://i.ibb.co/hRcKVmb/DSC-0971.jpg)`,
-                }}
-              ></div>
+              />
             </div>
             <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] ">
               <div className=" grid grid-cols-2 w-full items-center gap-2">

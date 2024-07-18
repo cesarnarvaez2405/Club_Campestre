@@ -1,25 +1,33 @@
 import React from "react";
 
-const bannerImageElClub = "https://i.ibb.co/71G0nCZ/1.jpg";
+const bannerImageElClub =
+  "https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(6).jpg";
 const bannerImageInstalaciones =
-  "https://i.ibb.co/rbS07Dm/campo-Golf-Club-Campestre.jpg";
+  "https://clubcampestreneiva.site/IMG/ElClub/elclub_club_campestre(8).jpg";
 
 export const BannerNosotros = ({ titulo, componente }) => {
+  const getImageSrc = (componente) => {
+    if (componente === "elClub") {
+      return bannerImageElClub;
+    }
+
+    if (componente === "instalaciones") {
+      return bannerImageInstalaciones;
+    }
+
+    return "";
+  };
+
   return (
     <>
       <div className="w-full 2xl:h-[45rem] h-[35rem]">
-        <div
-          className={` w-full h-full block bg-slate-500  bg-no-repeat bg-cover brightness-75 ${
-            componente === "elClub" ? "bg-top" : "bg-center"
+        <img
+          className={` w-full h-full block bg-slate-500 brightness-75 object-cover ${
+            componente === "elClub" ? " object-top" : "object-center"
           }`}
-          style={{
-            backgroundImage: `url(${
-              componente === "elClub"
-                ? bannerImageElClub
-                : bannerImageInstalaciones
-            })`,
-          }}
-        ></div>
+          src={getImageSrc(componente)}
+          alt=""
+        />
         <div className=" w-full 2xl:h-[45rem] h-[35rem] absolute top-0 flex justify-center items-center z-30">
           <div className=" flex flex-col 2xl:text-xl 2xl:px-[30rem] px-56 text-center gap-6">
             <h1

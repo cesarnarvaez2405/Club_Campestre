@@ -4,39 +4,47 @@ import ImageGallery from "react-image-gallery";
 export const FotosHotel = () => {
   const imagesHotel = [
     {
-      original: "https://i.ibb.co/GTtfmKP/IMG-5945.jpg",
-      thumbnail: "https://i.ibb.co/GTtfmKP/IMG-5945.jpg",
-      src: "https://i.ibb.co/GTtfmKP/IMG-5945.jpg",
+      original:
+        "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(5).jpg",
+      thumbnail:
+        "https://clubcampestreneiva.site/IMG/Hotel/320/hotel_club_320(3).jpeg",
+      src: "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(5).jpg",
     },
     {
-      original: "https://i.ibb.co/BGTVkcK/IMG-5975.jpg",
-      thumbnail: "https://i.ibb.co/BGTVkcK/IMG-5975.jpg",
-      src: "https://i.ibb.co/BGTVkcK/IMG-5975.jpg",
+      original:
+        "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(1).jpg",
+      thumbnail:
+        "https://clubcampestreneiva.site/IMG/Hotel/320/hotel_club_320(5).jpeg",
+      src: "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(1).jpg",
     },
     {
-      original: "https://i.ibb.co/928D6C3/IMG-5977.jpg",
-      thumbnail: "https://i.ibb.co/928D6C3/IMG-5977.jpg",
-      src: "https://i.ibb.co/928D6C3/IMG-5977.jpg",
+      original:
+        "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(2).jpg",
+      thumbnail:
+        "https://clubcampestreneiva.site/IMG/Hotel/320/hotel_club_320(6).jpeg",
+      src: "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(2).jpg",
     },
     {
-      original: "https://i.ibb.co/tcsJ1Rz/IMG-8429-HDR-1.jpg",
-      thumbnail: "https://i.ibb.co/tcsJ1Rz/IMG-8429-HDR-1.jpg",
-      src: "https://i.ibb.co/tcsJ1Rz/IMG-8429-HDR-1.jpg",
+      original:
+        "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(3).jpg",
+      thumbnail:
+        "https://clubcampestreneiva.site/IMG/Hotel/320/hotel_club_320(1).jpeg",
+      src: "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(3).jpg",
     },
     {
-      original: "https://i.ibb.co/Cnf2xK8/IMG-8452.jpg",
-      thumbnail: "https://i.ibb.co/Cnf2xK8/IMG-8452.jpg",
-      src: "https://i.ibb.co/Cnf2xK8/IMG-8452.jpg",
+      original:
+        "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(4).jpg",
+      thumbnail:
+        "https://clubcampestreneiva.site/IMG/Hotel/320/hotel_club_320(2).jpeg",
+      src: "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(4).jpg",
     },
+
     {
-      original: "https://i.ibb.co/n6ZxLnK/IMG-8453-HDR.jpg",
-      thumbnail: "https://i.ibb.co/n6ZxLnK/IMG-8453-HDR.jpg",
-      src: "https://i.ibb.co/n6ZxLnK/IMG-8453-HDR.jpg",
-    },
-    {
-      original: "https://i.ibb.co/G0ddDsZ/IMG-0404.jpg",
-      thumbnail: "https://i.ibb.co/G0ddDsZ/IMG-0404.jpg",
-      src: "https://i.ibb.co/G0ddDsZ/IMG-0404.jpg",
+      original:
+        "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(6).jpg",
+      thumbnail:
+        "https://clubcampestreneiva.site/IMG/Hotel/320/hotel_club_320(4).jpeg",
+      src: "https://clubcampestreneiva.site/IMG/Hotel/720/hotel_club(6).jpg",
     },
   ];
 

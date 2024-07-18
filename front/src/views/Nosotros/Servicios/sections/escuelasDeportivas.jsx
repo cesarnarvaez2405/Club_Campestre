@@ -87,7 +87,7 @@ export const EscuelasDeportivas = () => {
           <div className=" flex justify-center items-center">
             {atencionSocio && (
               <img
-                src="https://i.ibb.co/3NbbhH8/6-HORARIO-ATENCI-N-A-SOCIOS.jpg"
+                src="https://clubcampestreneiva.site/IMG/ElClub/horarios(2).jpg"
                 alt="Horario de atencion club campestre"
                 border="0"
                 className="w-[35rem] h-[40rem] bg-cover mb-2 shadow-md"
@@ -96,13 +96,13 @@ export const EscuelasDeportivas = () => {
             {verHorarios && (
               <div className=" flex flex-row gap-4 sm:max-md:grid sm:max-md:grid-rows-2">
                 <img
-                  src="https://i.ibb.co/tQV4KfT/5-VER-HORARIO-DEPORTES.jpg"
+                  src="https://clubcampestreneiva.site/IMG/ElClub/horarios(3).jpg"
                   alt="horario escuelas club campestre"
                   border="0"
                   className="w-[35rem] h-[40rem] bg-cover mb-2 shadow-md"
                 />
                 <img
-                  src="https://i.ibb.co/J3xL9ZG/4-VER-HORARIO-DEPORTES.jpg"
+                  src="https://clubcampestreneiva.site/IMG/ElClub/horarios(1).jpg"
                   alt="horario escuelas club campestre"
                   border="0"
                   className="w-[35rem] h-[40rem] bg-cover mb-2 shadow-md"
