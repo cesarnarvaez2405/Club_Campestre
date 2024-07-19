@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../style/instalaciones.css";
 import { RViewer, RViewerTrigger } from "react-viewerjs";
 import { salones } from "../utils/salonesData";
+import { ImagenSlider } from "../../../../components/ImagenSlider";
 
 export const EventosSociales = () => {
   const [imagenesSalones, setImagenesSalones] = useState([]);
-
-  useEffect(() => {
-    const nuevasImagenesSalones = salones.map((salon) => salon.imagen);
-    setImagenesSalones(nuevasImagenesSalones);
-  }, []);
 
   return (
     <>
@@ -43,34 +39,22 @@ export const EventosSociales = () => {
             </p>
           </div>
           <div className="flex flex-wrap justify-start px-[16rem] md:max-xl:px-[8rem] sm:max-md:px-0 ">
-            <RViewer imageUrls={imagenesSalones}>
-              {salones.map((salon, index) => (
-                <div
-                  key={index}
-                  className="w-full sm:w-1/2 lg:w-1/2 p-4 cursor-pointer"
-                >
-                  <div className="">
-                    <RViewerTrigger index={index}>
-                      <img
-                        src={salon.imagen}
-                        alt={salon.nombre}
-                        className="w-full h-64 object-cover mb-2 shadow-md sm:max-md:h-36"
-                        loading="lazy"
-                      />
-                    </RViewerTrigger>
+            {salones.map((salon, index) => (
+              <div key={index} className="w-full sm:w-1/2 lg:w-1/2 p-4 ">
+                <div>
+                  <ImagenSlider imagenes={salon.imagenes} />
 
-                    <div className=" flex flex-col justify-center items-start">
-                      <h2 className="text-2xl mb-2 font-thin text-white sm:max-md:text-xl">
-                        {salon.nombre}
-                      </h2>
-                      <small className=" text-white">
-                        ({salon.titulo} {salon.subTitulo})
-                      </small>
-                    </div>
+                  <div className=" flex flex-col justify-center items-start">
+                    <h2 className="text-2xl mb-2 font-thin text-white sm:max-md:text-xl">
+                      {salon.nombre}
+                    </h2>
+                    <small className=" text-white">
+                      ({salon.titulo} {salon.subTitulo})
+                    </small>
                   </div>
                 </div>
-              ))}
-            </RViewer>
+              </div>
+            ))}
           </div>
         </div>
       </div>

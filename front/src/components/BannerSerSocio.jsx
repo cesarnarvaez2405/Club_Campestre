@@ -102,7 +102,7 @@ export const BannerSerSocio = () => {
 
                 <div className="p-8 space-y-4 md:p-8">
                   <p className="text-base leading-relaxed text-black dark:text-white">
-                    Dejanos tus datos y podrás tener una asesoria detallada
+                    Déjanos tus datos y podrás tener una asesoria detallada
                   </p>
                   <div className="grid grid-cols-1 gap-2 ">
                     <div className="flex flex-col flex-wrap ">
@@ -187,7 +187,7 @@ export const BannerSerSocio = () => {
                         }`}
                         name="notas"
                         id="notas"
-                        placeholder="Dejanos saber en que estas interesado(a)"
+                        placeholder="Déjanos saber en qué estás interesado(a)."
                         rows="5"
                         cols="50"
                       />

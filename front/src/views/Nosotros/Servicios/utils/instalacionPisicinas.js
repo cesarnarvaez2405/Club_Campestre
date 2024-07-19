@@ -48,4 +48,25 @@ export const galeriaPiscinas = [
       "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(7)_thumb.jpg",
     src: "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(7).jpg",
   },
+  // {
+  //   original:
+  //     "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(1).jpeg",
+  //   thumbnail:
+  //     "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(1).jpeg",
+  //   src: "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(1).jpeg",
+  // },
+  // {
+  //   original:
+  //     "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(2).jpeg",
+  //   thumbnail:
+  //     "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(2).jpeg",
+  //   src: "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(2).jpeg",
+  // },
+  // {
+  //   original:
+  //     "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(3).jpeg",
+  //   thumbnail:
+  //     "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(3).jpeg",
+  //   src: "https://clubcampestreneiva.site/IMG/Piscinas/Piscinas_club_campestre_(3).jpeg",
+  // },
 ];

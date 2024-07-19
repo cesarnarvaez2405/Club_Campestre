@@ -1,23 +1,85 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { VideoYoutube } from "../../../components/videoYoutube";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 export const BannerInfoHotel = () => {
   const videoFondo = "https://clubcampestreneiva.site/secuencia.mp4";
+
+  const [posicionInfo, setPosicionInfo] = useState(0);
+
+  const videosFondo = [
+    {
+      src: "https://clubcampestreneiva.site/IMG/Hotel/Videos/Entrada.mp4",
+      title: "Video la entrada Hotel Club Campestre",
+    },
+    {
+      src: "https://clubcampestreneiva.site/IMG/Hotel/Videos/Titulo.mp4",
+      title: "Video del Letrero titulo Hotel club campestre",
+    },
+    {
+      src: "https://clubcampestreneiva.site/IMG/Hotel/Videos/Entrada_2.mp4",
+      title: "Video la entrada Hotel Club Campestre",
+    },
+    {
+      src: "https://clubcampestreneiva.site/IMG/Hotel/Videos/Recepcion.mp4",
+      title: "Video de la Recepcion del Hotel Club Campestre",
+    },
+    {
+      src: "https://clubcampestreneiva.site/IMG/Hotel/Videos/balcon.mp4",
+      title: "Video del balcon del hotel club campestre",
+    },
+    {
+      src: "https://clubcampestreneiva.site/IMG/Hotel/Videos/habitacion.mp4",
+      title: "Video de la Habitacion del hotel club campestre",
+    },
+    {
+      src: "https://clubcampestreneiva.site/IMG/Hotel/Videos/letreros.mp4",
+      title: "Video de los letreros del hotel club campestre",
+    },
+  ];
+
+  const handleClickButtonRight = () => {
+    if (posicionInfo < videosFondo.length - 1) {
+      setPosicionInfo(posicionInfo + 1);
+    }
+
+    if (posicionInfo == videosFondo.length - 1) {
+      setPosicionInfo(0);
+    }
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(handleClickButtonRight, 4500);
+    return () => clearInterval(intervalId);
+  }, [posicionInfo]);
+
   return (
     <>
       <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem]  z-10 flex top-0">
         <div className=" w-full h-full block z-20">
-          <div className="relative w-full 2xl:h-[46rem] xl:h-[40rem] h-[40rem] overflow-hidden">
-            {/* <VideoYoutube videoId="ddxdGn9dRxQ" width={1920} height={1080} /> */}
-            <video
-              autoPlay
-              loop
-              muted
-              controls={false}
-              className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
-            >
-              <source src={videoFondo} type="video/mp4" />
-            </video>
+          <div className="relative w-full 2xl:h-[46rem] xl:h-[40rem] h-[40rem] overflow-hidden bg-black">
+            <SwitchTransition>
+              <CSSTransition
+                classNames="fade"
+                key={videosFondo[posicionInfo].title}
+                addEndListener={(node, done) =>
+                  node.addEventListener("transitionend", done, false)
+                }
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  controls={false}
+                  className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7] bg-black"
+                >
+                  <source
+                    src={videosFondo[posicionInfo].src}
+                    type="video/mp4"
+                  />
+                </video>
+              </CSSTransition>
+            </SwitchTransition>
           </div>
         </div>
         <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[23%] xl:top-[18%] lg:top-[25%] top-[45%] sm:max-md:top-[30%] animate__animated animate__fadeInDown ">

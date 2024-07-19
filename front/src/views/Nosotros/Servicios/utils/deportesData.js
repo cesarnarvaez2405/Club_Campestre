@@ -79,4 +79,15 @@ export const galeriaDeportes = [
       "https://clubcampestreneiva.site/IMG/Natacion/natacion_club_campestre_(5).jpg",
     ],
   },
+  {
+    titulo: "🎾Tenis",
+    imagenes: [
+      "https://clubcampestreneiva.site/IMG/Tenis/tenis(1).jpeg",
+      "https://clubcampestreneiva.site/IMG/Tenis/tenis(2).jpeg",
+      "https://clubcampestreneiva.site/IMG/Tenis/tenis(3).jpeg",
+      "https://clubcampestreneiva.site/IMG/Tenis/tenis(4).jpeg",
+      "https://clubcampestreneiva.site/IMG/Tenis/tenis(5).jpeg",
+      "https://clubcampestreneiva.site/IMG/Tenis/tenis(6).jpeg",
+    ],
+  },
 ];

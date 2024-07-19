@@ -20,6 +20,7 @@ export const Footer = () => {
               Kilometro <span className="font-sans ">12</span> vía al sur ,
               Rivera - Huila
             </span>
+
             <div className="w-48 h-48 pt-3 sm:max-md:h-72 ">
               {/* <Wrapper apiKey={apiKeyGoogle}>
                 <GoogleMaps center={center} zoom={zoom} />
@@ -56,8 +57,17 @@ export const Footer = () => {
               Email: comunicaciones@clubcampestreneiva.com
             </span>
           </div>
+
           <div className="flex flex-col gap-3 text-right sm:max-md:text-center ">
-            <span className="pt-5 text-2xl text-white font-AltoneNormal sm:max-md:text-lg">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline text-wrap font-AltoneNormal"
+              href="https://clubcampestreneiva.site/Proteccion-datos/POLITICA_DE_TRATAMIENTO_DE_LA_INFORMACION.pdf"
+            >
+              Proteccion de datos
+            </a>
+            <span className=" text-2xl text-white font-AltoneNormal sm:max-md:text-lg">
               Nuestras Redes
             </span>
             <div className="flex justify-end sm:max-md:justify-center ">
@@ -96,6 +106,7 @@ export const Footer = () => {
                 </a>
               </div>
             </div>
+
             <div className="pt-5 ">
               <span className="text-white text-md font-AltoneNormal sm:max-md:hidden">
                 Plataforma Club Campestre

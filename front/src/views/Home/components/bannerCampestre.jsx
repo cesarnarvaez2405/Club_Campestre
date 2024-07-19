@@ -61,12 +61,12 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
 
   return (
     <>
-      <div className=' w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-black  z-10 flex top-0'>
-        <div className='z-20 block w-full h-full '>
-          <div className='relative w-full 2xl:h-[50rem] xl:h-[40rem] h-[40rem] overflow-hidden'>
+      <div className=" w-full 2xl:h-[50rem] xl:h-[40rem] lg:h-[40rem] bg-black z-10 flex top-0">
+        <div className="z-20 block w-full h-full ">
+          <div className="relative w-full 2xl:h-[50rem] xl:h-[40rem] h-[40rem] overflow-hidden">
             <SwitchTransition>
               <CSSTransition
-                classNames='fade'
+                classNames="fade"
                 key={videosFondo[posicionInfo].title}
                 addEndListener={(node, done) =>
                   node.addEventListener("transitionend", done, false)
@@ -77,20 +77,20 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
                   loop
                   muted
                   controls={false}
-                  className='absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]'
+                  className="absolute top-0 left-0 min-w-full min-h-full object-cover brightness-[0.7]"
                 >
                   <source
                     src={videosFondo[posicionInfo].src}
-                    type='video/mp4'
+                    type="video/mp4"
                   />
                 </video>
               </CSSTransition>
             </SwitchTransition>
           </div>
-          <div className=' w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[24%] lg:top-[18%] md:top-[30%] top-[45%] sm:max-md:top-[30%] '>
-            <div className='flex items-center justify-between h-full mx-8 sm:max-md:mx-2 '>
+          <div className=" w-full 2xl:h-[25rem] lg:h-[20rem] absolute z-30 2xl:top-[25%] xl:top-[24%] lg:top-[18%] md:top-[30%] top-[45%] sm:max-md:top-[30%] ">
+            <div className="flex items-center justify-between h-full mx-8 sm:max-md:mx-2 ">
               <div
-                className='order-first w-8 h-8 text-white cursor-pointer '
+                className="order-first w-8 h-8 text-white cursor-pointer "
                 onClick={handleClickButtonLeft}
               >
                 <ChevronLeftIcon />
@@ -98,28 +98,28 @@ export const BannerCampestre = ({ desplazarBannerHotel }) => {
               <div>
                 <SwitchTransition>
                   <CSSTransition
-                    classNames='fade'
+                    classNames="fade"
                     key={infoBanner[posicionInfo].text}
                     addEndListener={(node, done) =>
                       node.addEventListener("transitionend", done, false)
                     }
                   >
-                    <h3 className='2xl:text-5xl lg:text-3xl md:text-2xl text-white font-AltoneBold sm:text-lg  '>
+                    <h3 className="2xl:text-5xl lg:text-3xl md:text-2xl text-white font-AltoneBold sm:text-lg  ">
                       {infoBanner[posicionInfo].text}
                     </h3>
                   </CSSTransition>
                 </SwitchTransition>
               </div>
               <div
-                className='order-last w-8 h-8 text-white cursor-pointer '
+                className="order-last w-8 h-8 text-white cursor-pointer "
                 onClick={handleClickButtonRight}
               >
                 <ChevronRightIcon />
               </div>
             </div>
-            <div className='w-full h-[4rem] flex justify-center items-end max-lg:h-[10rem] sm:max-md:h-[15rem] '>
+            <div className="w-full h-[4rem] flex justify-center items-end max-lg:h-[10rem] sm:max-md:h-[15rem] ">
               <ChevronDoubleDownIcon
-                className='w-10 h-10 text-white transition-all duration-100 ease-in-out cursor-pointer hover:opacity-30'
+                className="w-10 h-10 text-white transition-all duration-100 ease-in-out cursor-pointer hover:opacity-30"
                 onClick={() => desplazarBannerHotel()}
               />
             </div>
