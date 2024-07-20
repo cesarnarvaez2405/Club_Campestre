@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { RViewer, RViewerTrigger } from "react-viewerjs";
 import { galeriaEscenariosDeportivos } from "../utils/escenariosDeportivosData";
 import "../style/instalaciones.css";
+import { ImagenSlider } from "../../../../components/ImagenSlider";
 
 export const EscenariosDeportivos = () => {
   const [imagenesEscenarios, setImagenesEscenarios] = useState([]);
@@ -46,25 +47,15 @@ export const EscenariosDeportivos = () => {
           </div>
           <div className=" flex justify-center items-center py-5">
             <div className=" w-[70%] sm:max-md:w-[80%] ">
-              <div className=" grid grid-cols-3 justify-center items-center py-[2rem] sm:max-md:grid-cols-1">
-                <RViewer imageUrls={imagenesEscenarios}>
-                  {galeriaEscenariosDeportivos.map((escenario, index) => (
-                    <div className=" flex flex-col gap-5 pr-5 py-3">
-                      <p className=" text-2xl mb-2 font-thin text-white">
-                        {escenario.titulo}
-                      </p>
-                      {escenario.imagen && (
-                        <RViewerTrigger index={index}>
-                          <img
-                            src={escenario.imagen}
-                            alt={escenario.titulo}
-                            className="w-full h-64 object-cover mb-2 shadow-md cursor-pointer"
-                          />
-                        </RViewerTrigger>
-                      )}
-                    </div>
-                  ))}
-                </RViewer>
+              <div className=" grid grid-cols-2 justify-center items-center py-[2rem] sm:max-md:grid-cols-1">
+                {galeriaEscenariosDeportivos.map((escenario, index) => (
+                  <div className=" flex flex-col gap-2  pr-5 py-6" key={index}>
+                    <p className=" text-2xl mb-2 font-thin text-white">
+                      {escenario.titulo}
+                    </p>
+                    <ImagenSlider imagenes={escenario.imagenes} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

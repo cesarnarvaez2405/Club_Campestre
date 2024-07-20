@@ -33,12 +33,12 @@ export const ImagenSlider = ({ imagenes }) => {
 
   return (
     <>
-      <div className="h-64 relative z-10 flex">
+      <div className="h-96 relative z-10 flex">
         <div className="relative w-full h-full overflow-hidden">
           <SwitchTransition>
             <CSSTransition
               classNames="fade"
-              key="Imagenes salones club campestre"
+              key="Imagenes club campestre"
               addEndListener={(node, done) =>
                 node.addEventListener("transitionend", done, false)
               }
