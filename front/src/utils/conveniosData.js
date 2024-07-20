@@ -103,8 +103,7 @@ export const convenios = {
       email: "gerencia@clubguaymaral.com.co",
     },
     {
-      imagen:
-        "https://clubcbe.com/newcbe/wp-content/uploads/thegem-logos/logo_e3cee504c5aae9a65767da1f539cf94a_1x.png",
+      imagen: "https://clubcampestreneiva.site/IMG/Titulos/banqueros.png",
       nombre: "Club de Banqueros",
       direccion: "Calle 72 No.7-64 Pent House- Cra.8 No.13-82 Piso 3",
       telefonos: "3105099 – 3361999",
@@ -200,8 +199,7 @@ export const convenios = {
       email: "gerencia@clubdelcomerciobogotá.com",
     },
     {
-      imagen:
-        "https://i0.wp.com/www.clubelnogal.com/wp-content/uploads/2022/05/cropped-LOGO-BLANCO-Y-NEGRO.png?fit=115%2C60&ssl=1",
+      imagen: "https://clubcampestreneiva.site/IMG/Titulos/nogal.jpg",
       nombre: "Club el Nogal (Solo hospedaje fines semana)",
       direccion: "Cra. 7 No. 78-96",
       telefonos: "3267700",

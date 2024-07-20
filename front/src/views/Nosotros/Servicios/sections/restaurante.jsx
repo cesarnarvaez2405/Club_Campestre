@@ -38,7 +38,7 @@ export const Restaurante = () => {
               comedores son muy agradables para todos los gustos. La cocina del
               Club Campestre de Neiva, es liderada por un reconocido y destacado
               Chef quien día a día sorprende a sus comensales con deliciosas
-              recetas nacionales e internacionales
+              recetas nacionales e internacionales.
             </p>
           </div>
 

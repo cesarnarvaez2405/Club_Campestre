@@ -27,7 +27,7 @@ export const InstalacionPiscinas = () => {
               refrescarse.
               <br /> En nuestro Club, además de piscinas especiales para todas
               las edades, también hay un divertido tobogán, que hace de las
-              visitas al Club un paseo inolvidable
+              visitas al Club un paseo inolvidable.
             </p>
           </div>
 

@@ -20,7 +20,15 @@ export const Guarderia = () => {
               Gracias a este servicio, en el cual la prioridad son los más
               pequeños de la casa, tenemos diferentes locaciones y actividades
               para que los niños se diviertan y adquieran nuevos conocimientos
-              de manera segura y muy entretenida.
+              de manera segura y muy entretenida, exclusivo para los hijos de
+              nuestros socios en edades de 0 meses a 8 años. <br />
+              <br />
+              El servicio en la Sede Infantil es de Miércoles a Viernes de 11:00
+              a.m a 7:00 p.m, sábados de 9:00 a.m. a 10:00 p.m. y Domingos de
+              9:00 a.m a 5:00 p.m. allí se vive actividades como manualidades,
+              pintura, coloreo, actividades lúdico-recreativas y además cuenta
+              con un gimnasio de estimulación temprana, guiado por una
+              profesional.
             </p>
           </div>
 

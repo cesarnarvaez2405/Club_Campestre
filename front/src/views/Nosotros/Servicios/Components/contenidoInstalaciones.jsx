@@ -9,6 +9,7 @@ import { Restaurante } from "../sections/restaurante";
 import { Guarderia } from "../sections/guarderia";
 import { Capilla } from "../sections/capilla";
 import { Gastrobar } from "../sections/gastrobar";
+import { Gimnasio } from "../sections/gimnasio";
 
 export const ContenidoInstalaciones = () => {
   const [opcionServicio, setOpcionServicio] = useState(0);
@@ -16,7 +17,7 @@ export const ContenidoInstalaciones = () => {
   return (
     <>
       <div className=" w-full h-full bg-zinc-800  ">
-        <div className=" w-full h-16 divide-x divide-amber-300 py-2 2xl:px-[10rem] lg:px-[3px] grid grid-cols-8 justify-center items-center sm:max-md:grid-cols-3 sm:max-md:grid-row-3 sm:max-md:gap-3 sm:max-md:h-24 sm:max-md:px-2 sm:max-md:py-5 animate__animated animate__fadeIn  ">
+        <div className=" w-full h-16 divide-x divide-amber-300 py-2 2xl:px-[10rem] lg:px-[3px] grid grid-cols-9 justify-center items-center sm:max-md:grid-cols-3 sm:max-md:grid-row-3 sm:max-md:gap-3 sm:max-md:h-24 sm:max-md:px-2 sm:max-md:py-5 animate__animated animate__fadeIn  ">
           {menuServicios.map((servicio, index) => (
             <button
               onClick={() => setOpcionServicio(servicio.id)}
@@ -37,6 +38,7 @@ export const ContenidoInstalaciones = () => {
         {opcionServicio === 5 && <Guarderia />}
         {opcionServicio === 6 && <Capilla />}
         {opcionServicio === 7 && <Gastrobar />}
+        {opcionServicio === 8 && <Gimnasio />}
       </div>
     </>
   );

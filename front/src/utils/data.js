@@ -16,7 +16,7 @@ export const menuServicios = [
     id: 3,
   },
   {
-    titulo: "Restaurante internacional",
+    titulo: "Restaurante",
     id: 4,
   },
   {
@@ -30,6 +30,10 @@ export const menuServicios = [
   {
     titulo: "Gastrobar",
     id: 7,
+  },
+  {
+    titulo: "Gimnasio",
+    id: 8,
   },
 ];
 
