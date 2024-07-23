@@ -46,7 +46,7 @@ export const galeriaDeportes = [
     ],
   },
   {
-    titulo: "⚽ Futbol ",
+    titulo: "⚽ Fútbol ",
     imagenes: [
       "https://clubcampestreneiva.site/IMG/Futbol/img_futbol_clubcampestre_7.jpg",
       "https://clubcampestreneiva.site/IMG/Futbol/img_futbol_clubcampestre_6.jpg",

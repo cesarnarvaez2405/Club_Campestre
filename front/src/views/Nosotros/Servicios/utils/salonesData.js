@@ -4,7 +4,6 @@ export const salones = [
     titulo: "Capacidad Máxima: ",
     subTitulo: "200 personas",
     imagenes: [
-      "https://clubcampestreneiva.site/IMG/Salones/Salon-Principal/salon_principal(1).jpg",
       "https://clubcampestreneiva.site/IMG/Salones/Salon-Principal/salon_principal(2).jpg",
       "https://clubcampestreneiva.site/IMG/Salones/Salon-Principal/salon_principal(3).jpg",
       "https://clubcampestreneiva.site/IMG/Salones/Salon-Principal/salon_principal(4).jpg",
@@ -25,7 +24,7 @@ export const salones = [
     ],
   },
   {
-    nombre: "Salón Guinnes",
+    nombre: "Salón Guinness",
     titulo: "Capacidad Máxima: ",
     subTitulo: "50 personas",
     imagenes: [
@@ -59,7 +58,7 @@ export const salones = [
   },
 
   {
-    nombre: "Salon la Espantosa",
+    nombre: "Salón la Espantosa",
     titulo: "Capacidad Máxima: ",
     subTitulo: "60 personas",
     imagenes: [
@@ -73,7 +72,7 @@ export const salones = [
   },
 
   {
-    nombre: "Salon Presidente",
+    nombre: "Salón Presidente",
     titulo: "Capacidad Máxima: ",
     subTitulo: "80 personas",
     imagenes: [
@@ -84,13 +83,16 @@ export const salones = [
   },
 
   {
-    nombre: "Salon Terraza la Riverita ",
+    nombre: "Terraza Zen ",
     titulo: "Capacidad Máxima: ",
     subTitulo: "50 personas",
     imagenes: [
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(2).jpeg",
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(1).jpeg",
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(3).jpeg",
+      "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(4).jpeg",
+      "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(5).jpeg",
+      "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(6).jpeg",
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(1).jpg",
     ],
   },

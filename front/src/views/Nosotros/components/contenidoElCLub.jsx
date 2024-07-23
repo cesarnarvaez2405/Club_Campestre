@@ -53,15 +53,14 @@ export const ContenidoElCLub = () => {
               <div className=" 2xl:pl-10 text-justify ">
                 <p>
                   El Club Campestre de Neiva es una Corporación que desde hace
-                  72 años que le viene aportando empleo y desarrollo al
-                  departamento del Huila. Nuestra misión es ser el epicentro de
-                  encuentro para las familias huilenses, ofreciendo un espacio
-                  seguro, de sano esparcimiento, formación deportiva y
-                  oportunidades de conexión interpersonal. Nos comprometemos a
-                  proporcionar servicios de calidad que fomenten la unión
-                  familiar, el desarrollo personal y la integración social,
-                  contribuyendo así al bienestar y al crecimiento de nuestra
-                  comunidad.
+                  72 años viene aportando empleo y desarrollo al departamento
+                  del Huila. Nuestra misión es ser el epicentro de encuentro
+                  para las familias huilenses, ofreciendo un espacio seguro, de
+                  sano esparcimiento, formación deportiva y oportunidades de
+                  conexión interpersonal. Nos comprometemos a proporcionar
+                  servicios de calidad que fomenten la unión familiar, el
+                  desarrollo personal y la integración social, contribuyendo así
+                  al bienestar y al crecimiento de nuestra comunidad.
                 </p>
               </div>
             </div>
