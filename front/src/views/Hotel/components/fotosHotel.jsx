@@ -50,15 +50,21 @@ export const FotosHotel = () => {
 
   return (
     <>
-      <div className=" flex justify-center items-center py-16 sm:max-md:py-5 ">
+      <div className=" flex justify-center items-center py-5 sm:max-md:py-5 ">
         <div className=" w-[60%] sm:max-md:w-[80%] ">
-          <div className=" flex justify-center items-center">
+          <p className=" py-5 text-black text-3xl text-center font-semibold sm:max-md:pt-10 ">
+            Galería
+          </p>
+          <div className=" flex justify-center items-center  sm:max-md:px-1 animate__animated animate__fadeIn">
             <ImageGallery
+              showIndex={true}
               items={imagesHotel}
               showFullscreenButton={false}
               showPlayButton={false}
-              autoPlay={false}
-              slideDuration={600}
+              autoPlay={true}
+              slideDuration={900}
+              slideInterval={5000}
+              showThumbnails={false}
             />
           </div>
         </div>

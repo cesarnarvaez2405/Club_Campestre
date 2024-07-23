@@ -90,7 +90,7 @@ export const Listado = () => {
           </div>
           <h2 className=" font-semibold text-xl">Lista de Clubes</h2>
           <div className="border-t border-amber-300 w-[20rem] mt-3 pb-6"></div>
-          <div className=" w-full h-16 divide-x gap-4 py-2 2xl:px-[16rem] lg:px-[2rem] grid grid-cols-7 justify-center items-center sm:max-md:grid-cols-4  ">
+          <div className=" w-11/12 h-16 divide-x gap-4 py-2 2xl:px-[16rem] lg:px-[2rem] grid grid-cols-7 justify-center items-center sm:max-md:grid-cols-4  ">
             {menuCanjes.map((servicio, index) => (
               <button
                 onClick={() => setCiudadCanje(servicio.id)}

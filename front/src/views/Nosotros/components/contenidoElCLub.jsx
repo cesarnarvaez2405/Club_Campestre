@@ -5,7 +5,7 @@ export const ContenidoElCLub = () => {
     <>
       <div className=" w-full">
         <div className=" w-full xl:px-[10rem] px-[3rem] sm:max-md:px-[2rem] ">
-          <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 sm:max-md:py-2">
+          <div className=" h-full grid grid-cols-2 py-[5rem] sm:max-md:grid-cols-1 ">
             <div className=" col-span-1 flex flex-col justify-start items-end gap-5 sm:max-md:items-center ">
               <div className="  grid grid-cols-2 w-full items-center gap-2">
                 <strong className=" font-AltoneNormal text-end text-5xl font-semibold sm:max-md:text-3xl">
@@ -43,7 +43,7 @@ export const ContenidoElCLub = () => {
                 border="0"
               />
             </div>
-            <div className=" col-span-1 flex flex-col justify-start items-start  gap-5 ">
+            <div className=" col-span-1 flex flex-col justify-start items-start gap-5 sm:max-md:py-10 ">
               <div className=" grid grid-cols-2 w-full items-center gap-2">
                 <div className=" h-2 w-full bg-amber-300 " />
                 <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl text-start">
@@ -104,8 +104,8 @@ export const ContenidoElCLub = () => {
                 alt="Evento san pedro, club campestre"
               />
             </div>
-            <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] sm:max-md:pb-[2rem] ">
-              <div className=" grid grid-cols-2 w-full items-center gap-2">
+            <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] sm:max-md:pb-[2rem] sm:max-md:py-10  ">
+              <div className=" grid grid-cols-2 w-full items-center gap-2 ">
                 <div className=" h-2 w-full bg-amber-300 " />
                 <strong className=" font-AltoneNormal text-5xl font-semibold sm:max-md:text-3xl text-start">
                   Historia
@@ -132,7 +132,7 @@ export const ContenidoElCLub = () => {
           </div>
           <div className=" h-full grid grid-cols-2 py-[3rem] sm:max-md:grid-cols-1 sm:max-md:py-2 ">
             <div className=" col-span-1 flex flex-col justify-start items-end  gap-5 ">
-              <div className=" grid grid-cols-2 w-full items-center gap-2">
+              <div className=" grid grid-cols-2 w-full items-center gap-2 ">
                 <strong className=" font-AltoneNormal text-3xl font-semibold text-end">
                   Política deportiva
                 </strong>
@@ -168,7 +168,7 @@ export const ContenidoElCLub = () => {
                 className=" w-[430px] h-[300px] bg-white mr-10 bg-center bg-no-repeat bg-cover sm:max-md:mr-1 sm:max-md:w-full sm:max-md:h-[300px]"
               />
             </div>
-            <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] ">
+            <div className=" col-span-1 flex flex-col justify-start items-start gap-5 pb-[5rem] sm:max-md:py-10  ">
               <div className=" grid grid-cols-2 w-full items-center gap-2">
                 <div className=" h-2 w-full bg-amber-300"></div>
                 <strong className=" font-AltoneNormal text-3xl font-semibold sm:max-md:text-xl text-start">
