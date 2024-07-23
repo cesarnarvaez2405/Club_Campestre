@@ -30,15 +30,19 @@ export const InstalacionPiscinas = () => {
               visitas al Club un paseo inolvidable.
             </p>
           </div>
-
-          <div className="flex justify-center items-center sm:max-md:w-[22rem] animate__animated animate__fadeIn">
+          <p className=" pt-10 text-white font-AltoneBold text-4xl text-center ">
+            Galería
+          </p>
+          <div className=" flex justify-center items-center  sm:max-md:px-1 animate__animated animate__fadeIn">
             <ImageGallery
+              showIndex={true}
               items={galeriaPiscinas}
               showFullscreenButton={false}
               showPlayButton={false}
               autoPlay={true}
-              slideDuration={1000}
+              slideDuration={900}
               slideInterval={5000}
+              showThumbnails={false}
             />
           </div>
         </div>

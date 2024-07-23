@@ -33,12 +33,6 @@ export const Gastrobar = () => {
 
         <div className=" my-8 py-6 w-[60%] backdrop-brightness-125 backdrop-blur-md rounded-md">
           <div>
-            {/* <div className="relative h-[10rem] z-20">
-              <ImagenHoverMause
-                src="https://clubcampestreneiva.site/IMG/Coctel/coctel.png"
-                alt="Coctel Hover"
-              />
-            </div> */}
             <div>
               <div className=" z-10 flex flex-col justify-start items-center sm:pt-1 sm:pl-1 sm:col-start-1 sm:row-start-2 gap-4">
                 <p className="text-white font-AltoneBold text-3xl text-center sm:pb-5">
@@ -61,7 +55,7 @@ export const Gastrobar = () => {
       </div>
 
       <div className=" px-32 py-10 flex flex-col justify-left items-center text-wrap text-white text-justify gap-8 col-start-2 col-span-2 sm:max-md:col-start-1  sm:max-md:row-start-1  sm:max-md:px-10  sm:max-md:pt-1">
-        <p className=" px-32 text-lg">
+        <p className=" sm:px-0 text-lg">
           El nuevo <strong>Gastrobar del Club Campestre de Neiva</strong> es un
           vibrante espacio que combina la elegancia de un bar con la delicia de
           la gastronomía. Ofrece una amplia variedad de cócteles expertamente
@@ -76,14 +70,16 @@ export const Gastrobar = () => {
         <p className=" pt-10 text-white font-AltoneBold text-4xl text-center ">
           Galería
         </p>
-        <div className=" flex justify-center items-center px-20 sm:max-md:px-1 animate__animated animate__fadeIn">
+        <div className=" flex justify-center items-center  sm:max-md:px-1 animate__animated animate__fadeIn">
           <ImageGallery
+            showIndex={true}
             items={imagesGastro}
             showFullscreenButton={false}
             showPlayButton={false}
             autoPlay={true}
             slideDuration={900}
             slideInterval={5000}
+            showThumbnails={false}
           />
         </div>
       </div>

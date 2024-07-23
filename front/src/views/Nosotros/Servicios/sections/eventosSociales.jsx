@@ -38,9 +38,9 @@ export const EventosSociales = () => {
               realización de sus eventos y recepciones.
             </p>
           </div>
-          <div className="flex flex-wrap justify-start px-[16rem] md:max-xl:px-[8rem] sm:max-md:px-0 ">
+          <div className="flex flex-wrap justify-start px-[16rem] md:max-xl:px-[3rem] sm:max-md:px-0 ">
             {salones.map((salon, index) => (
-              <div key={index} className="w-full sm:w-1/2 lg:w-1/2 p-4 ">
+              <div key={index} className="w-full sm:w-full lg:w-1/2 p-4 ">
                 <div>
                   <ImagenSlider imagenes={salon.imagenes} />
 

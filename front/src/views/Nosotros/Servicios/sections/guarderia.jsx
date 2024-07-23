@@ -15,7 +15,7 @@ export const Guarderia = () => {
         ></img>
         <div className="border-t border-amber-300 w-[40rem] mt-3 sm:max-md:w-[10rem] "></div>
         <div className=" 2xl:px-[8rem] px-[2rem] py-[2rem] sm:max-md:px-1 ">
-          <div className=" px-[23rem] md:px-48 text-justify py-4 text-wrap text-white sm:max-md:px-5">
+          <div className=" px-[23rem] md:px-20 text-justify py-4 text-wrap text-white sm:max-md:px-5">
             <p>
               Gracias a este servicio, en el cual la prioridad son los más
               pequeños de la casa, tenemos diferentes locaciones y actividades
@@ -31,15 +31,19 @@ export const Guarderia = () => {
               profesional.
             </p>
           </div>
-
-          <div className=" flex justify-center items-center animate__animated animate__fadeIn">
+          <p className=" pt-10 text-white font-AltoneBold text-4xl text-center ">
+            Galería
+          </p>
+          <div className=" flex justify-center items-center  sm:max-md:px-1 animate__animated animate__fadeIn">
             <ImageGallery
+              showIndex={true}
               items={imagesGuarderia}
               showFullscreenButton={false}
               showPlayButton={false}
               autoPlay={true}
-              slideDuration={1000}
+              slideDuration={900}
               slideInterval={5000}
+              showThumbnails={false}
             />
           </div>
         </div>

@@ -14,7 +14,7 @@ export const salones = [
   {
     nombre: "Salón Cincuentenario",
     titulo: "Capacidad Máxima: ",
-    subTitulo: "130 personas",
+    subTitulo: "100 personas",
     imagenes: [
       "https://clubcampestreneiva.site/IMG/Salones/Salon-Cicuentenario/salon-cicuentenario(1).jpg",
       "https://clubcampestreneiva.site/IMG/Salones/Salon-Cicuentenario/salon-cicuentenario(2).jpg",
@@ -85,7 +85,7 @@ export const salones = [
   {
     nombre: "Salón Terraza Zen ",
     titulo: "Capacidad Máxima: ",
-    subTitulo: "50 personas",
+    subTitulo: "200 personas",
     imagenes: [
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(2).jpeg",
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(1).jpeg",
@@ -93,7 +93,6 @@ export const salones = [
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(4).jpeg",
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(5).jpeg",
       "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(6).jpeg",
-      "https://clubcampestreneiva.site/IMG/Salones/Terraza/terraza(1).jpg",
     ],
   },
 
