@@ -31,6 +31,7 @@ export const EscenariosDeportivos = () => {
               Nuestros escenarios deportivos, resultan ideales para practicar
               actividades deportivas como <strong>Fútbol, Tenis y Golf</strong>,
               que son los de mayor número de seguidores en el Club.
+              <br />
               <br /> Contamos con un total de 8 canchas de tenis donde se juega
               este deporte en tierra batida, y 4 campos de Fútbol que no tienen
               nada que envidiarle a los mejores del país, pues su grama siempre

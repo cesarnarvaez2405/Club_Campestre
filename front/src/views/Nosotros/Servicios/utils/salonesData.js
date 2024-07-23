@@ -83,7 +83,7 @@ export const salones = [
   },
 
   {
-    nombre: "Terraza Zen ",
+    nombre: "Salón Terraza Zen ",
     titulo: "Capacidad Máxima: ",
     subTitulo: "50 personas",
     imagenes: [
