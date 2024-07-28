@@ -67,7 +67,7 @@ export const Footer = () => {
             >
               Proteccion de datos
             </a>
-            <span className=" text-2xl text-white font-AltoneNormal sm:max-md:text-lg">
+            <span className="text-white text-md font-AltoneNormal sm:max-md:hidden">
               Nuestras Redes
             </span>
             <div className="flex justify-end sm:max-md:justify-center ">

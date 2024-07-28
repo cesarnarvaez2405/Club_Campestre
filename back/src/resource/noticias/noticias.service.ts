@@ -24,6 +24,7 @@ export class NoticiasService {
       } as Usuario,
       tags,
     });
+    console.log(noticia);
     return await this.noticiaRepository.save(noticia);
   }
 
