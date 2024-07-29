@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { GoogleMaps } from "./Partials/googleMaps";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import API from "../api/apiNode";
 import { FooterTitle } from "./FooterTitle";
+import { useForm } from "react-hook-form";
+import Popup from "./popup";
+import { SugerenciasForm } from "./Forms/sugerenciasForm";
 
 const apiKeyGoogle = API.googleMap;
 
 export const Footer = () => {
   const center = { lat: 2.8356931949576785, lng: -75.29160131669344 };
   const zoom = 13;
+  const [abrirModal, setAbrirModal] = useState(false);
+
+  const { reset } = useForm();
+
+  const cerrarModal = () => {
+    setAbrirModal(false);
+    reset();
+  };
+
+  const additionalProps = {
+    cerrarModal,
+    titulo: "¿Tienes alguna sugerencia?",
+    subtitulo: "Déjanos tu sugerencia para poder tenerla en cuenta",
+  };
+
+  const EnhancedComponent = Popup(SugerenciasForm, additionalProps);
   return (
     <>
       <div className=" w-full h-[20rem] bg-zinc-800 px-5 border-t-4 border-amber-300 sm:max-md:h-[100%] ">
@@ -20,6 +39,25 @@ export const Footer = () => {
               Kilometro <span className="font-sans ">12</span> vía al sur ,
               Rivera - Huila
             </span>
+            <div className=" pt-4 flex flex-col justify-start items-start">
+              <button
+                onClick={() => setAbrirModal(true)}
+                className="text-white text-wrap font-AltoneNormal underline"
+              >
+                Sugerencias
+              </button>
+
+              {abrirModal && <EnhancedComponent />}
+
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white underline text-wrap font-AltoneNormal"
+                href="https://clubcampestreneiva.site/Proteccion-datos/POLITICA_DE_TRATAMIENTO_DE_LA_INFORMACION.pdf"
+              >
+                Proteccion de datos
+              </a>
+            </div>
 
             <div className="w-48 h-48 pt-3 sm:max-md:h-72 ">
               {/* <Wrapper apiKey={apiKeyGoogle}>
@@ -59,14 +97,6 @@ export const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-3 text-right sm:max-md:text-center ">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white underline text-wrap font-AltoneNormal"
-              href="https://clubcampestreneiva.site/Proteccion-datos/POLITICA_DE_TRATAMIENTO_DE_LA_INFORMACION.pdf"
-            >
-              Proteccion de datos
-            </a>
             <span className="text-white text-md font-AltoneNormal sm:max-md:hidden">
               Nuestras Redes
             </span>

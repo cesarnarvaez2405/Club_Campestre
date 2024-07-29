@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { useTerceroInteresado } from "../../hooks/useTerceroInteresado";
 import { useForm } from "react-hook-form";
-import { useTerceroInteresado } from "../../../hooks/useTerceroInteresado";
-import { Dot } from "../../../components/Util/Dot";
-import { AlertError } from "../../../components/Util/alertError";
-import { SpinnerLoading } from "../../../components/SpinnerLoading";
+import { SpinnerLoading } from "../SpinnerLoading";
+import { Dot } from "../Util/Dot";
+import { useSugerencias } from "../../hooks/useSugerencias";
+import { AlertError } from "../Util/alertError";
 
-export const SerSocioForm = () => {
+export const SugerenciasForm = () => {
   const [estaGuardando, setEstaGuardando] = useState(false);
 
-  const { guardarTercero } = useTerceroInteresado();
+  const { guardarSugerencia } = useSugerencias();
 
   const {
     register,
@@ -21,10 +22,11 @@ export const SerSocioForm = () => {
 
   const onGuardar = async (event) => {
     setEstaGuardando(true);
-    await guardarTercero(event);
+    await guardarSugerencia(event);
     setEstaGuardando(false);
     reset();
   };
+
   return (
     <>
       <form onSubmit={handleSubmit(onGuardar)}>
@@ -41,9 +43,9 @@ export const SerSocioForm = () => {
               type="text"
               name="nombre"
               id="nombre"
-              placeholder="nombre"
+              placeholder="Nombre Completo"
               {...register("nombre", {
-                required: "El nombre es obligatorio",
+                required: "El Nombre es obligatorio",
               })}
             />
             {errors.nombre && (
@@ -109,7 +111,7 @@ export const SerSocioForm = () => {
               }`}
               name="notas"
               id="notas"
-              placeholder="Déjanos saber en qué estás interesado(a)."
+              placeholder="Déjanos saber tu sugerencia"
               rows="5"
               cols="50"
             />
@@ -119,7 +121,7 @@ export const SerSocioForm = () => {
         <div className="flex flex-row items-center  border-t border-gray-200 rounded-b md:pt-4 dark:border-gray-600 mt-5">
           <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
             <div className="flex flex-row gap-3 ">
-              {!estaGuardando && <p>Registrar</p>}
+              {!estaGuardando && <p>Enviar</p>}
               {estaGuardando && <SpinnerLoading />}
             </div>
           </button>

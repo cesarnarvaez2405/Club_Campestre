@@ -25,6 +25,15 @@ export class TercerosInteresadosService {
     return await this.terceroInteresadoRepository.save(terceroInteresado);
   }
 
+  async crearSugerencia(
+    createTercerosInteresadoDto: CreateTercerosInteresadoDto,
+  ) {
+    const terceroInteresado = this.terceroInteresadoRepository.create(
+      createTercerosInteresadoDto,
+    );
+    await this.sendEmailService.sendSugerenciaNotificacion(terceroInteresado);
+  }
+
   findAll() {
     return `This action returns all tercerosInteresados`;
   }

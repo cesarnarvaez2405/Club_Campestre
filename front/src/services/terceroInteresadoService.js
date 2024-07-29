@@ -37,4 +37,18 @@ export default {
       alertErrorResponse(error);
     }
   },
+
+  async crearSugerencia(tercero) {
+    try {
+      const response = await axios.post(
+        `${API.node}campestre-api/v1/terceros-interesados/crear-sugerencia`,
+        tercero,
+        configApi
+      );
+      alertSuccessReponse(response);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
 };

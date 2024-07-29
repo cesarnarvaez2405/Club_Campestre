@@ -83,6 +83,35 @@ export class SendEmailService {
       });
   }
 
+  async sendSugerenciaNotificacion(
+    terceroInteresado: TercerosInteresado,
+  ): Promise<Boolean> {
+    const { nombre, email, telefono, notas } = terceroInteresado;
+
+    return await this.mailerService
+      .sendMail({
+        to: process.env.EMAIL_DESTINY,
+        from: 'no.reply@clubcampestre.com',
+        subject: `${nombre}, Realizó una nueva sugerencia - Club Campestre Web`,
+        template: 'notificacionSugerencia',
+        context: {
+          email,
+          nombre,
+          telefono,
+          notas,
+        },
+      })
+      .then(() => {
+        console.info(`email se envio correctamente`);
+        return true;
+      })
+      .catch((error) => {
+        console.error('Email-No-enviado****-=====>>>');
+        console.error(error);
+        return false;
+      });
+  }
+
   async sendOlvidoPasswordEmail(
     token: string,
     usuario: Partial<Usuario>,

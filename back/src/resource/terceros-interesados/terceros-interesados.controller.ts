@@ -54,4 +54,17 @@ export class TercerosInteresadosController {
   remove(@Param('id') id: string) {
     return this.tercerosInteresadosService.remove(+id);
   }
+
+  @Post('crear-sugerencia')
+  guardarSugerencia(
+    @Body() createTercerosInteresadoDto: CreateTercerosInteresadoDto,
+  ) {
+    try {
+      return this.tercerosInteresadosService.crearSugerencia(
+        createTercerosInteresadoDto,
+      );
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
+  }
 }
