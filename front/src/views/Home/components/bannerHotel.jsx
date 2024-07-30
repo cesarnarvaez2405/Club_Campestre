@@ -98,7 +98,7 @@ export const BannerHotel = React.forwardRef((props, ref) => {
           </div>
           <div>
             <a
-              href="https://wa.me/3157829360?text=Quiero%20reserver%20en%20el%20Hotel%20Club%20Campestre"
+              href="https://wa.me/3157829360?text=Quiero%20reservar%20en%20el%20Hotel%20Club%20Campestre%20de%20Neiva"
               target="_blank"
               rel="noopener noreferrer"
             >

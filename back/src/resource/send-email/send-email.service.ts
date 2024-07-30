@@ -91,7 +91,6 @@ export class SendEmailService {
     );
 
     for (const emailDestino of emailDestinos) {
-      console.log(emailDestino);
       await this.mailerService
         .sendMail({
           to: emailDestino,
