@@ -84,7 +84,7 @@ export const habitaciones = [
     ],
   },
   {
-    nombre: "CEDRALES",
+    nombre: "CEDRAL",
     imagenes: [
       "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Cedrales/cedrales_hotel(1).jpeg",
       "https://clubcampestreneiva.site/IMG/Hotel/Habitaciones/Cedrales/cedrales_hotel(2).jpeg",
