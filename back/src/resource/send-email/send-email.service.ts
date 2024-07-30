@@ -61,7 +61,7 @@ export class SendEmailService {
 
     return await this.mailerService
       .sendMail({
-        to: process.env.EMAIL_DESTINY,
+        to: process.env.EMAIL_DESTINY_INTERESADO,
         from: 'no.reply@clubcampestre.com',
         subject: `${nombre}, quiere contactarse contigo para mas informacion - Club Campestre Web`,
         template: 'notificacionTerceroInteresado',
@@ -83,33 +83,38 @@ export class SendEmailService {
       });
   }
 
-  async sendSugerenciaNotificacion(
-    terceroInteresado: TercerosInteresado,
-  ): Promise<Boolean> {
+  async sendSugerenciaNotificacion(terceroInteresado: TercerosInteresado) {
     const { nombre, email, telefono, notas } = terceroInteresado;
 
-    return await this.mailerService
-      .sendMail({
-        to: process.env.EMAIL_DESTINY,
-        from: 'no.reply@clubcampestre.com',
-        subject: `${nombre}, Realizó una nueva sugerencia - Club Campestre Web`,
-        template: 'notificacionSugerencia',
-        context: {
-          email,
-          nombre,
-          telefono,
-          notas,
-        },
-      })
-      .then(() => {
-        console.info(`email se envio correctamente`);
-        return true;
-      })
-      .catch((error) => {
-        console.error('Email-No-enviado****-=====>>>');
-        console.error(error);
-        return false;
-      });
+    const emailDestinos: string[] = JSON.parse(
+      process.env.EMAIL_DESTINY_SUGERENCIAS,
+    );
+
+    for (const emailDestino of emailDestinos) {
+      console.log(emailDestino);
+      await this.mailerService
+        .sendMail({
+          to: emailDestino,
+          from: 'no.reply@clubcampestre.com',
+          subject: `${nombre}, Realizó una nueva sugerencia - Club Campestre Web`,
+          template: 'notificacionSugerencia',
+          context: {
+            email,
+            nombre,
+            telefono,
+            notas,
+          },
+        })
+        .then(() => {
+          console.info(`email se envio correctamente`);
+          return true;
+        })
+        .catch((error) => {
+          console.error('Email-No-enviado****-=====>>>');
+          console.error(error);
+          return false;
+        });
+    }
   }
 
   async sendOlvidoPasswordEmail(
