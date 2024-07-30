@@ -1,5 +1,5 @@
 export const convenios = {
-  bogota: [
+  bogotá: [
     {
       imagen:
         "https://clublosarrayanes.com.co/wp-content/uploads/2022/04/LOGO-OFICIAL-1-1024x1024.png",
@@ -218,7 +218,7 @@ export const convenios = {
       email: "",
     },
   ],
-  medellin: [
+  medellín: [
     {
       imagen:
         "https://fotos.pandape.com/PROD/atslogos/6d5f2ceb-92f2-46f9-85f1-e94b94a60288_4.png",
@@ -303,7 +303,7 @@ export const convenios = {
       email: "gerencia@campestrepereira.com",
     },
   ],
-  ibague: [
+  ibagué: [
     {
       imagen:
         "https://ccibague.com/wp-content/uploads/2021/09/logo3-e1630851510161.png",
@@ -377,7 +377,7 @@ export const convenios = {
       email: "",
     },
   ],
-  monteria: [
+  montería: [
     {
       imagen:
         "https://pbs.twimg.com/profile_images/464634976424579072/61VYkZaz_400x400.png",
@@ -414,7 +414,7 @@ export const convenios = {
       email: "",
     },
   ],
-  cucuta: [
+  cúcuta: [
     {
       imagen:
         "https://tennisgolfclub.com.co/wp-content/uploads/2023/06/cropped-logotipo-club-tennis-3.png",
@@ -463,7 +463,7 @@ export const convenios = {
       email: "",
     },
   ],
-  popayan: [
+  popayán: [
     {
       imagen:
         "https://www.clubcampestrepopayan.com/static/logoclub-27d83cc44d8f4a51bba1d5adeb4784d2.png",

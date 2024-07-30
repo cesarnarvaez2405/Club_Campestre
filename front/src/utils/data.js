@@ -39,10 +39,10 @@ export const menuServicios = [
 
 export const menuCanjes = [
   {
-    id: "bogota",
+    id: "bogotá",
   },
   {
-    id: "medellin",
+    id: "medellín",
   },
   {
     id: "cali",
@@ -51,7 +51,7 @@ export const menuCanjes = [
     id: "pereira",
   },
   {
-    id: "ibague",
+    id: "ibagué",
   },
   {
     id: "bucaramanga",
@@ -63,13 +63,13 @@ export const menuCanjes = [
     id: "cartagena",
   },
   {
-    id: "monteria",
+    id: "montería",
   },
   {
     id: "valledupar",
   },
   {
-    id: "cucuta",
+    id: "cúcuta",
   },
   {
     id: "armenia",
@@ -81,7 +81,7 @@ export const menuCanjes = [
     id: "manizales",
   },
   {
-    id: "popayan",
+    id: "popayán",
   },
   {
     id: "girardot",

@@ -4,7 +4,7 @@ export const BannerDescripcion = () => {
   return (
     <>
       <div className=' w-full flex flex-col gap-4 justify-center items-center sm:max-md:py-10 sm:max-md:px-5'>
-        <h2 className=' text-xl font-thin italic'>
+        <h2 className=' text-xl font-thin italic mt-10'>
           Un oasis de elegancia en el corazón del Club Campestre de Neiva
         </h2>
         <h2 className=' font-semibold text-xl sm:max-md:pt-10'>
