@@ -183,12 +183,12 @@ export const MenuBarUtils = () => {
           hard break
         </a> */}
 
-        <a
+        {/* <a
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={editor.isActive("bulletList") ? "is-active" : ""}
         >
           <div>toggleBulletList</div>
-        </a>
+        </a> */}
 
         <a
           className=" cursor-pointer"
