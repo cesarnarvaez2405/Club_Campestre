@@ -4,7 +4,7 @@ import { useAuthUtils } from "../../../../../hooks/Utils/useAuthUtils";
 import noticiasService from "../../../../../services/noticiasService";
 
 export const useRegistrarNoticia = () => {
-  const { subirImagenImgbb } = useDocsUtils();
+  const { subirImagenImgbb, enviarImagen } = useDocsUtils();
   const { user } = useAuthUtils();
 
   const obtenerTags = async () => {
@@ -26,15 +26,14 @@ export const useRegistrarNoticia = () => {
     if (file && file.size > 3145728) {
       return "El tamaño del archivo excede el límite de 3MB";
     }
-    const imagen = await subirImagenImgbb(portada[0]);
+    const imagen = await enviarImagen(portada[0]);
 
-    const { display_url } = imagen.data;
     const tagsIds = tags.map((tag) => tag.value);
     const noticiaACrear = {
       titulo,
       cuerpo,
       sumario,
-      portada: display_url,
+      portada: `https://clubcampestreneiva.site/${imagen}`,
       usuarioCreacionId: user.rowId,
       usuarioModificacionId: user.rowId,
       tagsIds,
@@ -69,8 +68,8 @@ export const useRegistrarNoticia = () => {
           icon: "error",
         });
       }
-      const imagenSubida = await subirImagenImgbb(imagen);
-      imagenesGuardadas.push(imagenSubida.data.display_url);
+      const imagenSubida = await enviarImagen(imagen);
+      imagenesGuardadas.push(`https://clubcampestreneiva.site/${imagenSubida}`);
     }
 
     return imagenesGuardadas;

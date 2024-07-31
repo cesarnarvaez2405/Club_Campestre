@@ -43,7 +43,7 @@ export const Noticias = () => {
     setNoticiaAEditar(item);
     setEstaEditando(true);
     setContenido(item.cuerpo);
-    const portada = await getFileUrl(item.portada, "portadaImagen");
+    const portada = item.portada;
     setPortadaEditar(portada);
     setTab(1);
   };

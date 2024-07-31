@@ -48,4 +48,17 @@ export default {
       alertErrorResponse(error);
     }
   },
+
+  async uploadImageFile(body) {
+    try {
+      response = await axios.post(
+        `${API.node}campestre-api/v1/file/image-upload-ftp`,
+        body,
+        configApi
+      );
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
 };

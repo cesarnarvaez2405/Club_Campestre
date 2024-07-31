@@ -132,7 +132,6 @@ export const RegistrarNoticia = ({
         icon: "error",
       });
       setEstaGuardando(false);
-      reset();
     }
     reset();
 
@@ -257,7 +256,7 @@ export const RegistrarNoticia = ({
                 {imagenActual && (
                   <div className="flex justify-center items-center gap-4">
                     <img
-                      src={URL.createObjectURL(imagenActual)}
+                      src={imagenActual}
                       alt="Imagen actual"
                       className=" w-24"
                     />
