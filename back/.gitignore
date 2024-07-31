@@ -237,6 +237,5 @@ $RECYCLE.BIN/
 .ionide
 
 ## Carpeta de imagenes
-/uploads/*
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
