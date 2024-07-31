@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 export const SeccionNoticias = ({ noticias }) => {
   return (
     <>
-      <div className="flex flex-col py-8 px-20 items-center w-full 2xl:h-[30rem] h-[25rem] bg-gray-300 sm:max-md:h-[40rem] sm:max-md:px-8  ">
+      <div className="flex flex-col py-8 px-20 items-center w-full 2xl:h-[30rem] h-[30rem] bg-gray-300 sm:max-md:h-[40rem] sm:max-md:px-8  ">
         <span className="text-2xl  font-AltoneNormal">Noticias</span>
-        <div className="grid w-full h-full grid-cols-3 gap-5 pt-4 sm:max-md:grid-cols-1 ">
+        <div className="grid w-full h-full grid-cols-3 gap-5 pt-4 sm:max-lg:grid-cols-1 ">
           {noticias.map((noticia, index) => (
             <Link to={`/noticia/${noticia.rowId}`}>
-              <div className="relative h-96 bg-slate-200 border">
+              <div className="relative h-96  bg-slate-200 border">
                 <img
                   src={`${noticia.portada}`}
                   alt="Noticias"

@@ -24,6 +24,7 @@ export class NoticiasController {
   @Post()
   @Auth(Role.Admin)
   async create(@Body() createNoticiaDto: CreateNoticiaDto) {
+    console.log(createNoticiaDto);
     return this.noticiasService.create(createNoticiaDto);
   }
 
