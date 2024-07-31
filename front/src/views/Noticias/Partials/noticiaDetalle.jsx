@@ -56,12 +56,12 @@ export const NoticiaDetalle = () => {
                 </div>
               </div>
               <div className=" pt-10 w-full flex justify-center items-center">
-                <div className=" w-2/5">
+                <div>
                   <img
-                    src={`${noticia && noticia.portada}`}
+                    src={`${noticia?.portada}`}
                     alt="Noticias"
                     className=" h-[28rem] object-cover border  bg-slate-200"
-                  ></img>
+                  />
                 </div>
               </div>
               <div className=" pt-14">

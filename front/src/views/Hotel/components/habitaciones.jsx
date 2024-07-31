@@ -18,7 +18,7 @@ export const Habitaciones = () => {
             agradable ambiente, en un encuentro único con la naturaleza.
           </p>
         </div>
-        <div className=" grid lg:grid-cols-2 grid-cols-3 gap-24 py-8 sm:max-md:grid-cols-1 sm:max-md:gap-10">
+        <div className=" grid xl:grid-cols-2 xl:max-2xl:px-20  gap-24 py-8 sm:max-md:grid-cols-1 sm:max-md:gap-10">
           {habitaciones.map((habitacion, index) => (
             <div
               className="relative animate__animated animate__fadeIn"
