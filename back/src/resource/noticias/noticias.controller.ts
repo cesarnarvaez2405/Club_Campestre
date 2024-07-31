@@ -62,6 +62,7 @@ export class NoticiasController {
         relations: ['tags', 'usuarioCreacion'],
       });
     } catch (error) {
+      console.log(error);
       throw new InternalServerErrorException(error);
     }
   }
@@ -76,6 +77,7 @@ export class NoticiasController {
     try {
       return this.noticiasService.update(+rowId, updateNoticiaDto);
     } catch (error) {
+      console.log(error);
       throw new InternalServerErrorException(error);
     }
   }
@@ -85,9 +87,9 @@ export class NoticiasController {
   @HttpCode(204)
   async remove(@Param('rowId') rowId: number) {
     try {
-      this.noticiasService.remove(+rowId);
-      return null;
+      return this.noticiasService.remove(+rowId);
     } catch (error) {
+      console.log(error);
       throw new InternalServerErrorException(error);
     }
   }

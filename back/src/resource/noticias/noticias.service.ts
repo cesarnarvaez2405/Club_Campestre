@@ -47,8 +47,10 @@ export class NoticiasService {
 
   async update(rowId: number, datos: UpdateNoticiaDto): Promise<Noticia> {
     const noticia = await this.findOne(rowId);
-    const tags = await this.tagService.buscarPorIds(datos.tagsIds);
-    noticia.tags = tags;
+    if (datos.tagsIds) {
+      const tags = await this.tagService.buscarPorIds(datos.tagsIds);
+      noticia.tags = tags;
+    }
     this.noticiaRepository.merge(noticia, datos);
     return await this.noticiaRepository.save(noticia);
   }

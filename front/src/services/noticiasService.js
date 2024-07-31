@@ -33,7 +33,7 @@ export default {
         body,
         configApi
       );
-      alertSuccessReponse(response);
+      return response.data;
     } catch (error) {
       alertErrorResponse(error);
     }

@@ -22,6 +22,7 @@ export const useRegistrarNoticia = () => {
 
   const guardar = async (noticia) => {
     const { titulo, cuerpo, portada, sumario, tags } = noticia;
+
     const file = portada[0];
     if (file && file.size > 3145728) {
       return "El tamaño del archivo excede el límite de 3MB";
@@ -31,14 +32,25 @@ export const useRegistrarNoticia = () => {
     const tagsIds = tags.map((tag) => tag.value);
     const noticiaACrear = {
       titulo,
-      cuerpo,
+      cuerpo: "<p></p>",
       sumario,
       portada: `https://clubcampestreneiva.site/${imagen}`,
       usuarioCreacionId: user.rowId,
       usuarioModificacionId: user.rowId,
       tagsIds,
     };
-    await noticiasService.addNoticia(noticiaACrear);
+    const noticiaCreada = await noticiasService.addNoticia(noticiaACrear);
+
+    console.log(noticiaCreada);
+
+    const noticiaAActualizar = {
+      cuerpo: noticia.cuerpo,
+    };
+
+    console.log(noticia.cuerpo);
+
+    // Actualizamos para ingresar el cuerpo
+    await noticiasService.actualizar(noticiaCreada.rowId, noticiaAActualizar);
   };
 
   const actualizar = async (noticiaAEditar, noticiaId) => {

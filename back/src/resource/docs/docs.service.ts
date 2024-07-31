@@ -12,7 +12,6 @@ export class DocsService {
 
   constructor() {
     this.client = new ftp.Client();
-    this.client.ftp.verbose = true;
   }
 
   create(createDocDto: CreateDocDto) {
