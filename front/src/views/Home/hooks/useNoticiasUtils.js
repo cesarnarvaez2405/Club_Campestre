@@ -8,6 +8,7 @@ export const useNoticiasUtils = () => {
     const noticiasFilter = noticias.filter(
       (noticia) => noticia.estaActivo != false
     );
+    console.log(noticiasFilter);
     return noticiasFilter;
   };
 
