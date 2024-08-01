@@ -47,10 +47,13 @@ export class NoticiasController {
         fechaCreacion: true,
         fechaModificacion: true,
         portada: true,
-        estaActivo: true
+        estaActivo: true,
       },
       order: {
         fechaCreacion: 'DESC', // Ordenar por fechaCreacion de forma descendente
+      },
+      where: {
+        estaActivo: true,
       },
       take: registros,
     });
@@ -63,7 +66,6 @@ export class NoticiasController {
         relations: ['tags', 'usuarioCreacion'],
       });
     } catch (error) {
-      console.log(error);
       throw new InternalServerErrorException(error);
     }
   }
