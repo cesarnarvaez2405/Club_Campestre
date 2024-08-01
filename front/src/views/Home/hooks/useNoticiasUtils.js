@@ -5,6 +5,7 @@ export const useNoticiasUtils = () => {
     const noticias = await noticiasService.buscarNoticiasPersonalizado({
       registros: 3,
     });
+    console.log(noticias);
     const noticiasFilter = noticias.filter(
       (noticia) => noticia.estaActivo != false
     );
