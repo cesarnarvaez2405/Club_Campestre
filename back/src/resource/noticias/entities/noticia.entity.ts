@@ -24,6 +24,9 @@ export class Noticia extends entityBase {
   @Column('varchar', { nullable: false })
   portada: string;
 
+  @Column('boolean', { name: 'esta_activo', nullable: true, default: false })
+  estaActivo: boolean;
+
   @ManyToOne(() => Usuario, ({ rowId }) => rowId, { nullable: false })
   @JoinColumn({ name: 'created_by' })
   usuarioCreacion: Usuario;

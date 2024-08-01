@@ -41,23 +41,21 @@ export const useRegistrarNoticia = () => {
     };
     const noticiaCreada = await noticiasService.addNoticia(noticiaACrear);
 
-    console.log(noticiaCreada);
-
     const noticiaAActualizar = {
       cuerpo: noticia.cuerpo,
     };
-
-    console.log(noticia.cuerpo);
 
     // Actualizamos para ingresar el cuerpo
     await noticiasService.actualizar(noticiaCreada.rowId, noticiaAActualizar);
   };
 
   const actualizar = async (noticiaAEditar, noticiaId) => {
-    const tagsIds = noticiaAEditar.tags.map((tag) => tag.value);
-    noticiaAEditar.tagsIds = tagsIds;
+    if (noticiaAEditar.tags) {
+      const tagsIds = noticiaAEditar.tags.map((tag) => tag.value);
+      noticiaAEditar.tagsIds = tagsIds;
 
-    delete noticiaAEditar.tags;
+      delete noticiaAEditar.tags;
+    }
 
     if (noticiaAEditar.portada) {
       const file = noticiaAEditar.portada[0];

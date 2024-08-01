@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
+export const TableComponent = ({
+  items,
+  itemsPerPage,
+  onEdit,
+  onDelete,
+  onUpdate,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -26,7 +32,7 @@ export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
           <div key={index} className="border p-4">
             <h3 className=" font-semibold text-base">{item.titulo}</h3>
             <div className=" mt-3 text-sm">
-              <span>{item.sumario} </span>
+              <span>{item.sumario}</span>
             </div>
             <div className=" mt-2 flex gap-3">
               {item.tags.map((tag, index) => (
@@ -94,6 +100,14 @@ export const TableComponent = ({ items, itemsPerPage, onEdit, onDelete }) => {
                 onClick={() => onDelete(item)}
               >
                 Eliminar
+              </button>
+              <button
+                className={`bg-green-600 px-2 mx-2 rounded-md text-white font-AltoneNormal hover:bg-red-900 duration-150 ease-in-out
+                  ${!item.estaActivo && "bg-slate-800"}
+                  `}
+                onClick={() => onUpdate(item)}
+              >
+                {item.estaActivo ? "Activo" : "Inactivo"}
               </button>
             </div>
           </div>

@@ -5,6 +5,8 @@ import {
   IsArray,
   ValidateNested,
   IsNotEmpty,
+  IsBoolean,
+  IsOptional,
 } from 'class-validator';
 
 export class CreateNoticiaDto {
@@ -23,6 +25,10 @@ export class CreateNoticiaDto {
   @IsNotEmpty({ message: 'La Portada es obligatorio' })
   @IsString()
   portada: string;
+
+  @IsOptional()
+  @IsBoolean()
+  estaActivo?: boolean;
 
   @IsNotEmpty({ message: 'El usuarioCreacionId es obligatorio' })
   @IsNumber()

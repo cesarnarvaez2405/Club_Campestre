@@ -24,7 +24,6 @@ export class NoticiasController {
   @Post()
   @Auth(Role.Admin)
   async create(@Body() createNoticiaDto: CreateNoticiaDto) {
-    console.log(createNoticiaDto);
     return this.noticiasService.create(createNoticiaDto);
   }
 
@@ -48,6 +47,7 @@ export class NoticiasController {
         fechaCreacion: true,
         fechaModificacion: true,
         portada: true,
+        estaActivo: true
       },
       order: {
         fechaCreacion: 'DESC', // Ordenar por fechaCreacion de forma descendente

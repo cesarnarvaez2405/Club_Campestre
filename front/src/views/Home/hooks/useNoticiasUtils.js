@@ -5,7 +5,10 @@ export const useNoticiasUtils = () => {
     const noticias = await noticiasService.buscarNoticiasPersonalizado({
       registros: 3,
     });
-    return noticias;
+    const noticiasFilter = noticias.filter(
+      (noticia) => noticia.estaActivo != true
+    );
+    return noticiasFilter;
   };
 
   return {

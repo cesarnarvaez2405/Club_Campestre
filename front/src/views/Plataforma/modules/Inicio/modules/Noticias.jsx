@@ -22,6 +22,7 @@ export const Noticias = () => {
     noticias.map((noticia) => {
       noticia.fechaCreacion = getFormatDate(noticia.fechaCreacion);
       noticia.fechaModificacion = getFormatDate(noticia.fechaModificacion);
+      noticia.esta_activo = noticia.estaActivo;
     });
     Setnoticias(noticias);
   }
