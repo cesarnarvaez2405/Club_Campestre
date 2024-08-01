@@ -3,13 +3,23 @@ import API from "../../../api/apiNode";
 import { Link } from "react-router-dom";
 
 export const SeccionNoticias = ({ noticias }) => {
+  const formatTitleForURL = (title) => {
+    return title
+      .toLowerCase() // Convertir a minúsculas
+      .replace(/[^a-z0-9]+/g, "-") // Reemplazar caracteres no alfanuméricos por guiones
+      .replace(/^-+|-+$/g, ""); // Eliminar guiones al inicio y al final
+  };
   return (
     <>
       <div className="flex flex-col py-8 px-20 items-center w-full  bg-gray-300  sm:max-md:px-8  ">
         <span className="text-2xl  font-AltoneNormal">Noticias</span>
         <div className="grid w-full h-full grid-cols-3 gap-5 pt-4 sm:max-lg:grid-cols-1 ">
           {noticias.map((noticia, index) => (
-            <Link to={`/noticia/${noticia.rowId}`}>
+            <Link
+              to={`/noticia/${noticia.rowId}/${formatTitleForURL(
+                noticia.titulo
+              )}`}
+            >
               <div className="relative h-96  bg-slate-200 border">
                 <img
                   src={`${noticia.portada}`}
