@@ -34,11 +34,11 @@ export const NoticiaDetalle = () => {
                   {noticia?.titulo}
                 </h2>
               </div>
-              <div className=" pt-4 flex flex-row gap-5">
+              <div className=" pt-4 flex flex-row sm:max-md:grid sm:max-md:grid-cols-3 gap-5">
                 {noticia?.tags.map((tag, index) => (
                   <div
                     key={index}
-                    className="inline-block bg-orange-500 py-1 px-2 text-white rounded-md"
+                    className="inline-block bg-orange-500 sm:max-md:text-center py-1 px-2 text-white rounded-md"
                   >
                     <p>{tag.nombre}</p>
                   </div>
