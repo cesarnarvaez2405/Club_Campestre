@@ -25,25 +25,24 @@ export const NoticiaDetalle = () => {
   return (
     <>
       <div className=" w-full h-full bg-neutral-700">
-        <div className=" h-52 w-full "></div>
+        <div className=" h-52 sm:max-md:h-40 w-full "></div>
         <div className=" flex justify-center items-center">
-          <div className="flex top-0 w-2/3 bg-white rounded-md shadow-xl shadow-black mb-20 pb-20 ">
+          <div className="flex top-0 w-2/3 sm:max-md:w-full bg-white rounded-md shadow-xl shadow-black mb-20 pb-20 ">
             <div className=" px-10 py-12 w-full">
               <div>
-                <h2 className=" font-sans font-semibold text-3xl">
-                  {noticia && noticia.titulo}
+                <h2 className=" font-sans font-semibold text-3xl sm:max-md:text-xl">
+                  {noticia?.titulo}
                 </h2>
               </div>
               <div className=" pt-4 flex flex-row gap-5">
-                {noticia &&
-                  noticia.tags.map((tag, index) => (
-                    <div
-                      key={index}
-                      className="inline-block bg-orange-500 py-1 px-2 text-white rounded-md"
-                    >
-                      <p>{tag.nombre}</p>
-                    </div>
-                  ))}
+                {noticia?.tags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className="inline-block bg-orange-500 py-1 px-2 text-white rounded-md"
+                  >
+                    <p>{tag.nombre}</p>
+                  </div>
+                ))}
 
                 <div className=" flex justify-center items-center font-thin gap-2">
                   <ClockIcon className=" w-5 h-5" />
