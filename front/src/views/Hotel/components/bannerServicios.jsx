@@ -6,7 +6,7 @@ export const BannerServicios = () => {
     <>
       <div className=" w-full flex flex-col gap-4 justify-center items-center py-10 bg-zinc-800">
         <h2 className=" text-xl font-thin italic text-white">Comodidades</h2>
-        <div className=" h-full w-[60%] pt-8 grid grid-cols-7 sm:max-md:w-full sm:max-md:grid-cols-2 text-sm ">
+        <div className=" h-full w-[60%] pt-8 grid grid-cols-7 sm:max-md:w-full sm:max-md:grid-cols-2 sm:max-md:gap-5 text-sm ">
           <div className="flex flex-col items-center justify-center ">
             <div className="w-6 h-6 ">
               <svg
@@ -213,7 +213,7 @@ export const BannerServicios = () => {
         <h2 className=" text-xl font-thin italic text-white">
           Servicios locativos
         </h2>
-        <div className=" h-full w-[60%] pt-8 grid grid-cols-7 sm:max-md:w-full sm:max-md:grid-cols-2 text-sm  ">
+        <div className=" h-full w-[60%] pt-8 grid grid-cols-7 sm:max-md:w-full sm:max-md:grid-cols-2 sm:max-md:gap-5 text-sm  ">
           <div className="flex flex-col items-center justify-center ">
             <div className="flex items-center justify-center w-6 h-6 rounded-sm bg-amber-300">
               <div className="w-6 h-6 ">
@@ -419,7 +419,7 @@ export const BannerServicios = () => {
         <h2 className=" text-xl font-thin italic text-white">
           Otros Servicios
         </h2>
-        <div className=" h-full w-[40%] pt-8 grid grid-cols-5 sm:max-md:w-full sm:max-md:grid-cols-2 text-sm  ">
+        <div className=" h-full w-[40%] pt-8 grid grid-cols-5 sm:max-md:w-full sm:max-md:grid-cols-2 sm:max-md:gap-5 text-sm  ">
           <div className="flex flex-col items-center justify-center ">
             <div className="w-5 h-5 ">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
