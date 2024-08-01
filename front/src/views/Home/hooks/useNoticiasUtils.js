@@ -6,7 +6,7 @@ export const useNoticiasUtils = () => {
       registros: 3,
     });
     const noticiasFilter = noticias.filter(
-      (noticia) => noticia.estaActivo != true
+      (noticia) => noticia.estaActivo != false
     );
     return noticiasFilter;
   };
