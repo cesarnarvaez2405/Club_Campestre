@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
 import { Dot } from "../../../../../components/Util/Dot";
 import { AlertError } from "../../../../../components/Util/alertError";
+import { SpinnerLoading } from "../../../../../components/SpinnerLoading";
 
 export const ModalRegistrarTags = ({ cerrarModal }) => {
   const { crearTags } = useRegistrarNoticia();
+  const [estaGuardando, setEstaGuardando] = useState(false);
 
   const {
     register,
@@ -18,11 +20,13 @@ export const ModalRegistrarTags = ({ cerrarModal }) => {
   } = useForm();
 
   const registrarTags = async (event) => {
+    setEstaGuardando(true);
     await crearTags({
       nombre: event.nombre,
       prefijoTag: event.prefijo,
     });
     reset();
+    setEstaGuardando(false);
     cambiarModal();
   };
 
@@ -121,7 +125,8 @@ export const ModalRegistrarTags = ({ cerrarModal }) => {
               <div className="flex flex-row items-center p-4 border-t border-gray-200 rounded-b md:p-5 dark:border-gray-600">
                 <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
                   <div className="flex flex-row gap-3 ">
-                    <p>Registrar</p>
+                    {!estaGuardando && "Registrar"}
+                    {estaGuardando && <SpinnerLoading />}
                   </div>
                 </button>
               </div>

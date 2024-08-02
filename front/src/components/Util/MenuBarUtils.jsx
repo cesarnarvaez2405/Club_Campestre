@@ -7,6 +7,7 @@ import {
   PhotoIcon,
 } from "@heroicons/react/16/solid";
 import { useRegistrarNoticia } from "../../views/Plataforma/modules/Inicio/hooks/useRegistrarNoticia";
+import { SpinnerLoading } from "../SpinnerLoading";
 
 export const MenuBarUtils = () => {
   const { editor } = useCurrentEditor();
@@ -15,12 +16,14 @@ export const MenuBarUtils = () => {
   const [selectedHeadingLevel, setSelectedHeadingLevel] = useState(3);
   const [imagenes, setImagenes] = useState([]);
   const [verModalImagenes, setVerModalImagenes] = useState(false);
+  const [estaGuardandoImagen, setEstaGuardandoImagen] = useState(false);
 
   if (!editor) {
     return null;
   }
 
   const guardarImagenes = async () => {
+    setEstaGuardandoImagen(true);
     const respuesta = await guardarImagenesRegistro(imagenes);
     if (respuesta) {
       respuesta.forEach((url, index) => {
@@ -29,6 +32,7 @@ export const MenuBarUtils = () => {
           editor.chain().insertContent("\n").run();
         }
       });
+      setEstaGuardandoImagen(false);
       setVerModalImagenes(false);
       setImagenes([]);
     }
@@ -403,7 +407,8 @@ export const MenuBarUtils = () => {
                   onClick={guardarImagenes}
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
-                  Guardar
+                  {!estaGuardandoImagen && "Cargar Imagen"}
+                  {estaGuardandoImagen && <SpinnerLoading />}
                 </button>
               </div>
             </div>
