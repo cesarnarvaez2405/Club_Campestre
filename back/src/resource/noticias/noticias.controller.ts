@@ -28,7 +28,6 @@ export class NoticiasController {
   }
 
   @Get()
-  @Auth()
   async findAll() {
     return this.noticiasService.findAll({
       relations: ['tags', 'usuarioCreacion', 'usuarioModificacion'],
