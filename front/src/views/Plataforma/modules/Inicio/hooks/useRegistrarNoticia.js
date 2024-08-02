@@ -30,23 +30,17 @@ export const useRegistrarNoticia = () => {
     const imagen = await enviarImagen(portada[0]);
 
     const tagsIds = tags.map((tag) => tag.value);
+
     const noticiaACrear = {
       titulo,
-      cuerpo: "<p></p>",
+      cuerpo,
       sumario,
       portada: `https://clubcampestreneiva.site/${imagen}`,
-      usuarioCreacionId: user.rowId,
-      usuarioModificacionId: user.rowId,
+      usuarioCreacionId: user ? user.rowId : 1,
+      usuarioModificacionId: user ? user.rowId : 1,
       tagsIds,
     };
-    const noticiaCreada = await noticiasService.addNoticia(noticiaACrear);
-
-    const noticiaAActualizar = {
-      cuerpo: noticia.cuerpo,
-    };
-
-    // Actualizamos para ingresar el cuerpo
-    await noticiasService.actualizar(noticiaCreada.rowId, noticiaAActualizar);
+    await noticiasService.addNoticia(noticiaACrear);
   };
 
   const actualizar = async (noticiaAEditar, noticiaId) => {
