@@ -79,7 +79,6 @@ export class NoticiasController {
     try {
       return this.noticiasService.update(+rowId, updateNoticiaDto);
     } catch (error) {
-      console.log(error);
       throw new InternalServerErrorException(error);
     }
   }
@@ -91,7 +90,6 @@ export class NoticiasController {
     try {
       return this.noticiasService.remove(+rowId);
     } catch (error) {
-      console.log(error);
       throw new InternalServerErrorException(error);
     }
   }

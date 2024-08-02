@@ -1,13 +1,16 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { CreateNoticiaDto } from './dto/create-noticia.dto';
 import { UpdateNoticiaDto } from './dto/update-noticia.dto';
 import { Repository } from 'typeorm';
 import { Noticia } from './entities/noticia.entity';
 import { Usuario } from '../usuario/entities/usuario.entity';
 import { TagsService } from '../tags/tags.service';
+import { Cron } from '@nestjs/schedule';
 
 @Injectable()
 export class NoticiasService {
+  private readonly logger = new Logger(NoticiasService.name);
+
   constructor(
     @Inject('NOTICIA_REPOSITORY')
     private readonly noticiaRepository: Repository<Noticia>,
@@ -43,6 +46,19 @@ export class NoticiasService {
     }
 
     return noticia;
+  }
+
+  @Cron('*/10 * * * *')
+  async tareaBuscarNoticias(options?: any) {
+    this.logger.debug('Tarea programada //tareaBuscarNoticias// Iniciada');
+    await this.findAll({
+      take: 3,
+      where: {
+        estaActivo: true,
+      },
+    });
+
+    this.logger.debug('Tarea programada //tareaBuscarNoticias// Finalizada');
   }
 
   async update(rowId: number, datos: UpdateNoticiaDto): Promise<Noticia> {

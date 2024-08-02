@@ -12,9 +12,11 @@ import { DocsModule } from './resource/docs/docs.module';
 import { join } from 'path';
 import { SendEmailModule } from './resource/send-email/send-email.module';
 import { TercerosInteresadosModule } from './resource/terceros-interesados/terceros-interesados.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
+    ScheduleModule.forRoot(),
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
