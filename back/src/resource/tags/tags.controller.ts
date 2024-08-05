@@ -38,7 +38,6 @@ export class TagsController {
   }
 
   @Get(':rowId')
-  @Auth(Role.Admin)
   findOne(@Param('rowId') rowId: number) {
     try {
       return this.tagsService.findOne(+rowId);

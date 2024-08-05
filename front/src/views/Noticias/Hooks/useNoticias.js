@@ -10,8 +10,10 @@ export const useNoticias = () => {
   const obtenerNoticiaMongo = async (noticiaId) => {
     const noticia = await noticiasService.buscarPorIdMongo(noticiaId);
 
-    noticia.usuarioCreacion = await usuario.usuario(noticia.usuarioCreacionId);
-    noticia.usuarioModificacion = await usuario.usuario(
+    noticia.usuarioCreacion = await usuario.obtenerUsuarioPublico(
+      noticia.usuarioCreacionId
+    );
+    noticia.usuarioModificacion = await usuario.obtenerUsuarioPublico(
       noticia.usuarioModificacionId
     );
 
