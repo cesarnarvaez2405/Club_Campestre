@@ -27,6 +27,8 @@ export const Autenticador = () => {
           onLogin({
             email: usuarioLogeado.payload.email,
             rol: usuarioLogeado.payload.rol,
+            nombre: usuarioLogeado.payload.nombre,
+            rowId: usuarioLogeado.payload.rowId,
           })
         );
       }

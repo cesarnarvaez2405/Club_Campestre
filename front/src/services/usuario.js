@@ -60,6 +60,18 @@ export default {
     }
   },
 
+  async obtenerUsuarioPublico(usuarioId) {
+    try {
+      const response = await axios.get(
+        `${API.node}campestre-api/v1/usuario/buscar-publico/${usuarioId}`,
+        configApi
+      );
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
   async addUsuario(usuario) {
     try {
       const response = await axios.post(

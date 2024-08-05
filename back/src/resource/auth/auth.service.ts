@@ -32,14 +32,16 @@ export class AuthService {
     if (!tieneEmail) {
       throw new BadRequestException('Usuario no esta registrado');
     }
-
     const passwordValido = await bcrypt.compare(password, tieneEmail.password);
-
     if (!passwordValido) {
       throw new UnauthorizedException('La contraseña es incorrecta');
     }
-
-    const payload = { email: tieneEmail.email, rol: tieneEmail.rol };
+    const payload = {
+      email: tieneEmail.email,
+      rol: tieneEmail.rol,
+      rowId: tieneEmail.rowId,
+      nombre: tieneEmail.nombre,
+    };
     const token = await this.jwtService.signAsync(payload);
 
     return {
@@ -50,7 +52,15 @@ export class AuthService {
 
   async perfil(perfil) {
     const { email } = perfil;
-    return await this.usuarioService.buscarPorEmail(email);
+    return await this.usuarioService.buscarPerfil({
+      where: { email },
+      select: {
+        rowId: true,
+        nombre: true,
+        rol: true,
+        email: true,
+      },
+    });
   }
 
   async olvidoPassword(body) {

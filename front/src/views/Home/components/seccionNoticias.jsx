@@ -16,7 +16,7 @@ export const SeccionNoticias = ({ noticias }) => {
         <div className="grid w-full h-full grid-cols-3 gap-5 pt-4 sm:max-lg:grid-cols-1 ">
           {noticias.map((noticia, index) => (
             <Link
-              to={`/noticia/${noticia.rowId}/${formatTitleForURL(
+              to={`/noticia/${noticia._id}/${formatTitleForURL(
                 noticia.titulo
               )}`}
             >

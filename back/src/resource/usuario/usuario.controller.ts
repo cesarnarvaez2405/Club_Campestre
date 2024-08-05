@@ -21,6 +21,14 @@ import { Role } from '../common/enums/rol.enum';
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
+  @Get('buscar-publico/:rowId')
+  async buscarUsuarioId(@Param('rowId') rowId: string) {
+    return this.usuarioService.buscarPorIdPublico(+rowId, {
+      select: {
+        nombre: true,
+      },
+    });
+  }
   @Post()
   create(@Body() createUsuarioDto: CreateUsuarioDto) {
     return this.usuarioService.create(createUsuarioDto);

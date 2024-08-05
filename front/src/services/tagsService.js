@@ -48,4 +48,16 @@ export default {
       alertErrorResponse(error);
     }
   },
+
+  async obtenerPorId(id) {
+    try {
+      response = await axios.get(
+        `${API.node}campestre-api/v1/tags/${id}`,
+        configApi
+      );
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
 };

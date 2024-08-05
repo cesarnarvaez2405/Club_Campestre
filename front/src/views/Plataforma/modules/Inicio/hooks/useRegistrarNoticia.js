@@ -22,15 +22,12 @@ export const useRegistrarNoticia = () => {
 
   const guardar = async (noticia) => {
     const { titulo, cuerpo, portada, sumario, tags } = noticia;
-
     const file = portada[0];
     if (file && file.size > 3145728) {
       return "El tamaño del archivo excede el límite de 3MB";
     }
     const imagen = await enviarImagen(portada[0]);
-
     const tagsIds = tags.map((tag) => tag.value);
-
     const noticiaACrear = {
       titulo,
       cuerpo,
@@ -43,11 +40,31 @@ export const useRegistrarNoticia = () => {
     await noticiasService.addNoticia(noticiaACrear);
   };
 
+  const guardarNoticiasMongo = async (noticia) => {
+    const { titulo, cuerpo, portada, sumario, tags } = noticia;
+
+    const file = portada[0];
+    if (file && file.size > 3145728) {
+      return "El tamaño del archivo excede el límite de 3MB";
+    }
+    const imagen = await enviarImagen(portada[0]);
+
+    const noticiaACrear = {
+      titulo,
+      cuerpo,
+      sumario,
+      portada: `https://clubcampestreneiva.site/${imagen}`,
+      usuarioCreacionId: user ? user.rowId : 1,
+      usuarioModificacionId: user ? user.rowId : 1,
+      tags,
+    };
+    await noticiasService.addNoticiaMongo(noticiaACrear);
+  };
+
   const actualizar = async (noticiaAEditar, noticiaId) => {
     if (noticiaAEditar.tags) {
       const tagsIds = noticiaAEditar.tags.map((tag) => tag.value);
       noticiaAEditar.tagsIds = tagsIds;
-
       delete noticiaAEditar.tags;
     }
 
@@ -60,6 +77,18 @@ export const useRegistrarNoticia = () => {
       noticiaAEditar.portada = imagen.data.display_url;
     }
     await noticiasService.actualizar(noticiaId, noticiaAEditar);
+  };
+
+  const actualizarMongo = async (noticiaAEditar, noticiaId) => {
+    if (noticiaAEditar.portada) {
+      const file = noticiaAEditar.portada[0];
+      if (file && file.size > 3145728) {
+        return "El tamaño del archivo excede el límite de 3MB";
+      }
+      const imagen = await subirImagenImgbb(file);
+      noticiaAEditar.portada = imagen.data.display_url;
+    }
+    await noticiasService.actualizarMongo(noticiaId, noticiaAEditar);
   };
 
   const guardarImagenesRegistro = async (imagenes) => {
@@ -86,5 +115,7 @@ export const useRegistrarNoticia = () => {
     guardarImagenesRegistro,
     actualizar,
     crearTags,
+    guardarNoticiasMongo,
+    actualizarMongo,
   };
 };

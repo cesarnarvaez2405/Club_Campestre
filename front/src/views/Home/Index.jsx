@@ -9,16 +9,17 @@ import { getFormatDate } from "../../utils/timeFormat";
 
 export const Home = () => {
   const bannerHotelRef = createRef();
-  const { obtenerNoticias } = useNoticiasUtils();
+  const { obtenerNoticias, obtenerNoticiasLimiteMongo } = useNoticiasUtils();
 
   const [noticias, Setnoticias] = useState([]);
 
   async function encontrarNoticias() {
-    const noticias = await obtenerNoticias();
+    const noticias = await obtenerNoticiasLimiteMongo();
     noticias.map((noticia) => {
-      noticia.fechaCreacion = getFormatDate(noticia.fechaCreacion);
-      noticia.fechaModificacion = getFormatDate(noticia.fechaModificacion);
+      noticia.fechaCreacion = getFormatDate(noticia.createdAt);
+      noticia.fechaModificacion = getFormatDate(noticia.updatedAt);
     });
+
     Setnoticias(noticias);
   }
 

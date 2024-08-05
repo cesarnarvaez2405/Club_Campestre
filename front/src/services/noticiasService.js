@@ -108,4 +108,74 @@ export default {
       alertErrorResponse(error);
     }
   },
+
+  async addNoticiaMongo(body) {
+    try {
+      const response = await axios.post(`${API.noticiasApi}/noticias`, body);
+      alertSuccessReponse(response);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async buscarTodosMongo() {
+    try {
+      const response = await axios.get(`${API.noticiasApi}/noticias`);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async actualizarMongo(_id, body) {
+    try {
+      const response = await axios.patch(
+        `${API.noticiasApi}/noticias/${_id}`,
+        body
+      );
+      alertSuccessReponse(response);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async buscarPorIdMongo(_id) {
+    try {
+      const response = await axios.get(`${API.noticiasApi}/noticias/${_id}`);
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async eliminarMongo(_id) {
+    try {
+      const response = await axios.delete(`${API.noticiasApi}/noticias/${_id}`);
+      alertSuccessReponse(response);
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
+
+  async buscarNoticiasPersonalizadoMongo(parametros) {
+    try {
+      const url = `${API.noticiasApi}/noticias/buscar-limite`;
+
+      if (parametros) {
+        const queryString = new URLSearchParams(parametros).toString();
+        const fullUrl = url + "?" + queryString;
+        response = await axios.get(fullUrl, configApi);
+      } else {
+        response = await axios.get(
+          `${API.node}noticias/buscar-limite`,
+          configApi
+        );
+      }
+      return response.data;
+    } catch (error) {
+      alertErrorResponse(error);
+    }
+  },
 };

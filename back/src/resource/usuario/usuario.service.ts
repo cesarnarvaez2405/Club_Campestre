@@ -34,6 +34,19 @@ export class UsuarioService {
     return usuario;
   }
 
+  async buscarPorIdPublico(rowId: number, options?: any) {
+    const usuario = await this.usuarioRepository.findOne({
+      where: {
+        rowId,
+      },
+      ...options,
+    });
+    if (!usuario) {
+      throw new NotFoundException('No se encuentra el usuario');
+    }
+    return usuario;
+  }
+
   async buscarPorEmail(email: string): Promise<Usuario> {
     const usuario = await this.usuarioRepository.findOne({
       where: { email },
@@ -43,6 +56,16 @@ export class UsuarioService {
       throw new NotFoundException('No encuentra registro');
     }
 
+    return usuario;
+  }
+
+  async buscarPerfil(options?: any) {
+    const usuario = await this.usuarioRepository.findOne({
+      ...options,
+    });
+    if (!usuario) {
+      throw new NotFoundException('El usuario no se encuentra registrado');
+    }
     return usuario;
   }
 

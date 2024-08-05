@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import { useNoticias } from "../Hooks/useNoticias";
 import { getFormatDate } from "../../../utils/timeFormat";
 import { ClockIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import { Helmet } from "react-helmet-async";
 
 import styles from "../Style/noticia.module.css";
+import API from "../../../api/apiNode";
 
 export const NoticiaDetalle = () => {
   const { id } = useParams();
-  const { obtenerNoticia } = useNoticias();
+  const { obtenerNoticia, obtenerNoticiaMongo } = useNoticias();
 
   const [noticia, setNoticia] = useState();
 
@@ -17,13 +19,34 @@ export const NoticiaDetalle = () => {
   }, []);
 
   async function encontrarNoticia() {
-    const noticiaDetalle = await obtenerNoticia(id);
-    noticiaDetalle.fechaCreacion = getFormatDate(noticiaDetalle.fechaCreacion);
+    const noticiaDetalle = await obtenerNoticiaMongo(id);
+    noticiaDetalle.fechaCreacion = getFormatDate(noticiaDetalle.createdAt);
     setNoticia(noticiaDetalle);
   }
 
+  const formatTitleForURL = (title) => {
+    return title
+      .toLowerCase() // Convertir a minúsculas
+      .replace(/[^a-z0-9]+/g, "-") // Reemplazar caracteres no alfanuméricos por guiones
+      .replace(/^-+|-+$/g, ""); // Eliminar guiones al inicio y al final
+  };
+
   return (
     <>
+      {/* <Helmet>
+        <title>{noticia?.titulo}</title>
+        <meta property="og:title" content={noticia?.titulo} />
+        <meta property="og:description" content={noticia?.sumario} />
+        <meta property="og:image" content={noticia?.portada} />
+        <meta
+          property="og:url"
+          content={`${API.dominio}noticia/${noticia?.rowId}/${formatTitleForURL(
+            noticia?.titulo
+          )}`}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet> */}
+
       <div className=" w-full h-full bg-neutral-700">
         <div className=" h-52 sm:max-md:h-40 w-full "></div>
         <div className=" flex justify-center items-center">

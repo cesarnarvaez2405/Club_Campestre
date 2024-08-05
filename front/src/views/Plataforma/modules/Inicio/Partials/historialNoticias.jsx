@@ -5,8 +5,8 @@ import Swal from "sweetalert2";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
 
 export const HistorialNoticias = ({ noticias, obtenerNoticias, editar }) => {
-  const { eliminarNoticia } = useHistorialNoticias();
-  const { actualizar } = useRegistrarNoticia();
+  const { eliminarNoticiaMongo } = useHistorialNoticias();
+  const { actualizarMongo } = useRegistrarNoticia();
 
   const [headers, setHeaders] = useState([
     { text: "Id" },
@@ -33,7 +33,7 @@ export const HistorialNoticias = ({ noticias, obtenerNoticias, editar }) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await eliminarNoticia(item);
+        await eliminarNoticiaMongo(item);
         await obtenerNoticias();
       }
     });
@@ -52,11 +52,11 @@ export const HistorialNoticias = ({ noticias, obtenerNoticias, editar }) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await actualizar(
+        await actualizarMongo(
           {
             estaActivo: !item.estaActivo,
           },
-          item.rowId
+          item._id
         );
         await obtenerNoticias();
       }

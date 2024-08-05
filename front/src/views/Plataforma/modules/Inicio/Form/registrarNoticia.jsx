@@ -37,7 +37,13 @@ export const RegistrarNoticia = ({
   const [estaGuardando, setEstaGuardando] = useState(false);
   const [estaAbiertoModalTag, setEstaAbiertoModalTag] = useState(false);
 
-  const { guardar, actualizar, obtenerTags } = useRegistrarNoticia();
+  const {
+    guardar,
+    actualizar,
+    actualizarMongo,
+    obtenerTags,
+    guardarNoticiasMongo,
+  } = useRegistrarNoticia();
 
   const animatedComponents = makeAnimated();
   const {
@@ -94,11 +100,11 @@ export const RegistrarNoticia = ({
 
   useEffect(() => {
     if (estaEditando) {
-      const { titulo, sumario, rowId } = noticiaAEditar;
+      const { titulo, sumario, _id } = noticiaAEditar;
       setValue("titulo", titulo);
       setValue("sumario", sumario);
       setImagenActual(portadaEditar);
-      setNoticiaId(rowId);
+      setNoticiaId(_id);
 
       const tagsSelect = tags
         .filter((tag) =>
@@ -124,7 +130,7 @@ export const RegistrarNoticia = ({
   const guardarNoticia = async (event) => {
     setEstaGuardando(true);
     event.cuerpo = contenido;
-    const respuesta = await guardar(event);
+    const respuesta = await guardarNoticiasMongo(event);
     if (respuesta) {
       Swal.fire({
         title: "El tamaño del archivo excede el límite de 3MB",
@@ -146,7 +152,7 @@ export const RegistrarNoticia = ({
     if (imagenActual) {
       delete event.portada;
     }
-    await actualizar(event, noticiaId);
+    await actualizarMongo(event, noticiaId);
     reset();
     await setContenido("");
     await setTab(0);

@@ -9,9 +9,8 @@ export const useAuthUtils = () => {
   const checkAuthToken = async () => {
     dispatch(checking());
     const token = localStorage.getItem("token");
-
     if (!token) {
-      return dispatch(onLogout("No estas logeado"));
+      return dispatch(onLogout("no autenticado"));
     }
 
     try {

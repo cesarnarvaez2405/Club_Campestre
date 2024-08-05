@@ -6,7 +6,7 @@ import { getFormatDate } from "../../../../../utils/timeFormat";
 import { useRegistrarNoticia } from "../hooks/useRegistrarNoticia";
 
 export const Noticias = () => {
-  const { obtenerNoticias } = useHistorialNoticias();
+  const { obtenerNoticias, obtenerNoticiasMongo } = useHistorialNoticias();
   const { obtenerTags } = useRegistrarNoticia();
 
   const [tab, setTab] = useState(0);
@@ -18,10 +18,10 @@ export const Noticias = () => {
   const [portadaEditar, setPortadaEditar] = useState();
 
   async function encontrarNoticias() {
-    const noticias = await obtenerNoticias();
+    const noticias = await obtenerNoticiasMongo();
     noticias.map((noticia) => {
-      noticia.fechaCreacion = getFormatDate(noticia.fechaCreacion);
-      noticia.fechaModificacion = getFormatDate(noticia.fechaModificacion);
+      noticia.fechaCreacion = getFormatDate(noticia.createdAt);
+      noticia.fechaModificacion = getFormatDate(noticia.updatedAt);
       noticia.esta_activo = noticia.estaActivo;
     });
     Setnoticias(noticias);
