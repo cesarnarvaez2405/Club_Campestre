@@ -33,7 +33,7 @@ export const ImagenSlider = ({ imagenes }) => {
 
   return (
     <>
-      <div className="h-96 relative z-10 flex">
+      <div className="xl:h-96 relative z-10 flex">
         <div className="relative w-full h-full overflow-hidden">
           <SwitchTransition>
             <CSSTransition

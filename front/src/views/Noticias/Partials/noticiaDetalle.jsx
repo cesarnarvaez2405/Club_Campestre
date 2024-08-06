@@ -47,14 +47,17 @@ export const NoticiaDetalle = () => {
         <meta property="og:type" content="article" />
       </Helmet> */}
 
-      <div className=" w-full h-full bg-neutral-700">
+      <div className=" w-full h-full bg-neutral-700 ">
         <div className=" h-52 sm:max-md:h-40 w-full "></div>
         <div className=" flex justify-center items-center">
           <div className="flex top-0 w-2/3 sm:max-md:w-full bg-white rounded-md shadow-xl shadow-black mb-20 pb-20 ">
             <div className=" px-10 py-12 w-full">
-              <div>
-                <h2 className=" font-sans font-semibold text-3xl sm:max-md:text-xl">
+              <div className=" flex flex-col gap-5 sm:max-md:gap-8">
+                <h1 className=" font-sans font-semibold text-3xl sm:max-md:text-xl text-justify">
                   {noticia?.titulo}
+                </h1>
+                <h2 className=" text-gray-600 text-xl sm:max-md:text-sm text-justify pb-5">
+                  {noticia && noticia.sumario}
                 </h2>
               </div>
               <div className=" pt-4 flex flex-row sm:max-md:grid sm:max-md:grid-cols-3 gap-5">
@@ -82,11 +85,12 @@ export const NoticiaDetalle = () => {
                   <img
                     src={`${noticia?.portada}`}
                     alt="Noticias"
-                    className=" h-[28rem] object-cover border  bg-slate-200"
+                    className=" xl:h-[28rem] object-cover border  bg-slate-200"
                   />
                 </div>
               </div>
-              <div className=" pt-14">
+
+              <div className=" pt-8 flex flex-col gap-5">
                 <div
                   className={styles.noticia}
                   dangerouslySetInnerHTML={{

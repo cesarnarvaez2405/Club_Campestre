@@ -48,10 +48,10 @@ export const EscenariosDeportivos = () => {
           </div>
           <div className=" flex justify-center items-center py-5">
             <div className=" w-[70%] sm:max-md:w-[80%] ">
-              <div className=" grid grid-cols-2 justify-center items-center py-[2rem] sm:max-md:grid-cols-1">
+              <div className=" grid grid-cols-2 justify-center items-center py-[2rem] sm:max-md:py-0 sm:max-md:grid-cols-1">
                 {galeriaEscenariosDeportivos.map((escenario, index) => (
                   <div className=" flex flex-col gap-2  pr-5 py-6" key={index}>
-                    <p className=" text-2xl mb-2 font-thin text-white">
+                    <p className=" text-2xl sm:max-md:text-lg mb-2 font-thin text-white">
                       {escenario.titulo}
                     </p>
                     <ImagenSlider imagenes={escenario.imagenes} />
