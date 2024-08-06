@@ -26,7 +26,7 @@ export const BannerSerSocio = () => {
     <>
       <div className="flex justify-center items-center h-full flex-col gap-7 animate__animated animate__bounceInRight ">
         <div className=" text-2xl flex justify-center items-center flex-col font-AltoneNormal ">
-          <span> ¿Cómo Ser Socio?</span>
+          <span> ¿Cómo ser socio?</span>
         </div>
         <div className=" font-AltoneNormal">
           <p className=" text-center sm:max-md:text-justify sm:max-md:px-5">

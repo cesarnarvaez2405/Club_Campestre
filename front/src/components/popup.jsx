@@ -12,7 +12,7 @@ const Popup = (Formulario, additionalProps) => {
           className="fixed top-0 left-0 right-0 z-50 items-center justify-center w-full max-h-full overflow-x-hidden overflow-y-auto bg-gray-700 shadow md:inset-0 bg-opacity-60 sm:max-md:pt-12 sm:max-md:pb-20 "
         >
           <div className="relative w-full max-w-2xl max-h-full p-4 2xl:left-1/3 2xl:top-[20%] sm:max-md:left-[0%] lg:top-0 lg:left-[28%]">
-            <div className="relative bg-blue-950 rounded-lg shadow dark:bg-blue-950">
+            <div className="relative bg-white rounded-lg shadow dark:bg-blue-950">
               <div className="flex items-center justify-between p-4 border-b rounded-t md:p-5 dark:border-gray-600">
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {titulo}
