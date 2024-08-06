@@ -119,7 +119,7 @@ export const SerSocioForm = () => {
         <div className="flex flex-row items-center  border-t border-gray-200 rounded-b md:pt-4 dark:border-gray-600 mt-5">
           <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
             <div className="flex flex-row gap-3 ">
-              {!estaGuardando && <p>Registrar</p>}
+              {!estaGuardando && <p>Enviar</p>}
               {estaGuardando && <SpinnerLoading />}
             </div>
           </button>
